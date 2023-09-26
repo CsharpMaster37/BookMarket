@@ -94,5 +94,18 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Source\свернуть_неактив.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\свернуть_актив.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\крест_неактив.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\крест_актив.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

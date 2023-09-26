@@ -24,11 +24,22 @@ namespace BookMarket
         {
             InitializeComponent();
         }
-
-        private void Transportation(object sender, MouseButtonEventArgs e)
+        private void Drag(object sender, MouseButtonEventArgs e)
         {
-            try { DragMove(); }
-            catch { }
+            if (e.ChangedButton == MouseButton.Left)
+            {
+                this.DragMove();
+            }
+        }
+
+        private void CloseButton_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void MinButton_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
         }
     }
 }

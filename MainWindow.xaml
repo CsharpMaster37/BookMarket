@@ -5,9 +5,41 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BookMarket"
         mc:Ignorable="d"
-       Title="MainWindow" Height="800" Width="1300" AllowsTransparency="True" WindowStyle="None" ResizeMode="NoResize" Background="{x:Null}" MouseLeftButtonDown="Transportation">
-    <Border CornerRadius="50" Background="DarkSlateGray" BorderBrush="Gray" BorderThickness="0.3">
+       Title="MainWindow" Height="800" Width="1300" AllowsTransparency="True" WindowStyle="None" ResizeMode="NoResize" Background="{x:Null}">
+    <Border CornerRadius="30" Background="#FF24394E" BorderBrush="Gray" BorderThickness="0.3">
         <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+            </Grid.RowDefinitions>
+            <Grid Name ="ToolBar" Background="Transparent" Grid.Row="0" MouseLeftButtonDown="Drag">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Width="150">
+                    <Image Name="MinButton" Height="35" Width="35" Margin="40,0,10,0" MouseDown="MinButton_MouseDown">
+                        <Image.Style>
+                            <Style TargetType="{x:Type Image}">
+                                <Setter Property="Source" Value="Source/свернуть_неактив.png"/>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding IsMouseOver, ElementName=MinButton}" Value="True">
+                                        <Setter Property="Source" Value="Source/свернуть_актив.png"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Image.Style>
+                        </Image>
+                    <Image Name="CloseButton" Height="35" Width="35" Margin="0,0,0,0" MouseDown="CloseButton_MouseDown">
+                        <Image.Style>
+                            <Style TargetType="{x:Type Image}">
+                                <Setter Property="Source" Value="Source/крест_неактив.png"/>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding IsMouseOver, ElementName=CloseButton}" Value="True">
+                                        <Setter Property="Source" Value="Source/крест_актив.png"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Image.Style>
+                    </Image>
+                </StackPanel>
+            </Grid>
+
         </Grid>
     </Border>
 </Window>
