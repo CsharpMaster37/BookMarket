@@ -3,10 +3,17 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:BookMarket"
+        xmlns:local="clr-namespace:BookMarket" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-       Title="MainWindow" Height="800" Width="1300" AllowsTransparency="True" WindowStyle="None" ResizeMode="NoResize" Background="{x:Null}">
-    <Border CornerRadius="30" Background="#FF24394E" BorderBrush="Gray" BorderThickness="0.3">
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+         TextElement.FontWeight="Regular"
+         TextElement.FontSize="13"
+         TextOptions.TextFormattingMode="Ideal"
+         TextOptions.TextRenderingMode="Auto"
+         Background="{x:Null}"
+         FontFamily="{DynamicResource MaterialDesignFont}"
+       Title="MainWindow" Height="800" Width="1300" AllowsTransparency="True" WindowStyle="None" ResizeMode="NoResize">
+    <Border CornerRadius="30" Background="#FFB59971" BorderBrush="Gray" BorderThickness="0.3">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="100"/>
@@ -24,7 +31,7 @@
                                 </Style.Triggers>
                             </Style>
                         </Image.Style>
-                        </Image>
+                    </Image>
                     <Image Name="CloseButton" Height="35" Width="35" Margin="0,0,0,0" MouseDown="CloseButton_MouseDown">
                         <Image.Style>
                             <Style TargetType="{x:Type Image}">
@@ -39,7 +46,6 @@
                     </Image>
                 </StackPanel>
             </Grid>
-
         </Grid>
     </Border>
 </Window>
