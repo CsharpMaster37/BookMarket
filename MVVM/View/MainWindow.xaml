@@ -14,7 +14,7 @@
          FontFamily="{DynamicResource MaterialDesignFont}"
        Title="MainWindow" Height="800" Width="1300" AllowsTransparency="True" WindowStyle="None" ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen">
-    <Border CornerRadius="30" Background="#FFB59971" BorderBrush="Gray" BorderThickness="0.3">
+    <Border CornerRadius="30" Background="#FF282828" BorderBrush="Gray" BorderThickness="0.3">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="50"/>
