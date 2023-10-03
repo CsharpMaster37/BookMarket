@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BookMarket" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:wpfanimated="http://wpfanimatedgif.codeplex.com"
         mc:Ignorable="d"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
          TextElement.FontWeight="Regular"
@@ -14,10 +15,11 @@
          FontFamily="{DynamicResource MaterialDesignFont}"
        Title="MainWindow" Height="600" Width="400" AllowsTransparency="True" WindowStyle="None" ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen">
-    <Border CornerRadius="30" Background="#FFB59971" BorderBrush="Gray" BorderThickness="0.3">
+    <Border CornerRadius="30" Background="#FF1C262D" BorderBrush="Gray" BorderThickness="0.3">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="50"/>
+                <RowDefinition Height="200"/>
             </Grid.RowDefinitions>
             <Grid Name ="ToolBar" Background="Transparent" Grid.Row="0" MouseLeftButtonDown="Drag">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Width="150">
@@ -47,6 +49,9 @@
                     </Image>
                 </StackPanel>
             </Grid>
-        </Grid>
+            <Grid Name ="Title" Background="Transparent" Grid.Row="1">
+                
+            </Grid>
+            </Grid>
     </Border>
 </Window>
