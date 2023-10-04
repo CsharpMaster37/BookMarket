@@ -98,6 +98,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ResourcePack\Buttons.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MVVM\View\SettingsWindow.xaml.cs">
@@ -134,7 +138,6 @@
     <Folder Include="MVVM\Model\" />
     <Folder Include="MVVM\ViewModel\" />
     <Folder Include="Services\" />
-    <Folder Include="Source\GIF\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Source\свернуть_неактив.png" />
