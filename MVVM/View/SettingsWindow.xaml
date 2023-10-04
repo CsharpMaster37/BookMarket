@@ -57,74 +57,93 @@
             </Grid>
             
             <Grid Name ="Title" Grid.Row="1">
-               
+                <TextBlock
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   FontSize="50"
+                   FontFamily="Cascadia Mono ExtraLight"
+                   >
+                    <TextBlock.Foreground>
+                        <LinearGradientBrush>
+                            <GradientStop Color="#f670c1" Offset="0.8"/>
+                            <GradientStop Color="#32defd" Offset="0.3"/>
+                        </LinearGradientBrush>
+                    </TextBlock.Foreground>
+                    Settings
+                </TextBlock>
             </Grid>
 
             <Grid Name ="Data1" Grid.Row="2">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Width="400">
-                    <Button Name="Minus1" Height="50" Width="50" 
+                    <Button Name="Minus1" Height="35" Width="35" 
                         Style="{DynamicResource RoundButton}"
                         HorizontalAlignment="Left"
                         Margin="70,0,0,0"
-                        Background="Red"
+                        Background="#955ceb"
                         HorizontalContentAlignment="Center"
                         VerticalContentAlignment="Center"
-                        Content="-" FontSize="40">
+                        Content="-" FontSize="25"
+                        BorderBrush="#FF282828">
                     </Button>
-                    <Button Name="Plus1" Height="50" Width="50" 
+                    <Button Name="Plus1" Height="35" Width="35" 
                         Style="{DynamicResource RoundButton}"
                         HorizontalAlignment="Left"
-                        Margin="160,0,0,0"
-                        Background="Green"
+                        Margin="185,0,0,0"
+                        Background="#955ceb"
                         HorizontalContentAlignment="Center"
                         VerticalContentAlignment="Center"
-                        Content="+" FontSize="30">
+                        Content="+" FontSize="25"
+                        BorderBrush="#FF282828">
                     </Button>
                 </StackPanel>
             </Grid>
 
             <Grid Name ="Data2" Grid.Row="3">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Width="400">
-                    <Button Name="Minus2" Height="50" Width="50" 
+                    <Button Name="Minus2" Height="35" Width="35" 
                         Style="{DynamicResource RoundButton}"
                         HorizontalAlignment="Left"
                         Margin="70,0,0,0"
-                        Background="Red"
+                        Background="#955ceb"
                         HorizontalContentAlignment="Center"
                         VerticalContentAlignment="Center"
-                        Content="-" FontSize="40">
+                        Content="-" FontSize="25"
+                        BorderBrush="#FF282828">
                     </Button>
-                    <Button Name="Plus2" Height="50" Width="50" 
+                    <Button Name="Plus2" Height="35" Width="35" 
                         Style="{DynamicResource RoundButton}"
                         HorizontalAlignment="Left"
-                        Margin="160,0,0,0"
-                        Background="Green"
+                        Margin="185,0,0,0"
+                        Background="#955ceb"
                         HorizontalContentAlignment="Center"
                         VerticalContentAlignment="Center"
-                        Content="+" FontSize="30">
+                        Content="+" FontSize="25"
+                        BorderBrush="#FF282828">
                     </Button>
                 </StackPanel>
             </Grid>
 
             <Grid Name ="Data3" Grid.Row="4">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Width="400">
-                    <Button Name="Minus3" Height="50" Width="50" 
+                    <Button Name="Minus3" Height="35" Width="35" 
                         Style="{DynamicResource RoundButton}"
                         HorizontalAlignment="Left"
                         Margin="70,0,0,0"
-                        Background="Red"
+                        Background="#955ceb"
                         HorizontalContentAlignment="Center"
                         VerticalContentAlignment="Center"
-                        Content="-" FontSize="40">
+                        Content="-" FontSize="25"
+                        BorderBrush="#FF282828">
                     </Button>
-                    <Button Name="Plus3" Height="50" Width="50" 
+                    <Button Name="Plus3" Height="35" Width="35" 
                         Style="{DynamicResource RoundButton}"
                         HorizontalAlignment="Left"
-                        Margin="160,0,0,0"
-                        Background="Green"
+                        Margin="185,0,0,0"
+                        Background="#955ceb"
                         HorizontalContentAlignment="Center"
                         VerticalContentAlignment="Center"
-                        Content="+" FontSize="30">
+                        Content="+" FontSize="25"
+                        BorderBrush="#FF282828">
                     </Button>
                 </StackPanel>
             </Grid>
