@@ -151,6 +151,12 @@
   <ItemGroup>
     <Resource Include="Source\крест_актив.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\GIF\preview.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\image %281%29.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\MaterialDesignThemes.4.9.0\build\MaterialDesignThemes.targets" Condition="Exists('packages\MaterialDesignThemes.4.9.0\build\MaterialDesignThemes.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

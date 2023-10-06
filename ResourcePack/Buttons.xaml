@@ -10,4 +10,12 @@
             </Style>
         </Style.Resources>
     </Style>
+
+    <Style TargetType="TextBox" x:Key="RoundBlock">
+        <Style.Resources>
+            <Style TargetType="Border">
+                <Setter Property="CornerRadius" Value="10"/>
+            </Style>
+        </Style.Resources>
+    </Style>
 </ResourceDictionary>
