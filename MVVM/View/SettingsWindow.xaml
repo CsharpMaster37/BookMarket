@@ -13,49 +13,49 @@
          TextOptions.TextRenderingMode="Auto"
          Background="{x:Null}"
          FontFamily="{DynamicResource MaterialDesignFont}"
-       Title="MainWindow" Height="565" Width="405" AllowsTransparency="True" WindowStyle="None" ResizeMode="NoResize"
+       Title="MainWindow" Height="600" Width="700" AllowsTransparency="True" WindowStyle="None" ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen">
 
-    <Border CornerRadius="30" Background="#32defd">
-        <Border CornerRadius="30" Background="#FF282828" BorderBrush="Gray" BorderThickness="0.3" Height="560" Width="400">
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="50"/>
-                    <RowDefinition Height="150"/>
-                    <RowDefinition Height="120"/>
-                    <RowDefinition Height="120"/>
-                    <RowDefinition Height="120"/>
-                </Grid.RowDefinitions>
-                <Grid Name ="ToolBar" Background="Transparent" Grid.Row="0" MouseLeftButtonDown="Drag">
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Width="150">
-                        <Image Name="MinButton" Height="32" Width="32" Margin="55,0,10,0" MouseDown="MinButton_MouseDown">
-                            <Image.Style>
-                                <Style TargetType="{x:Type Image}">
-                                    <Setter Property="Source" Value="../../Source/свернуть_неактив.png"/>
-                                    <Style.Triggers>
-                                        <DataTrigger Binding="{Binding IsMouseOver, ElementName=MinButton}" Value="True">
-                                            <Setter Property="Source" Value="../../Source/свернуть_актив.png"/>
-                                        </DataTrigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </Image.Style>
-                        </Image>
-                        <Image Name="CloseButton" Height="32" Width="32" Margin="0,0,0,0" MouseDown="CloseButton_MouseDown" >
-                            <Image.Style>
-                                <Style TargetType="{x:Type Image}">
-                                    <Setter Property="Source" Value="../../Source/крест_неактив.png"/>
-                                    <Style.Triggers>
-                                        <DataTrigger Binding="{Binding IsMouseOver, ElementName=CloseButton}" Value="True">
-                                            <Setter Property="Source" Value="../../Source/крест_актив.png"/>
-                                        </DataTrigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </Image.Style>
-                        </Image>
-                    </StackPanel>
-                </Grid>
+    <Border CornerRadius="30" Background="#FF282828" BorderBrush="Gray" BorderThickness="0.3" Height="600" Width="700">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="240"/>
+                <RowDefinition Height="240"/>
+            </Grid.RowDefinitions>
 
-                <Grid Name ="Title" Grid.Row="1">
+            <Grid Name ="ToolBar" Background="Transparent" Grid.Row="0" MouseLeftButtonDown="Drag">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Width="150" >
+                    <Image Name="MinButton" Height="32" Width="32" Margin="55,0,10,0" MouseDown="MinButton_MouseDown">
+                        <Image.Style>
+                            <Style TargetType="{x:Type Image}">
+                                <Setter Property="Source" Value="../../Source/свернуть_неактив.png"/>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding IsMouseOver, ElementName=MinButton}" Value="True">
+                                        <Setter Property="Source" Value="../../Source/свернуть_актив.png"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Image.Style>
+                    </Image>
+                    <Image Name="CloseButton" Height="32" Width="32" Margin="0,0,0,0" MouseDown="CloseButton_MouseDown" >
+                        <Image.Style>
+                            <Style TargetType="{x:Type Image}">
+                                <Setter Property="Source" Value="../../Source/крест_неактив.png"/>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding IsMouseOver, ElementName=CloseButton}" Value="True">
+                                        <Setter Property="Source" Value="../../Source/крест_актив.png"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Image.Style>
+                    </Image>
+                </StackPanel>
+            </Grid>
+
+            <Grid Name ="Title" Grid.Row="1">
+                <Border Width="690" BorderBrush="Gray" BorderThickness="2" CornerRadius="30">
                     <TextBlock
                    HorizontalAlignment="Center"
                    VerticalAlignment="Center"
@@ -70,101 +70,39 @@
                         </TextBlock.Foreground>
                     Settings
                     </TextBlock>
+                </Border>
+            </Grid>
+            
+            <Grid Name="Data1" Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="350"/>
+                    <ColumnDefinition Width="350"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="0">
+                    <Border CornerRadius="30" BorderBrush="Gray" BorderThickness="2">
+                        
+                    </Border> 
                 </Grid>
 
-                <Grid Name ="Data1" Grid.Row="2">
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Width="400">
-                        <Button Name="Minus1" Height="35" Width="35" 
-                        Style="{DynamicResource RoundButton}"
-                        HorizontalAlignment="Left"
-                        Margin="70,0,0,0"
-                        Background="#955ceb"
-                        HorizontalContentAlignment="Center"
-                        VerticalContentAlignment="Center"
-                        Content="-" FontSize="25"
-                        BorderBrush="#FF282828">
-                        </Button>
+                <Grid Grid.Column="1">
+                    <Border CornerRadius="30" BorderBrush="Gray" BorderThickness="2">
 
-                        <TextBox Style="{DynamicResource RoundBlock}" BorderBrush="#FF282828" Background="#FFD6CBCB" Height="50" Width="100" Margin="40,0,0,0"/>
-
-
-                        <Button Name="Plus1" Height="35" Width="35" 
-                        Style="{DynamicResource RoundButton}"
-                        HorizontalAlignment="Left"
-                        Margin="35,0,0,0"
-                        Background="#955ceb"
-                        HorizontalContentAlignment="Center"
-                        VerticalContentAlignment="Center"
-                        Content="+" FontSize="25"
-                        BorderBrush="#FF282828">
-                        </Button>
-
-                        <Button
-                        IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
-                        Style="{StaticResource MaterialDesignFloatingActionSecondaryDarkButton}"
-                        Background="Black" BorderBrush="Black"
-                        ToolTip="MaterialDesignFloatingActionSecondaryDarkButton">
-                        </Button>
-                    </StackPanel>
-                </Grid>
-
-                <Grid Name ="Data2" Grid.Row="3">
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Width="400">
-                        <Button Name="Minus2" Height="35" Width="35" 
-                        Style="{DynamicResource RoundButton}"
-                        HorizontalAlignment="Left"
-                        Margin="70,0,0,0"
-                        Background="#955ceb"
-                        HorizontalContentAlignment="Center"
-                        VerticalContentAlignment="Center"
-                        Content="-" FontSize="25"
-                        BorderBrush="#FF282828">
-                        </Button>
-
-                        <TextBox Style="{DynamicResource RoundBlock}" BorderBrush="#FF282828" Background="#FFD6CBCB" Height="50" Width="100" Margin="40,0,0,0"/>
-
-                        <Button Name="Plus2" Height="35" Width="35" 
-                        Style="{DynamicResource RoundButton}"
-                        HorizontalAlignment="Left"
-                        Margin="35,0,0,0"
-                        Background="#955ceb"
-                        HorizontalContentAlignment="Center"
-                        VerticalContentAlignment="Center"
-                        Content="+" FontSize="25"
-                        BorderBrush="#FF282828">
-                        </Button>
-                    </StackPanel>
-                </Grid>
-
-                <Grid Name ="Data3" Grid.Row="4">
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Width="400">
-                        <Button Name="Minus3" Height="35" Width="35" 
-                        Style="{DynamicResource RoundButton}"
-                        HorizontalAlignment="Left"
-                        Margin="70,0,0,0"
-                        Background="#955ceb"
-                        HorizontalContentAlignment="Center"
-                        VerticalContentAlignment="Center"
-                        Content="-" FontSize="25"
-                        BorderBrush="#FF282828">
-                        </Button>
-
-                        <TextBox Style="{DynamicResource RoundBlock}" BorderBrush="#FF282828" Background="#FFD6CBCB" Height="50" Width="100" Margin="40,0,0,0"/>
-
-                        <Button Name="Plus3" Height="35" Width="35" 
-                        Style="{DynamicResource RoundButton}"
-                        HorizontalAlignment="Left"
-                        Margin="35,0,0,0"
-                        Background="#955ceb"
-                        HorizontalContentAlignment="Center"
-                        VerticalContentAlignment="Center"
-                        Content="+" FontSize="25"
-                        BorderBrush="#FF282828">
-                        </Button>
-                    </StackPanel>
+                    </Border>
                 </Grid>
 
             </Grid>
-        </Border>
+
+            <Grid Name="Data2" Grid.Row="3">
+
+                <Border CornerRadius="30" BorderBrush="Gray" BorderThickness="2">
+                    <Grid>
+
+                    </Grid>
+                </Border>
+
+            </Grid>
+
+        </Grid>
     </Border>
 </Window>
