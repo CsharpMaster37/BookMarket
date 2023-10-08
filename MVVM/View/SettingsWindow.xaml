@@ -54,42 +54,63 @@
                 </StackPanel>
             </Grid>
 
-            <Grid Name ="Title" Grid.Row="1">
-                <Border Width="690" BorderBrush="Gray" BorderThickness="2" CornerRadius="30">
+            <Border Grid.Row="1" Width="690" BorderBrush="Gray" BorderThickness="2" CornerRadius="30">
+                <Grid>
                     <TextBlock
-                   HorizontalAlignment="Center"
-                   VerticalAlignment="Center"
-                   FontSize="50"
-                   FontFamily="Cascadia Mono ExtraLight"
-                   >
-                        <TextBlock.Foreground>
-                            <LinearGradientBrush>
-                                <GradientStop Color="#f670c1" Offset="0.8"/>
-                                <GradientStop Color="#32defd" Offset="0.3"/>
-                            </LinearGradientBrush>
-                        </TextBlock.Foreground>
-                    Settings
-                    </TextBlock>
-                </Border>
-            </Grid>
-            
+                        Style="{DynamicResource ForTitle}"
+                        Effect="{DynamicResource SomeShadow}"
+                        Foreground="{DynamicResource GradietnTitle}"
+                        Text="Settings"/>
+                </Grid>
+            </Border>
+
             <Grid Name="Data1" Grid.Row="2">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="350"/>
                     <ColumnDefinition Width="350"/>
                 </Grid.ColumnDefinitions>
 
-                <Grid Grid.Column="0">
-                    <Border CornerRadius="30" BorderBrush="Gray" BorderThickness="2">
-                        
-                    </Border> 
-                </Grid>
+                <Border Grid.Column="0" CornerRadius="30" BorderBrush="Gray" BorderThickness="2">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition Height="210"/>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0">
+                            <TextBlock 
+                                Style="{DynamicResource ForSettings}" 
+                                Effect="{DynamicResource SomeShadow}"
+                                Text="Ranges"/>
+                        </Grid>
+                        <Grid Grid.Row="1">
+                            
+                        </Grid>
+                    </Grid>
+                </Border>
 
-                <Grid Grid.Column="1">
-                    <Border CornerRadius="30" BorderBrush="Gray" BorderThickness="2">
-
-                    </Border>
-                </Grid>
+                <Border Grid.Column="1" CornerRadius="30" BorderBrush="Gray" BorderThickness="2">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition Height="105"/>
+                            <RowDefinition Height="105"/>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0">
+                            <TextBlock 
+                                Style="{DynamicResource ForSettings}" 
+                                Effect="{DynamicResource SomeShadow}"
+                                Text="Price markup"/>
+                        </Grid>
+                        <Grid Grid.Row="1">
+                            <StackPanel>
+                                
+                            </StackPanel>
+                        </Grid>
+                        <Grid Grid.Row="2">
+                            
+                        </Grid>
+                    </Grid>
+                </Border>
 
             </Grid>
 
