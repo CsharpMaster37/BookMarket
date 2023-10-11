@@ -160,6 +160,10 @@
   <ItemGroup>
     <Resource Include="Source\крест_актив.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\Стрелка_влево.png" />
+    <Resource Include="Source\Стрелка_вправо.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\MaterialDesignThemes.4.9.0\build\MaterialDesignThemes.targets" Condition="Exists('packages\MaterialDesignThemes.4.9.0\build\MaterialDesignThemes.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
