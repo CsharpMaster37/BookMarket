@@ -58,7 +58,7 @@
                 <Grid>
                     <TextBlock
                         Style="{DynamicResource ForTitle}"
-                        Effect="{DynamicResource SomeShadow}"
+                        Effect="{DynamicResource SomeShadow1}"
                         Foreground="{DynamicResource GradietnTitle}"
                         Text="Settings"/>
                 </Grid>
@@ -85,6 +85,7 @@
                         <Grid Grid.Row="1">
                             
                         </Grid>
+
                     </Grid>
                 </Border>
 
@@ -107,14 +108,14 @@
                                         Margin="0,18,0,0">
 
                                 <Button Height="40" Width="40"
-                                        Background="IndianRed"
+                                        Background="#FF2BC0DC"
                                         Margin="0,0,7,0"
                                         HorizontalContentAlignment="Center"
                                         VerticalContentAlignment="Center"
                                         Content="-"
                                         Foreground="Black"
                                         FontSize="25"
-                                        BorderBrush="Red"/>
+                                        BorderBrush="#FF4CD2FF"/>
 
                                 <TextBox
                                     Height="40" Width="100"
@@ -128,14 +129,14 @@
                                     CaretBrush="Black"/>
 
                                 <Button Height="40" Width="40"
-                                        Background="DarkSeaGreen"
+                                        Background="#FFE867B4"
                                         Margin="7,0,0,0"
                                         HorizontalContentAlignment="Center"
                                         VerticalContentAlignment="Center"
                                         Content="+"
                                         Foreground="Black"
                                         FontSize="15"
-                                        BorderBrush="Green"/>
+                                        BorderBrush="#FFB827B9"/>
 
 
                             </StackPanel>
@@ -146,14 +147,14 @@
                                         Margin="0,0,0,18">
 
                                 <Button Height="40" Width="40"
-                                        Background="IndianRed"
+                                        Background="#FF2BC0DC"
                                         Margin="0,0,7,0"
                                         HorizontalContentAlignment="Center"
                                         VerticalContentAlignment="Center"
                                         Content="-"
                                         Foreground="Black"
                                         FontSize="25"
-                                        BorderBrush="Red"/>
+                                        BorderBrush="#FF4CD2FF"/>
 
                                 <TextBox
                                     Height="40" Width="100"
@@ -167,14 +168,14 @@
                                     CaretBrush="Black"/>
 
                                 <Button Height="40" Width="40"
-                                        Background="DarkSeaGreen"
+                                        Background="#FFE867B4"
                                         Margin="7,0,0,0"
                                         HorizontalContentAlignment="Center"
                                         VerticalContentAlignment="Center"
                                         Content="+"
                                         Foreground="Black"
                                         FontSize="15"
-                                        BorderBrush="Green"/>
+                                        BorderBrush="#FFB827B9"/>
 
 
                             </StackPanel>
