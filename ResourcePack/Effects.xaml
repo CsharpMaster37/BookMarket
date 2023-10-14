@@ -1,0 +1,23 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <LinearGradientBrush x:Key="GradietnTitle">
+        <GradientStop Color="#f670c1" Offset="0.8"/>
+        <GradientStop Color="#32defd" Offset="0.3"/>
+    </LinearGradientBrush>
+
+    <DropShadowEffect x:Key="SomeShadow" 
+                      ShadowDepth="3" Direction="270" 
+                      Color="Black" 
+                      Opacity="70" BlurRadius="2"/>
+    <DropShadowEffect x:Key="SomeShadow1" 
+                      ShadowDepth="3" Direction="0" 
+                      Color="Black" 
+                      Opacity="70" BlurRadius="3" />
+
+    <DropShadowEffect x:Key="ShadowForRange"
+                      ShadowDepth="3" Direction="0"
+                      Color="Black" Opacity="70"
+                      BlurRadius="3"/>
+
+</ResourceDictionary>

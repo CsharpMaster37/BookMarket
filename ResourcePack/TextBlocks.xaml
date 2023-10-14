@@ -16,12 +16,22 @@
         <Setter Property="FontFamily" Value="Cascadia Mono ExtraLight"/>
     </Style>
 
-    <LinearGradientBrush x:Key="GradietnTitle">
-        <GradientStop Color="#f670c1" Offset="0.8"/>
-        <GradientStop Color="#32defd" Offset="0.3"/>
-    </LinearGradientBrush>
+    <Style TargetType="TextBlock" x:Key="TextBlockForRange">
+        <Style.Resources>
+            <Style TargetType="Border">
+                <Setter Property="CornerRadius" Value="5"/>
+                <Setter Property="BorderThickness" Value="2"/>
+            </Style>
+        </Style.Resources>
+    </Style>
 
-    <DropShadowEffect x:Key="SomeShadow" ShadowDepth="3" Direction="270" Color="Black" Opacity="70" BlurRadius="2"/>
-    <DropShadowEffect x:Key="SomeShadow1" ShadowDepth="3" Direction="0" Color="Black" Opacity="70" BlurRadius="3" />
+
+    <Style TargetType="TextBlock" x:Key="ForRange">
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="FontSize" Value="15"/>
+        <Setter Property="FontFamily" Value="Cascadia Mono ExtraLight"/>
+        <Setter Property="Foreground" Value="Gray"/>
+    </Style>
     
 </ResourceDictionary>
