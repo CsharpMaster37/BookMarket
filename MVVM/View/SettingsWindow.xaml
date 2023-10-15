@@ -6,7 +6,8 @@
         xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BookMarket"
-        xmlns:wpfanimated="http://wpfanimatedgif.codeplex.com"
+        xmlns:wpfanimated="http://wpfanimatedgif.codeplex.com" 
+        xmlns:viewmodels="clr-namespace:BookMarket.MVVM.ViewModels"
         mc:Ignorable="d"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
          TextElement.FontWeight="Regular"
@@ -18,7 +19,11 @@
        Title="MainWindow" Height="600" Width="700" AllowsTransparency="True" WindowStyle="None" ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen">
 
-    <Border CornerRadius="30" Background="#FF282828" BorderBrush="Gray" BorderThickness="0.3" Height="600" Width="700">
+    <Window.DataContext>
+        <viewmodels:SettingsViewModel/>
+    </Window.DataContext>
+    
+    <Border CornerRadius="30" Background="#FF1F1F1F" BorderBrush="Black" BorderThickness="0.3" Height="600" Width="700">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="40"/>
@@ -56,7 +61,7 @@
                 </StackPanel>
             </Grid>
 
-            <Border Grid.Row="1" Width="690" BorderBrush="Gray" BorderThickness="2" CornerRadius="30">
+            <Border Grid.Row="1" Width="690" BorderBrush="{DynamicResource GradietnTitle}" BorderThickness="2" CornerRadius="30">
                 <Grid>
                     <TextBlock
                         Style="{DynamicResource ForTitle}"
@@ -72,7 +77,7 @@
                     <ColumnDefinition Width="350"/>
                 </Grid.ColumnDefinitions>
 
-                <Border Grid.Column="0" CornerRadius="30" BorderBrush="Gray" BorderThickness="2">
+                <Border Grid.Column="0" CornerRadius="30" BorderBrush="#FF2BC0DC" BorderThickness="2">
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="30"/>
@@ -112,14 +117,18 @@
                                         <TextBlock Text="Modeling step"
                                                    Style="{DynamicResource ForRange}"
                                                    Effect="{DynamicResource ShadowForRange}"/>
-                                        
+
                                         <mah:RangeSlider Width="130" Height="30" 
                                              IsSnapToTickEnabled="True" 
                                              Minimum="1" Maximum="3" 
                                             AutoToolTipPlacement="TopLeft"
                                             TickFrequency="1"
-                                            mah:SliderHelper.TrackValueFillBrush="#FFE867B4"
-                                            mah:SliderHelper.ThumbFillBrush="#FF2BC0DC"/>
+                                            mah:SliderHelper.TrackValueFillBrush="#FFE867B4"                                            
+                                            mah:SliderHelper.ThumbFillBrush="#FF2BC0DC"
+                                            MinRangeWidth ="0"
+                                            LowerValue="1"
+                                            UpperValue="3">
+                                        </mah:RangeSlider>
                                     </StackPanel>
 
                                     <Border Height="25" Width="25" 
@@ -161,7 +170,10 @@
                                             AutoToolTipPlacement="TopLeft"
                                             TickFrequency="1"
                                             mah:SliderHelper.TrackValueFillBrush="#FFE867B4"
-                                            mah:SliderHelper.ThumbFillBrush="#FF2BC0DC"/>
+                                            mah:SliderHelper.ThumbFillBrush="#FF2BC0DC"
+                                             MinRangeWidth ="0"
+                                            LowerValue="1"
+                                            UpperValue="5"/>
                                     </StackPanel>
 
                                     <Border Height="25" Width="25" 
@@ -205,7 +217,10 @@
                                             AutoToolTipPlacement="TopLeft"
                                             TickFrequency="1"
                                             mah:SliderHelper.TrackValueFillBrush="#FFE867B4"
-                                            mah:SliderHelper.ThumbFillBrush="#FF2BC0DC"/>
+                                            mah:SliderHelper.ThumbFillBrush="#FF2BC0DC"
+                                            MinRangeWidth ="0"
+                                            LowerValue="3"
+                                            UpperValue="5"/>
                                     </StackPanel>
 
                                     <Border Height="25" Width="25" 
@@ -225,7 +240,7 @@
                     </Grid>
                 </Border>
 
-                <Border Grid.Column="1" CornerRadius="30" BorderBrush="Gray" BorderThickness="2">
+                <Border Grid.Column="1" CornerRadius="30" BorderBrush="#FFE867B4" BorderThickness="2">
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="30"/>
@@ -245,13 +260,14 @@
 
                                 <Button Height="40" Width="40"
                                         Background="#FF2BC0DC"
-                                        Margin="0,0,7,0"
+                                        Template="{DynamicResource RoundButtonForSettings}"
                                         HorizontalContentAlignment="Center"
                                         VerticalContentAlignment="Center"
                                         Content="-"
-                                        Style="{DynamicResource RoundButton}"
+                                        Command="{Binding ClickSubRetail}"
                                         Foreground="Black"
                                         FontSize="25"
+                                        Margin="0,0,7,0"
                                         BorderBrush="#FF4CD2FF"/>
 
                                 <TextBox
@@ -263,16 +279,17 @@
                                     HorizontalContentAlignment="Center"
                                     VerticalContentAlignment="Center"
                                     FontSize="15"
-                                    Text="0"
+                                    Text="{Binding Retail}"
                                     CaretBrush="Black"/>
 
                                 <Button Height="40" Width="40"
                                         Background="#FFE867B4"
+                                        Template="{DynamicResource RoundButtonForSettings}"
                                         Margin="7,0,0,0"
                                         HorizontalContentAlignment="Center"
                                         VerticalContentAlignment="Center"
                                         Content="+"
-                                        Style="{DynamicResource RoundButton}"
+                                        Command="{Binding ClickAddRetail}"
                                         Foreground="Black"
                                         FontSize="15"
                                         BorderBrush="#FFB827B9"/>
@@ -287,13 +304,14 @@
 
                                 <Button Height="40" Width="40"
                                         Background="#FF2BC0DC"
+                                        Template="{DynamicResource RoundButtonForSettings}"
                                         Margin="0,0,7,0"
                                         HorizontalContentAlignment="Center"
                                         VerticalContentAlignment="Center"
                                         Content="-"
-                                        Style="{DynamicResource RoundButton}"
                                         Foreground="Black"
                                         FontSize="25"
+                                        Command="{Binding ClickSubNewBooks}"
                                         BorderBrush="#FF4CD2FF"/>
 
                                 <TextBox
@@ -304,18 +322,19 @@
                                     HorizontalContentAlignment="Center"
                                     VerticalContentAlignment="Center"
                                     FontSize="15"
-                                    Text="0"
+                                    Text ="{Binding NewBooks}"
                                     CaretBrush="Black"/>
 
                                 <Button Height="40" Width="40"
                                         Background="#FFE867B4"
+                                        Template="{DynamicResource RoundButtonForSettings}"
                                         Margin="7,0,0,0"
                                         HorizontalContentAlignment="Center"
                                         VerticalContentAlignment="Center"
                                         Content="+"
-                                        Style="{DynamicResource RoundButton}"
                                         Foreground="Black"
                                         FontSize="15"
+                                        Command="{Binding ClickAddNewBooks}"
                                         BorderBrush="#FFB827B9"/>
 
 
@@ -328,7 +347,7 @@
 
             <Grid Name="Data2" Grid.Row="3">
 
-                <Border CornerRadius="30" BorderBrush="Gray" BorderThickness="2">
+                <Border CornerRadius="30" BorderBrush="{DynamicResource GradietnTitle}" BorderThickness="2">
                     <Grid>
 
                     </Grid>
