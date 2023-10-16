@@ -369,34 +369,79 @@
                             </Grid>
 
                             <Grid Grid.Row="1">
-                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                    
-                                    <Border Height="25" Width="25" 
-                                        CornerRadius="5" 
-                                        Background="Gray"
-                                        Margin="0,15,10,0">
-                                        <TextBlock 
-                                        Text="{Binding ModelingStep_Left}" 
-                                        VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                                    </Border>
-                                    
-                                    <Slider Width="200" Height="30"
+                                <StackPanel Orientation="Horizontal" 
+                                            HorizontalAlignment="Center" VerticalAlignment="Center"
+                                            Margin="0,0,10,0">
+
+                                    <StackPanel Orientation="Vertical" 
+                                                HorizontalAlignment="Center" VerticalAlignment="Center"
+                                                Margin="45,0,0,0">
+
+                                        <TextBlock Text="Modeling period"
+                                                   HorizontalAlignment="Center"
+                                                   Style="{DynamicResource ForRange}"
+                                                   Effect="{DynamicResource ShadowForRange}"/>
+
+                                        <Slider Width="200" Height="30"
+                                        IsSnapToTickEnabled="True" 
+                                        Minimum="10" Maximum="30" 
+                                        AutoToolTipPlacement="TopLeft"
+                                        Value="{Binding Modeling_period_slider}"
+                                        TickFrequency="1"                                        
                                         Style="{DynamicResource MahApps.Styles.Slider.Win10}"
                                         mah:SliderHelper.TrackValueFillBrush="#FFE867B4"
                                         mah:SliderHelper.ThumbFillBrush="#FF2BC0DC"/>
 
-                                    <Border Height="25" Width="25" 
+                                    </StackPanel>
+
+                                    <Border Height="35" Width="35" 
                                         CornerRadius="5" 
                                         Background="Gray"
-                                        Margin="0,15,10,0">
+                                        Margin="15,15,0,0">
                                         <TextBlock 
-                                        Text="{Binding ModelingStep_Left}" 
+                                        Text="{Binding Modeling_period_block}"
                                         VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                     </Border>
-                                    
+
                                 </StackPanel>
                             </Grid>
+                            <Grid Grid.Row="2">
 
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+
+                                    <StackPanel Orientation="Vertical" 
+                                                HorizontalAlignment="Center" VerticalAlignment="Center"
+                                                Margin="45,0,0,0">
+
+                                        <TextBlock Text="Initial assortment"
+                                                   HorizontalAlignment="Center"
+                                                   Style="{DynamicResource ForRange}"
+                                                   Effect="{DynamicResource ShadowForRange}"/>
+
+                                        <Slider Width="200" Height="30"
+                                        IsSnapToTickEnabled="True" 
+                                        Minimum="10" Maximum="1000" 
+                                        AutoToolTipPlacement="TopLeft"
+                                        Value="{Binding CountBooks_slider}"
+                                        TickFrequency="10"                                        
+                                        Style="{DynamicResource MahApps.Styles.Slider.Win10}"
+                                        mah:SliderHelper.TrackValueFillBrush="#FFE867B4"
+                                        mah:SliderHelper.ThumbFillBrush="#FF2BC0DC"/>
+
+                                    </StackPanel>
+
+                                    <Border Height="35" Width="50" 
+                                        CornerRadius="5" 
+                                        Background="Gray"
+                                        Margin="15,15,0,0">
+                                        <TextBlock 
+                                        Text="{Binding CountBooks_block}"
+                                        VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    </Border>
+
+                                </StackPanel>
+
+                            </Grid>
                         </Grid>
                     </Border>
                     <Border Grid.Column="1" CornerRadius="30" BorderBrush="#FFE867B4" BorderThickness="2">

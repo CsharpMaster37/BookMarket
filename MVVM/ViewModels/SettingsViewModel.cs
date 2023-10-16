@@ -22,13 +22,12 @@ namespace BookMarket.MVVM.ViewModels
                 if (value >= 0)
                 {
                     _retail = value;
-                    RaisePropertiesChanged();
                 }
                 else
                 {
                     _retail = 0;
-                    RaisePropertiesChanged();
                 }
+                RaisePropertyChanged(() => Retail);
             }
         }
 
@@ -47,14 +46,10 @@ namespace BookMarket.MVVM.ViewModels
         {
             get
             {
-                if (Retail > 0)
+                return new RelayCommand((obj) =>
                 {
-                    return new RelayCommand((obj) =>
-                    {
-                        Retail--;
-                    });
-                }
-                return null;
+                    Retail--;
+                });
             }
         }
         #endregion
@@ -69,13 +64,12 @@ namespace BookMarket.MVVM.ViewModels
                 if (value >= 0)
                 {
                     _newbooks = value;
-                    RaisePropertiesChanged();
                 }
                 else
                 {
                     _newbooks = 0;
-                    RaisePropertiesChanged();
                 }
+                RaisePropertyChanged(() => NewBooks);
             }
         }
         public RelayCommand ClickAddNewBooks
@@ -93,14 +87,10 @@ namespace BookMarket.MVVM.ViewModels
         {
             get
             {
-                if (NewBooks > 0)
+                return new RelayCommand((obj) =>
                 {
-                    return new RelayCommand((obj) =>
-                    {
-                        NewBooks--;
-                    });
-                }
-                return null;
+                    NewBooks--;
+                });
             }
         }
         #endregion
@@ -115,6 +105,7 @@ namespace BookMarket.MVVM.ViewModels
             private set
             {
                 _left_ModelingStep = value;
+                RaisePropertyChanged(() => ModelingStep_Left);
             }
         }
 
@@ -126,7 +117,7 @@ namespace BookMarket.MVVM.ViewModels
             {
                 _lowervalue_ModelingStep = value;
                 ModelingStep_Left = value;
-                RaisePropertiesChanged();
+                RaisePropertyChanged(() => ModelingStep_Lower);
             }
         }
 
@@ -138,6 +129,7 @@ namespace BookMarket.MVVM.ViewModels
             private set
             {
                 _right_ModelingStep = value;
+                RaisePropertyChanged(() => ModelingStep_Right);
             }
         }
 
@@ -149,7 +141,7 @@ namespace BookMarket.MVVM.ViewModels
             {
                 _uppervalue_ModelingStep = value;
                 ModelingStep_Right = value;
-                RaisePropertiesChanged();
+                RaisePropertyChanged(() => ModelingStep_Upper);
             }
         }
 
@@ -166,6 +158,7 @@ namespace BookMarket.MVVM.ViewModels
             private set
             {
                 _left_DeliveryTime = value;
+                RaisePropertyChanged(() => DeliveryTime_Left);
             }
         }
 
@@ -177,7 +170,7 @@ namespace BookMarket.MVVM.ViewModels
             {
                 _lowervalue_DeliveryTime = value;
                 DeliveryTime_Left = value;
-                RaisePropertiesChanged();
+                RaisePropertyChanged(() => DeliveryTime_Lower);
             }
         }
 
@@ -189,6 +182,7 @@ namespace BookMarket.MVVM.ViewModels
             private set
             {
                 _right_DeliveryTime = value;
+                RaisePropertyChanged(() => DeliveryTime_Right);
             }
         }
 
@@ -200,7 +194,7 @@ namespace BookMarket.MVVM.ViewModels
             {
                 _uppervalue_DeliveryTime = value;
                 DeliveryTime_Right = value;
-                RaisePropertiesChanged();
+                RaisePropertyChanged(() => DeliveryTime_Upper);
             }
         }
 
@@ -216,6 +210,7 @@ namespace BookMarket.MVVM.ViewModels
             private set
             {
                 _left_Threeshold = value;
+                RaisePropertyChanged(() => Threeshold_Left);
             }
         }
 
@@ -227,7 +222,7 @@ namespace BookMarket.MVVM.ViewModels
             {
                 _lowervalue_Threeshold = value;
                 Threeshold_Left = value;
-                RaisePropertiesChanged();
+                RaisePropertyChanged(() => Threeshold_Lower);
             }
         }
 
@@ -239,6 +234,7 @@ namespace BookMarket.MVVM.ViewModels
             private set
             {
                 _right_Threeshold = value;
+                RaisePropertyChanged(() => Threeshold_Right);
             }
         }
 
@@ -250,10 +246,62 @@ namespace BookMarket.MVVM.ViewModels
             {
                 _uppervalue_Threeshold = value;
                 Threeshold_Right = value;
-                RaisePropertiesChanged();
+                RaisePropertyChanged(() => Threeshold_Upper);
             }
         }
 
+        #endregion
+
+        #region Modeling period
+
+        static private int _modeling_period_block = 20;
+        public int Modeling_period_block
+        {
+            get { return _modeling_period_block;}
+            set
+            {
+                _modeling_period_block = value;
+                RaisePropertyChanged(() => Modeling_period_block);
+            }
+        }
+
+        private int _modeling_period_slider = _modeling_period_block;
+        public int Modeling_period_slider
+        {
+            get { return _modeling_period_slider; }
+            set
+            {
+                _modeling_period_slider = value;
+                Modeling_period_block = value;
+                RaisePropertyChanged(() => Modeling_period_slider);
+            }
+        }
+        #endregion
+
+        #region Initial assortiment
+
+        static private int _countbooks_block = 100;
+        public int CountBooks_block
+        {
+            get { return _countbooks_block; }
+            set
+            {
+                _countbooks_block = value;
+                RaisePropertyChanged(() => CountBooks_block);
+            }
+        }
+
+        private int _countbooks_slider = _countbooks_block;
+        public int CountBooks_slider
+        {
+            get { return _countbooks_slider; }
+            set
+            {
+                _countbooks_slider = value;
+                CountBooks_block = value;
+                RaisePropertyChanged(() => CountBooks_slider);
+            }
+        }
         #endregion
     }
 }
