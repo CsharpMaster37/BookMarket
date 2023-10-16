@@ -27,6 +27,7 @@
                 <ResourceDictionary Source="ResourcePack/TextBlocks.xaml"/>
                 <ResourceDictionary Source="ResourcePack/TextBoxes.xaml"/>
                 <ResourceDictionary Source="ResourcePack/Effects.xaml"/>
+                <ResourceDictionary Source="ResourcePack/Sliders.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

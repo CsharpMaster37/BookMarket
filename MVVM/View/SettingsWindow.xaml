@@ -107,7 +107,7 @@
                                         Background="Gray"
                                         Margin="0,15,10,0">
                                         <TextBlock 
-                                        Text="1" 
+                                        Text="{Binding ModelingStep_Left}" 
                                         VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                     </Border>
 
@@ -126,8 +126,8 @@
                                             mah:SliderHelper.TrackValueFillBrush="#FFE867B4"                                            
                                             mah:SliderHelper.ThumbFillBrush="#FF2BC0DC"
                                             MinRangeWidth ="0"
-                                            LowerValue="1"
-                                            UpperValue="3">
+                                            LowerValue="{Binding ModelingStep_Lower}"
+                                            UpperValue="{Binding ModelingStep_Upper}">
                                         </mah:RangeSlider>
                                     </StackPanel>
 
@@ -136,7 +136,7 @@
                                         Background="Gray"
                                         Margin="10,15,0,0">
                                         <TextBlock 
-                                        Text="3" 
+                                        Text="{Binding ModelingStep_Right}" 
                                         VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                     </Border>
                                 </StackPanel>
@@ -153,7 +153,7 @@
                                         Background="Gray"
                                         Margin="0,15,10,0">
                                         <TextBlock 
-                                        Text="1" 
+                                        Text="{Binding DeliveryTime_Left}" 
                                         VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                     </Border>
 
@@ -171,9 +171,9 @@
                                             TickFrequency="1"
                                             mah:SliderHelper.TrackValueFillBrush="#FFE867B4"
                                             mah:SliderHelper.ThumbFillBrush="#FF2BC0DC"
-                                             MinRangeWidth ="0"
-                                            LowerValue="1"
-                                            UpperValue="5"/>
+                                             MinRangeWidth ="0"                                                        
+                                            LowerValue="{Binding DeliveryTime_Lower}"
+                                            UpperValue="{Binding DeliveryTime_Upper}"/>
                                     </StackPanel>
 
                                     <Border Height="25" Width="25" 
@@ -181,7 +181,7 @@
                                         Background="Gray"
                                         Margin="10,15,0,0">
                                         <TextBlock 
-                                        Text="5" 
+                                        Text="{Binding DeliveryTime_Right}" 
                                         VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                     </Border>
                                 </StackPanel>
@@ -199,7 +199,7 @@
                                         Background="Gray"
                                         Margin="0,15,10,0">
                                         <TextBlock 
-                                        Text="3" 
+                                        Text="{Binding Threeshold_Left}" 
                                         VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                     </Border>
 
@@ -219,8 +219,8 @@
                                             mah:SliderHelper.TrackValueFillBrush="#FFE867B4"
                                             mah:SliderHelper.ThumbFillBrush="#FF2BC0DC"
                                             MinRangeWidth ="0"
-                                            LowerValue="3"
-                                            UpperValue="5"/>
+                                            LowerValue="{Binding Threeshold_Lower}"
+                                            UpperValue="{Binding Threeshold_Upper}"/>
                                     </StackPanel>
 
                                     <Border Height="25" Width="25" 
@@ -228,7 +228,7 @@
                                         Background="Gray"
                                         Margin="10,15,0,0">
                                         <TextBlock 
-                                        Text="5" 
+                                        Text="{Binding Threeshold_Right}" 
                                         VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                     </Border>
                                 </StackPanel>
@@ -347,11 +347,62 @@
 
             <Grid Name="Data2" Grid.Row="3">
 
-                <Border CornerRadius="30" BorderBrush="{DynamicResource GradietnTitle}" BorderThickness="2">
                     <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="350"/>
+                            <ColumnDefinition Width="350"/>
+                        </Grid.ColumnDefinitions>
 
+                    <Border Grid.Column="0" CornerRadius="30" BorderBrush="#FF2BC0DC" BorderThickness="2">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="30"/>
+                                <RowDefinition Height="105"/>
+                                <RowDefinition Height="105"/>
+                            </Grid.RowDefinitions>
+
+                            <Grid Grid.Row="0">
+                                <TextBlock 
+                                Style="{DynamicResource ForSettings}" 
+                                Effect="{DynamicResource SomeShadow}"
+                                Text="Modelling"/>
+                            </Grid>
+
+                            <Grid Grid.Row="1">
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    
+                                    <Border Height="25" Width="25" 
+                                        CornerRadius="5" 
+                                        Background="Gray"
+                                        Margin="0,15,10,0">
+                                        <TextBlock 
+                                        Text="{Binding ModelingStep_Left}" 
+                                        VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    </Border>
+                                    
+                                    <Slider Width="200" Height="30"
+                                        Style="{DynamicResource MahApps.Styles.Slider.Win10}"
+                                        mah:SliderHelper.TrackValueFillBrush="#FFE867B4"
+                                        mah:SliderHelper.ThumbFillBrush="#FF2BC0DC"/>
+
+                                    <Border Height="25" Width="25" 
+                                        CornerRadius="5" 
+                                        Background="Gray"
+                                        Margin="0,15,10,0">
+                                        <TextBlock 
+                                        Text="{Binding ModelingStep_Left}" 
+                                        VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    </Border>
+                                    
+                                </StackPanel>
+                            </Grid>
+
+                        </Grid>
+                    </Border>
+                    <Border Grid.Column="1" CornerRadius="30" BorderBrush="#FFE867B4" BorderThickness="2">
+                        
+                    </Border>   
                     </Grid>
-                </Border>
 
             </Grid>
 
