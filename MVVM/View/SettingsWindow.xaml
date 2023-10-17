@@ -23,7 +23,9 @@
         <viewmodels:SettingsViewModel/>
     </Window.DataContext>
     
-    <Border CornerRadius="30" Background="#FF1F1F1F" BorderBrush="Black" BorderThickness="0.3" Height="600" Width="700">
+    <Border CornerRadius="30" Background="#FF1F1F1F" 
+            Height="600" Width="700"
+            BorderBrush="Black" BorderThickness="0.4">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="40"/>
@@ -33,6 +35,19 @@
             </Grid.RowDefinitions>
 
             <Grid Name ="ToolBar" Background="Transparent" Grid.Row="0" MouseLeftButtonDown="Drag">
+
+                <ComboBox Width="45" Height="30"
+                          VerticalAlignment="Center" HorizontalAlignment="Left"
+                          Margin="40,0,0,0"                                                    
+                          HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+                    <ComboBoxItem IsSelected="True">
+                        <Image Source="../../Source/America.png" Width="30" Height="25"/>
+                    </ComboBoxItem>
+                    <ComboBoxItem>
+                        <Image Source="../../Source/Russia.png" Width="30" Height="25"/>
+                    </ComboBoxItem>
+                </ComboBox>
+                
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Width="150" >
                     <Image Name="MinButton" Height="32" Width="32" Margin="55,0,10,0" MouseDown="MinButton_MouseDown">
                         <Image.Style>
@@ -260,6 +275,8 @@
 
                                 <Button Height="40" Width="40"
                                         Background="#FF2BC0DC"
+                                        BorderBrush="AliceBlue"
+                                        BorderThickness="1"
                                         Template="{DynamicResource RoundButtonForSettings}"
                                         HorizontalContentAlignment="Center"
                                         VerticalContentAlignment="Center"
@@ -267,8 +284,7 @@
                                         Command="{Binding ClickSubRetail}"
                                         Foreground="Black"
                                         FontSize="25"
-                                        Margin="0,0,7,0"
-                                        BorderBrush="#FF4CD2FF"/>
+                                        Margin="0,0,7,0"/>
 
                                 <TextBox
                                     
@@ -284,6 +300,8 @@
 
                                 <Button Height="40" Width="40"
                                         Background="#FFE867B4"
+                                        BorderBrush="AliceBlue"
+                                        BorderThickness="1"
                                         Template="{DynamicResource RoundButtonForSettings}"
                                         Margin="7,0,0,0"
                                         HorizontalContentAlignment="Center"
@@ -291,8 +309,7 @@
                                         Content="+"
                                         Command="{Binding ClickAddRetail}"
                                         Foreground="Black"
-                                        FontSize="15"
-                                        BorderBrush="#FFB827B9"/>
+                                        FontSize="15"/>
 
 
                             </StackPanel>
@@ -304,6 +321,8 @@
 
                                 <Button Height="40" Width="40"
                                         Background="#FF2BC0DC"
+                                        BorderBrush="AliceBlue"
+                                        BorderThickness="1"
                                         Template="{DynamicResource RoundButtonForSettings}"
                                         Margin="0,0,7,0"
                                         HorizontalContentAlignment="Center"
@@ -311,8 +330,7 @@
                                         Content="-"
                                         Foreground="Black"
                                         FontSize="25"
-                                        Command="{Binding ClickSubNewBooks}"
-                                        BorderBrush="#FF4CD2FF"/>
+                                        Command="{Binding ClickSubNewBooks}"/>
 
                                 <TextBox
                                     Height="40" Width="100"
@@ -327,6 +345,8 @@
 
                                 <Button Height="40" Width="40"
                                         Background="#FFE867B4"
+                                        BorderBrush="AliceBlue"
+                                        BorderThickness="1"
                                         Template="{DynamicResource RoundButtonForSettings}"
                                         Margin="7,0,0,0"
                                         HorizontalContentAlignment="Center"
@@ -334,8 +354,7 @@
                                         Content="+"
                                         Foreground="Black"
                                         FontSize="15"
-                                        Command="{Binding ClickAddNewBooks}"
-                                        BorderBrush="#FFB827B9"/>
+                                        Command="{Binding ClickAddNewBooks}"/>
 
 
                             </StackPanel>
@@ -407,7 +426,8 @@
                             </Grid>
                             <Grid Grid.Row="2">
 
-                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center"
+                                            Margin="0,0,10,0">
 
                                     <StackPanel Orientation="Vertical" 
                                                 HorizontalAlignment="Center" VerticalAlignment="Center"
@@ -430,7 +450,7 @@
 
                                     </StackPanel>
 
-                                    <Border Height="35" Width="50" 
+                                    <Border Height="35" Width="35" 
                                         CornerRadius="5" 
                                         Background="Gray"
                                         Margin="15,15,0,0">
@@ -445,7 +465,43 @@
                         </Grid>
                     </Border>
                     <Border Grid.Column="1" CornerRadius="30" BorderBrush="#FFE867B4" BorderThickness="2">
-                        
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="120"/>
+                                <RowDefinition Height="120"/>
+                            </Grid.RowDefinitions>
+
+                            <Grid Grid.Row="0">
+
+                                <Button Height="70" Width="250"                       
+                                        Background="#FFE867B4"
+                                        BorderBrush="AliceBlue"
+                                        Foreground="AliceBlue"
+                                        BorderThickness="2"
+                                        Template="{DynamicResource RoundButtonForApply}"
+                                        Margin="0,30,0,0"
+                                        Content="Default Settings"
+                                        FontSize="20"
+                                        FontFamily="Cascadia Mono ExtraLight"/>
+
+                            </Grid>
+
+                            <Grid Grid.Row="1">
+
+                                <Button Height="70" Width="250"
+                                        Background="#FF2BC0DC"
+                                        BorderBrush="AliceBlue"
+                                        Foreground="AliceBlue"
+                                        BorderThickness="2"
+                                        Template="{DynamicResource RoundButtonForApply}"
+                                        Margin="0,0,0,30"
+                                        Content="Start"
+                                        FontSize="20"
+                                        FontFamily="Cascadia Mono ExtraLight"/>
+
+                            </Grid>
+
+                        </Grid>
                     </Border>   
                     </Grid>
 
