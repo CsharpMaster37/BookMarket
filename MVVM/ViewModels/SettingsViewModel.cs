@@ -303,5 +303,234 @@ namespace BookMarket.MVVM.ViewModels
             }
         }
         #endregion
+
+        #region Default Settings
+
+        public RelayCommand DefSettings
+        {
+            get
+            {
+                return new RelayCommand((obj) =>
+                {
+                    Retail = 30;
+                    NewBooks = 40;
+                    ModelingStep_Lower = 1;
+                    ModelingStep_Upper = 3;
+                    DeliveryTime_Lower = 1;
+                    DeliveryTime_Upper = 5;
+                    Threeshold_Lower = 3;
+                    Threeshold_Upper = 5;
+                    Modeling_period_slider = 20;
+                    CountBooks_slider = 100;
+                });
+            }
+        }
+
+        #endregion
+
+        #region Localization
+
+        private bool _langamerica = true;
+        public bool LangAmerica
+        {
+            get { return _langamerica; }
+            set
+            {
+                _langamerica = value;
+                LocalizationAmerica();
+                RaisePropertyChanged(() => LangAmerica);
+            }
+        }
+
+        private bool _langrussia;
+        public bool LangRussia
+        {
+            get { return _langrussia; }
+            set
+            {
+                _langrussia = value;
+                LocalizationRussia();
+                RaisePropertyChanged(() => LangAmerica);
+            }
+        }
+        private void LocalizationAmerica()
+        {
+            Text_Settings = "Settings";
+            Text_Ranges = "Ranges";
+            Text_Price_Markup = "Price markup";
+            Text_Modelling = "Modelling";
+            Text_Modeling_Step = "Modelling step";
+            Text_Delivery_Time = "Delivery time";
+            Text_Threshold = "Threshold";
+            Text_Retail = "Retail (%)";
+            Text_New_Books = "New books (%)";
+            Text_Modeling_Period = "Modeling period";
+            Text_Initial_Assortement = "Initial assortment";
+            Text_Start = "Start";
+            Text_Default_Settings = "Default Settings";
+        }
+        private void LocalizationRussia()
+        {
+            Text_Settings = "Настройки";
+            Text_Ranges = "Диапазоны";
+            Text_Price_Markup = "Наценки";
+            Text_Modelling = "Моделирование";
+            Text_Modeling_Step = "Шаг моделирования";
+            Text_Delivery_Time = "Время доставки";
+            Text_Threshold = "Порог";
+            Text_Retail = "Розница (%)";
+            Text_New_Books = "Новые книги (%)";
+            Text_Modeling_Period = "Период моделирования";
+            Text_Initial_Assortement = "Начальный ассортимент";
+            Text_Start = "Начало";
+            Text_Default_Settings = "Настройки по умолчанию";
+        }
+        #endregion
+
+        #region Texts
+
+        private string text_settings;
+        public string Text_Settings
+        {
+            get { return text_settings; }
+            set
+            {
+                text_settings = value;
+                RaisePropertyChanged(() => Text_Settings);
+            }
+        }
+
+        private string text_ranges;
+        public string Text_Ranges
+        {
+            get { return text_ranges; }
+            set
+            {
+                text_ranges = value;
+                RaisePropertyChanged(() => Text_Ranges);
+            }
+        }
+
+        private string text_price_markup;
+        public string Text_Price_Markup
+        {
+            get { return text_price_markup; }
+            set
+            {
+                text_price_markup = value;
+                RaisePropertyChanged(() => Text_Price_Markup);
+            }
+        }
+
+        private string text_modelling;
+        public string Text_Modelling
+        {
+            get { return text_modelling; }
+            set
+            {
+                text_modelling = value;
+                RaisePropertyChanged(() => Text_Modelling);
+            }
+        }
+
+        private string text_modelling_step;
+        public string Text_Modeling_Step
+        {
+            get { return text_modelling_step; }
+            set
+            {
+                text_modelling_step = value;
+                RaisePropertyChanged(() => Text_Modeling_Step);
+            }
+        }
+
+        private string text_delivery_time;
+        public string Text_Delivery_Time
+        {
+            get { return text_delivery_time; }
+            set
+            {
+                text_delivery_time = value;
+                RaisePropertyChanged(() => Text_Delivery_Time);
+            }
+        }
+
+        private string text_threshold;
+        public string Text_Threshold
+        {
+            get { return text_threshold; }
+            set
+            {
+                text_threshold = value;
+                RaisePropertyChanged(() => Text_Threshold);
+            }
+        }
+
+        private string text_retail;
+        public string Text_Retail
+        {
+            get { return text_retail; }
+            set
+            {
+                text_retail = value;
+                RaisePropertyChanged(() => Text_Retail);
+            }
+        }
+
+        private string text_new_books;
+        public string Text_New_Books
+        {
+            get { return text_new_books; }
+            set
+            {
+                text_new_books = value;
+                RaisePropertyChanged(() => Text_New_Books);
+            }
+        }
+
+        private string text_modeling_period;
+        public string Text_Modeling_Period
+        {
+            get { return text_modeling_period; }
+            set
+            {
+                text_modeling_period = value;
+                RaisePropertyChanged(() => Text_Modeling_Period);
+            }
+        }
+
+        private string text_initial_assortement;
+        public string Text_Initial_Assortement
+        {
+            get { return text_initial_assortement; }
+            set
+            {
+                text_initial_assortement = value;
+                RaisePropertyChanged(() => Text_Initial_Assortement);
+            }
+        }
+
+        private string text_start;
+        public string Text_Start
+        {
+            get { return text_start; }
+            set
+            {
+                text_start = value;
+                RaisePropertyChanged(() => Text_Start);
+            }
+        }
+
+        private string text_default_settings;
+        public string Text_Default_Settings
+        {
+            get { return text_default_settings; }
+            set
+            {
+                text_default_settings = value;
+                RaisePropertyChanged(() => Text_Default_Settings);
+            }
+        }
+        #endregion
     }
 }

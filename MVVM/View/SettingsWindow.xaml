@@ -38,12 +38,13 @@
 
                 <ComboBox Width="45" Height="30"
                           VerticalAlignment="Center" HorizontalAlignment="Left"
-                          Margin="40,0,0,0"                                                    
+                          Margin="40,0,0,0"
+                          
                           HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
-                    <ComboBoxItem IsSelected="True">
+                    <ComboBoxItem IsSelected="{Binding LangAmerica}">
                         <Image Source="../../Source/America.png" Width="30" Height="25"/>
                     </ComboBoxItem>
-                    <ComboBoxItem>
+                    <ComboBoxItem IsSelected="{Binding LangRussia}">
                         <Image Source="../../Source/Russia.png" Width="30" Height="25"/>
                     </ComboBoxItem>
                 </ComboBox>
@@ -82,7 +83,7 @@
                         Style="{DynamicResource ForTitle}"
                         Effect="{DynamicResource SomeShadow1}"
                         Foreground="{DynamicResource GradietnTitle}"
-                        Text="Settings"/>
+                        Text="{Binding Text_Settings}"/>
                 </Grid>
             </Border>
 
@@ -102,7 +103,7 @@
                             <TextBlock 
                                 Style="{DynamicResource ForSettings}" 
                                 Effect="{DynamicResource SomeShadow}"
-                                Text="Ranges"/>
+                                Text="{Binding Text_Ranges}"/>
                         </Grid>
                         <Grid Grid.Row="1">
 
@@ -129,7 +130,7 @@
                                     <StackPanel Orientation="Vertical" 
                                                 VerticalAlignment="Center" HorizontalAlignment="Center">
                                         
-                                        <TextBlock Text="Modeling step"
+                                        <TextBlock Text="{Binding Text_Modeling_Step}"
                                                    Style="{DynamicResource ForRange}"
                                                    Effect="{DynamicResource ShadowForRange}"/>
 
@@ -175,7 +176,7 @@
                                     <StackPanel Orientation="Vertical" 
                                                 VerticalAlignment="Center" HorizontalAlignment="Center">
 
-                                        <TextBlock Text="Delivery time"
+                                        <TextBlock Text="{Binding Text_Delivery_Time}"
                                                    Style="{DynamicResource ForRange}"
                                                    Effect="{DynamicResource ShadowForRange}"/>
 
@@ -221,7 +222,7 @@
                                     <StackPanel Orientation="Vertical"
                                                 VerticalAlignment="Center" HorizontalAlignment="Center">
 
-                                        <TextBlock Text="Threshold"
+                                        <TextBlock Text="{Binding Text_Threshold}"
                                                    TextWrapping ="Wrap"
                                                    Style="{DynamicResource ForRange}"
                                                    Effect="{DynamicResource ShadowForRange}"/>
@@ -266,7 +267,7 @@
                             <TextBlock 
                                 Style="{DynamicResource ForSettings}" 
                                 Effect="{DynamicResource SomeShadow}"
-                                Text="Price markup"/>
+                                Text="{Binding Text_Price_Markup}"/>
                         </Grid>
                         <Grid Grid.Row="1">
                             <StackPanel Orientation="Horizontal" 
@@ -289,7 +290,7 @@
                                 <TextBox
                                     
                                     Height="40" Width="100"
-                                    materialDesign:HintAssist.Hint="Retail (%)"  
+                                    materialDesign:HintAssist.Hint="{Binding Text_Retail}"  
                                     materialDesign:HintAssist.IsFloating="True"
                                     Background="Gray"
                                     HorizontalContentAlignment="Center"
@@ -334,7 +335,7 @@
 
                                 <TextBox
                                     Height="40" Width="100"
-                                    materialDesign:HintAssist.Hint="New books (%)"  
+                                    materialDesign:HintAssist.Hint="{Binding Text_New_Books}"  
                                     materialDesign:HintAssist.IsFloating="True"
                                     Background="Gray"
                                     HorizontalContentAlignment="Center"
@@ -384,7 +385,7 @@
                                 <TextBlock 
                                 Style="{DynamicResource ForSettings}" 
                                 Effect="{DynamicResource SomeShadow}"
-                                Text="Modelling"/>
+                                Text="{Binding Text_Modelling}"/>
                             </Grid>
 
                             <Grid Grid.Row="1">
@@ -396,7 +397,7 @@
                                                 HorizontalAlignment="Center" VerticalAlignment="Center"
                                                 Margin="45,0,0,0">
 
-                                        <TextBlock Text="Modeling period"
+                                        <TextBlock Text="{Binding Text_Modeling_Period}"
                                                    HorizontalAlignment="Center"
                                                    Style="{DynamicResource ForRange}"
                                                    Effect="{DynamicResource ShadowForRange}"/>
@@ -433,7 +434,7 @@
                                                 HorizontalAlignment="Center" VerticalAlignment="Center"
                                                 Margin="45,0,0,0">
 
-                                        <TextBlock Text="Initial assortment"
+                                        <TextBlock Text="{Binding Text_Initial_Assortement}"
                                                    HorizontalAlignment="Center"
                                                    Style="{DynamicResource ForRange}"
                                                    Effect="{DynamicResource ShadowForRange}"/>
@@ -478,11 +479,12 @@
                                         BorderBrush="AliceBlue"
                                         Foreground="AliceBlue"
                                         BorderThickness="2"
+                                        Command="{Binding DefSettings}"
                                         Template="{DynamicResource RoundButtonForApply}"
                                         Margin="0,30,0,0"
-                                        Content="Default Settings"
+                                        Content="{Binding Text_Default_Settings}"
                                         FontSize="20"
-                                        FontFamily="Cascadia Mono ExtraLight"/>
+                                        FontFamily="Cascadia Mono ExtraLight" Cursor="Hand"/>
 
                             </Grid>
 
@@ -495,9 +497,9 @@
                                         BorderThickness="2"
                                         Template="{DynamicResource RoundButtonForApply}"
                                         Margin="0,0,0,30"
-                                        Content="Start"
+                                        Content="{Binding Text_Start}"
                                         FontSize="20"
-                                        FontFamily="Cascadia Mono ExtraLight"/>
+                                        FontFamily="Cascadia Mono ExtraLight" Cursor="Hand"/>
 
                             </Grid>
 
