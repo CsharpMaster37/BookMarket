@@ -12,6 +12,7 @@ namespace BookMarket.MVVM.ViewModels
 {
     class SettingsViewModel : ViewModelBase
     {
+        public SettingsViewModel() { LocalizationAmerica(); }
         #region Retail
         private int _retail;
         public int Retail

@@ -62,6 +62,33 @@
                     <Setter Property="CornerRadius" Value="10"/>
                 </Style>
             </Style.Resources>
-        </Style>
+    </Style>
+
+    <ControlTemplate TargetType="{x:Type Button}" x:Key="SettingsButton">
+        <Border x:Name="Bord" CornerRadius="20" 
+                Background="{TemplateBinding Background}"
+                Opacity="{TemplateBinding Opacity}"
+                Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
+            <ContentPresenter       ContentSource="{TemplateBinding Content}"                             
+                                    VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                    HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}">
+                <ContentPresenter.Content>
+                    <materialDesign:PackIcon  Kind="Cog" x:Name="Icon"
+                                             Width="50" Height="50"
+                                             Foreground="Black"/>
+                </ContentPresenter.Content>
+            </ContentPresenter>
+        </Border>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="Bord" Property="Opacity" Value="0.6"/>
+                <Setter TargetName="Icon" Property="Foreground" Value="White"/>
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter TargetName="Icon" Property="Height" Value="48"/>
+                <Setter TargetName="Icon" Property="Width" Value="48"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
 
 </ResourceDictionary>

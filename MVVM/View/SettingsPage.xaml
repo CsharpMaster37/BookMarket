@@ -1,4 +1,4 @@
-﻿<Window x:Class="BookMarket.MVVM.View.SettingsWindow"
+﻿<Page x:Class="BookMarket.MVVM.View.SettingsPage"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -16,16 +16,15 @@
          TextOptions.TextRenderingMode="Auto"
          Background="{x:Null}"
          FontFamily="{DynamicResource MaterialDesignFont}"
-       Title="MainWindow" Height="600" Width="700" AllowsTransparency="True" WindowStyle="None" ResizeMode="NoResize"
-        WindowStartupLocation="CenterScreen">
+       Title="MainWindow" Height="600" Width="700">
 
-    <Window.DataContext>
+    <Page.DataContext>
         <viewmodels:SettingsViewModel/>
-    </Window.DataContext>
-    
-    <Border CornerRadius="30" Background="#FF1F1F1F" 
+    </Page.DataContext>
+
+    <Border Background="#FF1F1F1F" 
             Height="600" Width="700"
-            BorderBrush="Black" BorderThickness="0.4">
+            CornerRadius="0,0,0,30">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="40"/>
@@ -34,7 +33,7 @@
                 <RowDefinition Height="240"/>
             </Grid.RowDefinitions>
 
-            <Grid Name ="ToolBar" Background="Transparent" Grid.Row="0" MouseLeftButtonDown="Drag">
+            <Grid Name ="ToolBar" Background="Transparent" Grid.Row="0">
 
                 <ComboBox Width="45" Height="30"
                           VerticalAlignment="Center" HorizontalAlignment="Left"
@@ -48,33 +47,6 @@
                         <Image Source="../../Source/Russia.png" Width="30" Height="25"/>
                     </ComboBoxItem>
                 </ComboBox>
-                
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Width="150" >
-                    <Image Name="MinButton" Height="32" Width="32" Margin="55,0,10,0" MouseDown="MinButton_MouseDown">
-                        <Image.Style>
-                            <Style TargetType="{x:Type Image}">
-                                <Setter Property="Source" Value="../../Source/свернуть_неактив.png"/>
-                                <Style.Triggers>
-                                    <DataTrigger Binding="{Binding IsMouseOver, ElementName=MinButton}" Value="True">
-                                        <Setter Property="Source" Value="../../Source/свернуть_актив.png"/>
-                                    </DataTrigger>
-                                </Style.Triggers>
-                            </Style>
-                        </Image.Style>
-                    </Image>
-                    <Image Name="CloseButton" Height="32" Width="32" Margin="0,0,0,0" MouseDown="CloseButton_MouseDown" >
-                        <Image.Style>
-                            <Style TargetType="{x:Type Image}">
-                                <Setter Property="Source" Value="../../Source/крест_неактив.png"/>
-                                <Style.Triggers>
-                                    <DataTrigger Binding="{Binding IsMouseOver, ElementName=CloseButton}" Value="True">
-                                        <Setter Property="Source" Value="../../Source/крест_актив.png"/>
-                                    </DataTrigger>
-                                </Style.Triggers>
-                            </Style>
-                        </Image.Style>
-                    </Image>
-                </StackPanel>
             </Grid>
 
             <Border Grid.Row="1" Width="690" BorderBrush="{DynamicResource GradietnTitle}" BorderThickness="2" CornerRadius="30">
@@ -129,7 +101,7 @@
 
                                     <StackPanel Orientation="Vertical"
                                                 VerticalAlignment="Center" HorizontalAlignment="Center">
-                                        
+
                                         <TextBlock Text="{Binding Text_Modeling_Step}"                                                  
                                                    Style="{DynamicResource ForRange}"
                                                    Effect="{DynamicResource ShadowForRange}"/>
@@ -250,7 +222,7 @@
                                 </StackPanel>
 
                             </Grid>
-                            
+
                         </Grid>
 
                     </Grid>
@@ -367,11 +339,11 @@
 
             <Grid Name="Data2" Grid.Row="3">
 
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="350"/>
-                            <ColumnDefinition Width="350"/>
-                        </Grid.ColumnDefinitions>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="350"/>
+                        <ColumnDefinition Width="350"/>
+                    </Grid.ColumnDefinitions>
 
                     <Border Grid.Column="0" CornerRadius="30" BorderBrush="#FF2BC0DC" BorderThickness="2">
                         <Grid>
@@ -504,11 +476,11 @@
                             </Grid>
 
                         </Grid>
-                    </Border>   
-                    </Grid>
+                    </Border>
+                </Grid>
 
             </Grid>
 
         </Grid>
     </Border>
-</Window>
+</Page>

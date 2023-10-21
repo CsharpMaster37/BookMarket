@@ -3,7 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:BookMarket" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:BookMarket" 
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+        
         mc:Ignorable="d"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
          TextElement.FontWeight="Regular"
@@ -12,12 +15,14 @@
          TextOptions.TextRenderingMode="Auto"
          Background="{x:Null}"
          FontFamily="{DynamicResource MaterialDesignFont}"
-       Title="MainWindow" Height="800" Width="1300" AllowsTransparency="True" WindowStyle="None" ResizeMode="NoResize"
+       Title="MainWindow" Height="660" Width="1200" AllowsTransparency="True" WindowStyle="None" ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen">
-    <Border CornerRadius="30" Background="#FF282828" BorderBrush="Gray" BorderThickness="0.3">
+    <Border CornerRadius="30" Background="#FF1F1F1F"
+            BorderBrush="Black" BorderThickness="0.4">
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="50"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="600"/>
             </Grid.RowDefinitions>
             <Grid Name ="ToolBar" Background="Transparent" Grid.Row="0" MouseLeftButtonDown="Drag">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Width="150">
@@ -46,6 +51,44 @@
                         </Image.Style>
                     </Image>
                 </StackPanel>
+                <Button HorizontalAlignment="Left" 
+                        Height="50" Width="50" 
+                        Margin="20,0,0,0"
+                        Template="{DynamicResource SettingsButton}"
+                        Background="#FF1F1F1F"/>
+            </Grid>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="700"/>
+                    <ColumnDefinition Width="500"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="45"/>
+                        <RowDefinition Height="555"/>
+                    </Grid.RowDefinitions>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="175"/>
+                            <ColumnDefinition Width="175"/>
+                            <ColumnDefinition Width="175"/>
+                            <ColumnDefinition Width="175"/>
+                        </Grid.ColumnDefinitions>
+                        <Border Grid.Column="0" BorderBrush="Gray" BorderThickness="1"/>
+                        <Border Grid.Column="1" BorderBrush="Gray" BorderThickness="1"/>
+                        <Border Grid.Column="2" BorderBrush="Gray" BorderThickness="1"/>
+                        <Border Grid.Column="3" BorderBrush="Gray" BorderThickness="1"/>
+                    </Grid>
+                </Grid>
+                <Frame Grid.Column="0" x:Name="Settings" Visibility="Visible"/>
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="45"/>
+                        <RowDefinition Height="555"/>
+                    </Grid.RowDefinitions>
+                    <Border Grid.Row="0" BorderBrush="Gray" BorderThickness="1"/>
+                </Grid>
             </Grid>
         </Grid>
     </Border>

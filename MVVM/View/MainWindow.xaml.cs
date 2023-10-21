@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BookMarket.MVVM.View;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,7 @@ namespace BookMarket
         public MainWindow()
         {
             InitializeComponent();
+            Settings.Content = new SettingsPage();
         }
         private void Drag(object sender, MouseButtonEventArgs e)
         {
@@ -32,14 +34,9 @@ namespace BookMarket
             }
         }
 
-        private void CloseButton_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            this.Close();
-        }
+        private void CloseButton_MouseDown(object sender, MouseButtonEventArgs e) => this.Close();
 
-        private void MinButton_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            this.WindowState = WindowState.Minimized;
-        }
+        private void MinButton_MouseDown(object sender, MouseButtonEventArgs e) => this.WindowState = WindowState.Minimized;
+
     }
 }
