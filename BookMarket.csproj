@@ -91,6 +91,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="MVVM\View\ListBooksPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MVVM\View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -99,17 +103,30 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="MVVM\ViewModels\Helpers.cs" />
+    <Compile Include="MVVM\ViewModels\MainViewModel.cs" />
     <Compile Include="MVVM\ViewModels\RelayCommand.cs" />
     <Compile Include="MVVM\ViewModels\SettingsViewModel.cs" />
+    <Compile Include="MVVM\View\ListBooksPage.xaml.cs">
+      <DependentUpon>ListBooksPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MVVM\View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="MVVM\View\SettingsPage.xaml">
+    <Page Include="MVVM\View\OrderPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MVVM\View\SettingsWindow.xaml">
+    <Page Include="MVVM\View\PurchaseRequestsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\SalesHistoryPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\SettingsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -135,11 +152,17 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MVVM\View\OrderPage.xaml.cs">
+      <DependentUpon>OrderPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\PurchaseRequestsPage.xaml.cs">
+      <DependentUpon>PurchaseRequestsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\SalesHistoryPage.xaml.cs">
+      <DependentUpon>SalesHistoryPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MVVM\View\SettingsPage.xaml.cs">
       <DependentUpon>SettingsPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="MVVM\View\SettingsWindow.xaml.cs">
-      <DependentUpon>SettingsWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

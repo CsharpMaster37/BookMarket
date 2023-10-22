@@ -25,6 +25,10 @@ namespace BookMarket
         {
             InitializeComponent();
             Settings.Content = new SettingsPage();
+            ListBooks.Content = new ListBooksPage();
+            Orders.Content = new OrderPage();
+            SalesHistory.Content = new SalesHistoryPage();
+            PurchaseRequests.Content = new PurchaseRequestsPage();
         }
         private void Drag(object sender, MouseButtonEventArgs e)
         {

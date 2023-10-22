@@ -54,7 +54,28 @@
             </Trigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
-    
+
+    <ControlTemplate TargetType="{x:Type RadioButton}" x:Key="RadioBut">
+        <Border x:Name="Bord" CornerRadius="15" 
+                Background="{TemplateBinding Background}"
+                Opacity="{TemplateBinding Opacity}"
+                Width="{TemplateBinding Width}" Height="{TemplateBinding Height}"
+                BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+            <ContentPresenter   ContentSource="{TemplateBinding Content}"
+                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"/>
+        </Border>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="Bord" Property="Opacity" Value="0.8"/>
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter TargetName="Bord" Property="Width" Value="245"/>
+                <Setter TargetName="Bord" Property="Height" Value="65"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
 
     <Style TargetType="TextBox" x:Key="RoundBlock">
             <Style.Resources>
@@ -90,5 +111,34 @@
             </Trigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
+
+    <ControlTemplate TargetType="{x:Type Button}" x:Key="PlayButton">
+        <Border x:Name="Bord" CornerRadius="20" 
+                Background="{TemplateBinding Background}"
+                Opacity="{TemplateBinding Opacity}"
+                Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
+            <ContentPresenter       ContentSource="{TemplateBinding Content}"                             
+                                    VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                    HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}">
+                <ContentPresenter.Content>
+                    <materialDesign:PackIcon  Kind="Play" x:Name="Icon"
+                                             Width="60" Height="60"
+                                             Foreground="Black"/>
+                    
+                </ContentPresenter.Content>
+            </ContentPresenter>
+        </Border>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="Bord" Property="Opacity" Value="0.6"/>
+                <Setter TargetName="Icon" Property="Foreground" Value="White"/>
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter TargetName="Icon" Property="Height" Value="48"/>
+                <Setter TargetName="Icon" Property="Width" Value="48"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
 
 </ResourceDictionary>
