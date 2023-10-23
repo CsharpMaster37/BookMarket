@@ -55,17 +55,23 @@
                         </Image.Style>
                     </Image>
                 </StackPanel>
-                <StackPanel Margin="20,0,0,0" Orientation="Horizontal">
-                    <Button HorizontalAlignment="Left" 
-                        Height="50" Width="50" 
+                <StackPanel Margin="10,0,0,0" Orientation="Horizontal" HorizontalAlignment="Left">
+                    <Button HorizontalAlignment="Left"                        
+                        Height="50" Width="50"
                         Command="{Binding SettingsButton}"
                         Template="{DynamicResource SettingsButton}"
                         Background="#FF1F1F1F"/>
                     
                     <Button HorizontalAlignment="Left" 
                         Margin="15,0,0,0"
-                        Height="60" Width="60" 
+                        Height="60" Width="60"
                         Template="{DynamicResource PlayButton}"
+                        Background="#FF1F1F1F"/>
+
+                    <Button HorizontalAlignment="Left" 
+                        Margin="0,0,0,0"
+                        Height="60" Width="60" 
+                        Template="{DynamicResource PauseButton}"
                         Background="#FF1F1F1F"/>
                 </StackPanel>
             </Grid>
@@ -113,20 +119,8 @@
                     <Frame Grid.Row="1" x:Name="PurchaseRequests" Visibility="Hidden"/>
                 </Grid>
                 <Frame Grid.Column="0" x:Name="Settings" Visibility="{Binding FrameSettings}"/>
-                <Grid Grid.Column="1">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="45"/>
-                        <RowDefinition Height="555"/>
-                    </Grid.RowDefinitions>
-
-                    <Border BorderBrush="Gray" BorderThickness="1">
-                        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"
-                                   Text="Информация"
-                                   FontSize="25" Foreground="AliceBlue"/>
-                    </Border>
-                                       
-
-                </Grid>
+                <Frame Grid.Column="1" x:Name="Information" Visibility="Hidden"/>
+                <Frame Grid.Column="1" x:Name="Statistics" Visibility="Visible"/>
             </Grid>
         </Grid>
     </Border>

@@ -95,7 +95,7 @@
                                     HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}">
                 <ContentPresenter.Content>
                     <materialDesign:PackIcon  Kind="Cog" x:Name="Icon"
-                                             Width="50" Height="50"
+                                             Width="40" Height="40"
                                              Foreground="Black"/>
                 </ContentPresenter.Content>
             </ContentPresenter>
@@ -106,8 +106,8 @@
                 <Setter TargetName="Icon" Property="Foreground" Value="White"/>
             </Trigger>
             <Trigger Property="IsPressed" Value="True">
-                <Setter TargetName="Icon" Property="Height" Value="48"/>
-                <Setter TargetName="Icon" Property="Width" Value="48"/>
+                <Setter TargetName="Icon" Property="Height" Value="38"/>
+                <Setter TargetName="Icon" Property="Width" Value="38"/>
             </Trigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
@@ -134,8 +134,36 @@
                 <Setter TargetName="Icon" Property="Foreground" Value="White"/>
             </Trigger>
             <Trigger Property="IsPressed" Value="True">
-                <Setter TargetName="Icon" Property="Height" Value="48"/>
-                <Setter TargetName="Icon" Property="Width" Value="48"/>
+                <Setter TargetName="Icon" Property="Height" Value="57"/>
+                <Setter TargetName="Icon" Property="Width" Value="57"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    
+    <ControlTemplate TargetType="{x:Type Button}" x:Key="PauseButton">
+        <Border x:Name="Bord" CornerRadius="20" 
+             Background="{TemplateBinding Background}"
+             Opacity="{TemplateBinding Opacity}"
+             Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
+            <ContentPresenter       ContentSource="{TemplateBinding Content}"                             
+                                 VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                 HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}">
+                <ContentPresenter.Content>
+                    <materialDesign:PackIcon  Kind="Pause" x:Name="Icon"
+                                          Width="60" Height="60"
+                                          Foreground="Black"/>
+
+                </ContentPresenter.Content>
+            </ContentPresenter>
+        </Border>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="Bord" Property="Opacity" Value="0.6"/>
+                <Setter TargetName="Icon" Property="Foreground" Value="White"/>
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter TargetName="Icon" Property="Height" Value="57"/>
+                <Setter TargetName="Icon" Property="Width" Value="57"/>
             </Trigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
