@@ -90,37 +90,41 @@
                         <RadioButton Width="175" Style="{DynamicResource MahApps.Styles.Button}" 
                                      Background="Gray"
                                      Content="Список книг"
+                                     Command="{Binding RadioButton_Category1}"
                                      HorizontalContentAlignment="Center"
                                      VerticalContentAlignment="Center"
                                      FontSize="13"/>
                         <RadioButton Width="175" Style="{DynamicResource MahApps.Styles.Button}" 
                                      Background="Gray"
                                      Content="Заявки"
+                                     Command="{Binding RadioButton_Category2}"
                                      HorizontalContentAlignment="Center"
                                      VerticalContentAlignment="Center"
                                      FontSize="13"/>
                         <RadioButton Width="175" Style="{DynamicResource MahApps.Styles.Button}" 
                                      Background="Gray"
                                      Content="История продаж"
+                                     Command="{Binding RadioButton_Category3}"
                                      HorizontalContentAlignment="Center"
                                      VerticalContentAlignment="Center"
                                      FontSize="13"/>
                         <RadioButton Width="175" Style="{DynamicResource MahApps.Styles.Button}" 
                                      Background="Gray"
                                      Content="Запросы"
+                                     Command="{Binding RadioButton_Category4}"
                                      HorizontalContentAlignment="Center"
                                      VerticalContentAlignment="Center"
                                      FontSize="13"/>
                     </StackPanel>
 
-                    <Frame Grid.Row="1" x:Name="ListBooks" Visibility="Visible"/>
-                    <Frame Grid.Row="1" x:Name="Orders" Visibility="Hidden"/>
-                    <Frame Grid.Row="1" x:Name="SalesHistory" Visibility="Hidden"/>
-                    <Frame Grid.Row="1" x:Name="PurchaseRequests" Visibility="Hidden"/>
+                    <Frame Grid.Row="1" x:Name="ListBooks" Visibility="{Binding Visibility_Category1}"/>
+                    <Frame Grid.Row="1" x:Name="Orders" Visibility="{Binding Visibility_Category2}"/>
+                    <Frame Grid.Row="1" x:Name="SalesHistory" Visibility="{Binding Visibility_Category3}"/>
+                    <Frame Grid.Row="1" x:Name="PurchaseRequests" Visibility="{Binding Visibility_Category4}"/>
                 </Grid>
                 <Frame Grid.Column="0" x:Name="Settings" Visibility="{Binding FrameSettings}"/>
-                <Frame Grid.Column="1" x:Name="Information" Visibility="Hidden"/>
-                <Frame Grid.Column="1" x:Name="Statistics" Visibility="Visible"/>
+                <Frame Grid.Column="1" x:Name="Information" Visibility="{Binding Visibility_Information}"/>
+                <Frame Grid.Column="1" x:Name="Statistics" Visibility="{Binding Visibility_Statistic}"/>
             </Grid>
         </Grid>
     </Border>
