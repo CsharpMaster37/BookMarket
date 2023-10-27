@@ -33,6 +33,27 @@
         </ControlTemplate.Triggers>
     </ControlTemplate>
 
+    <ControlTemplate TargetType="{x:Type Button}" x:Key="RoundButtonForAdd">
+        <Border x:Name="Bord" CornerRadius="5" 
+                Background="{TemplateBinding Background}"
+                Opacity="{TemplateBinding Opacity}"
+                Width="{TemplateBinding Width}" Height="{TemplateBinding Height}"
+                BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+            <ContentPresenter   ContentSource="{TemplateBinding Content}"
+                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"/>
+        </Border>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="Bord" Property="Opacity" Value="0.8"/>
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter TargetName="Bord" Property="Width" Value="198"/>
+                <Setter TargetName="Bord" Property="Height" Value="48"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
 
     <ControlTemplate TargetType="{x:Type Button}" x:Key="RoundButtonForApply">
         <Border x:Name="Bord" CornerRadius="15" 

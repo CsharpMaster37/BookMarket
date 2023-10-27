@@ -24,13 +24,6 @@ namespace BookMarket
         public MainWindow()
         {
             InitializeComponent();
-            Settings.Content = new SettingsPage();
-            ListBooks.Content = new ListBooksPage();
-            Orders.Content = new OrderPage();
-            SalesHistory.Content = new SalesHistoryPage();
-            PurchaseRequests.Content = new PurchaseRequestsPage();
-            Information.Content = new InformationPage();
-            Statistics.Content = new StatisticsPage();
         }
         private void Drag(object sender, MouseButtonEventArgs e)
         {

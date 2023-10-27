@@ -18,7 +18,7 @@ namespace BookMarket.MVVM.View
     /// <summary>
     /// Логика взаимодействия для SettingsPage.xaml
     /// </summary>
-    public partial class SettingsPage : Page
+    public partial class SettingsPage : UserControl
     {
         public SettingsPage()
         {

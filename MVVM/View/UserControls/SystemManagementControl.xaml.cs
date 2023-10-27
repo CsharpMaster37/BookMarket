@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace BookMarket.MVVM.View
+namespace BookMarket.MVVM.View.UserControls
 {
     /// <summary>
-    /// Логика взаимодействия для SalesHistory.xaml
+    /// Логика взаимодействия для SystemManagementControl.xaml
     /// </summary>
-    public partial class SalesHistoryPage : Page
+    public partial class SystemManagementControl : UserControl
     {
-        public SalesHistoryPage()
+        public SystemManagementControl()
         {
             InitializeComponent();
         }

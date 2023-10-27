@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BookMarket" 
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls" xmlns:viewmodels="clr-namespace:BookMarket.MVVM.ViewModels"
+        xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls" xmlns:viewmodels="clr-namespace:BookMarket.MVVM.ViewModels" 
+        xmlns:usercontrols="clr-namespace:BookMarket.MVVM.View.UserControls"
         mc:Ignorable="d"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
          TextElement.FontWeight="Regular"
@@ -14,19 +15,19 @@
          TextOptions.TextRenderingMode="Auto"
          Background="{x:Null}"
          FontFamily="{DynamicResource MaterialDesignFont}"
-       Title="MainWindow" Height="660" Width="1200" AllowsTransparency="True" WindowStyle="None" ResizeMode="NoResize"
+       Title="MainWindow" Height="960" Width="1600" AllowsTransparency="True" WindowStyle="None" ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen">
     
     <Window.DataContext>
         <viewmodels:MainViewModel/>
     </Window.DataContext>
     
-    <Border CornerRadius="30" Background="#FF1F1F1F"
+    <Border CornerRadius="20" Background="#FF212429"
             BorderBrush="Black" BorderThickness="0.4">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="60"/>
-                <RowDefinition Height="600"/>
+                <RowDefinition Height="900"/>
             </Grid.RowDefinitions>
             <Grid Name ="ToolBar" Background="Transparent" Grid.Row="0" MouseLeftButtonDown="Drag">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Width="150">
@@ -60,71 +61,52 @@
                         Height="50" Width="50"
                         Command="{Binding SettingsButton}"
                         Template="{DynamicResource SettingsButton}"
-                        Background="#FF1F1F1F"/>
-                    
-                    <Button HorizontalAlignment="Left" 
-                        Margin="15,0,0,0"
-                        Height="60" Width="60"
-                        Template="{DynamicResource PlayButton}"
-                        Background="#FF1F1F1F"/>
-
-                    <Button HorizontalAlignment="Left" 
-                        Margin="0,0,0,0"
-                        Height="60" Width="60" 
-                        Template="{DynamicResource PauseButton}"
-                        Background="#FF1F1F1F"/>
+                        Background="#FF212429"/>
                 </StackPanel>
             </Grid>
             <Grid Grid.Row="1">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="700"/>
-                    <ColumnDefinition Width="500"/>
+                    <ColumnDefinition Width="300"/>
+                    <ColumnDefinition Width="1000"/>
+                    <ColumnDefinition Width="300"/>
                 </Grid.ColumnDefinitions>
-
-                <Grid>
+                <Grid Grid.Column="0">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="45"/>
-                        <RowDefinition Height="555"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="425"/>
+                        <RowDefinition Height="425"/>
                     </Grid.RowDefinitions>
-                    <StackPanel Grid.Row="0" Orientation="Horizontal" >
-                        <RadioButton Width="175" Style="{DynamicResource MahApps.Styles.Button}" 
-                                     Background="Gray"
-                                     Content="Список книг"
-                                     Command="{Binding RadioButton_Category1}"
-                                     HorizontalContentAlignment="Center"
-                                     VerticalContentAlignment="Center"
-                                     FontSize="13"/>
-                        <RadioButton Width="175" Style="{DynamicResource MahApps.Styles.Button}" 
-                                     Background="Gray"
-                                     Content="Заявки"
-                                     Command="{Binding RadioButton_Category2}"
-                                     HorizontalContentAlignment="Center"
-                                     VerticalContentAlignment="Center"
-                                     FontSize="13"/>
-                        <RadioButton Width="175" Style="{DynamicResource MahApps.Styles.Button}" 
-                                     Background="Gray"
-                                     Content="История продаж"
-                                     Command="{Binding RadioButton_Category3}"
-                                     HorizontalContentAlignment="Center"
-                                     VerticalContentAlignment="Center"
-                                     FontSize="13"/>
-                        <RadioButton Width="175" Style="{DynamicResource MahApps.Styles.Button}" 
-                                     Background="Gray"
-                                     Content="Запросы"
-                                     Command="{Binding RadioButton_Category4}"
-                                     HorizontalContentAlignment="Center"
-                                     VerticalContentAlignment="Center"
-                                     FontSize="13"/>
-                    </StackPanel>
-
-                    <Frame Grid.Row="1" x:Name="ListBooks" Visibility="{Binding Visibility_Category1}"/>
-                    <Frame Grid.Row="1" x:Name="Orders" Visibility="{Binding Visibility_Category2}"/>
-                    <Frame Grid.Row="1" x:Name="SalesHistory" Visibility="{Binding Visibility_Category3}"/>
-                    <Frame Grid.Row="1" x:Name="PurchaseRequests" Visibility="{Binding Visibility_Category4}"/>
+                    <Border Grid.Row="0" Background="#FF64676C" Margin="10,0,10,0" 
+                            Height="auto" Width="auto"
+                            CornerRadius="10,2,2,10">
+                        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"
+                                   FontSize="13" Text="ЭЛЕМЕНТЫ УПРАВЛЕНИЯ" FontWeight="Bold"
+                                   Foreground="Black"/>
+                    </Border>
+                    <Grid Grid.Row="1" Margin="10,15,10,10">
+                        <usercontrols:SystemManagementControl/>
+                    </Grid>
                 </Grid>
-                <Frame Grid.Column="0" x:Name="Settings" Visibility="{Binding FrameSettings}"/>
-                <Frame Grid.Column="1" x:Name="Information" Visibility="{Binding Visibility_Information}"/>
-                <Frame Grid.Column="1" x:Name="Statistics" Visibility="{Binding Visibility_Statistic}"/>
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="850"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <usercontrols:ChoosePageControl/>
+                    </Grid>
+                    <Grid Grid.Row="1" Margin="0,15,0,10">
+                        <usercontrols:ListBooksControl/>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Column="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="425"/>
+                        <RowDefinition Height="425"/>
+                    </Grid.RowDefinitions>
+                    
+                </Grid>
             </Grid>
         </Grid>
     </Border>

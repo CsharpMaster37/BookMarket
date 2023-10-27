@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace BookMarket.MVVM.View
+namespace BookMarket.MVVM.View.UserControls
 {
     /// <summary>
-    /// Логика взаимодействия для OrderPage.xaml
+    /// Логика взаимодействия для ChoosePageControl.xaml
     /// </summary>
-    public partial class OrderPage : Page
+    public partial class ChoosePageControl : UserControl
     {
-        public OrderPage()
+        public ChoosePageControl()
         {
             InitializeComponent();
         }
