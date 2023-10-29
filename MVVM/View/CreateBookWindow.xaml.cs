@@ -10,25 +10,27 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace BookMarket.MVVM.View.UserControls
+namespace BookMarket.MVVM.View
 {
     /// <summary>
-    /// Логика взаимодействия для SystemManagementControl.xaml
+    /// Логика взаимодействия для CreateBookWindow.xaml
     /// </summary>
-    public partial class SystemManagementControl : UserControl
+    public partial class CreateBookWindow : Window
     {
-        public SystemManagementControl()
+        public CreateBookWindow()
         {
             InitializeComponent();
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Drag(object sender, MouseButtonEventArgs e)
         {
-            var cont = new CreateBookWindow();
-            cont.Show();
+            if (e.ChangedButton == MouseButton.Left)
+            {
+                this.DragMove();
+            }
         }
+
+        private void CloseButton_MouseDown_1(object sender, MouseButtonEventArgs e) => this.Close();
     }
 }

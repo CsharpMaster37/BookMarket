@@ -12,23 +12,30 @@
                 <RowDefinition Height="25"/>
                 <RowDefinition Height="75"/>
                 <RowDefinition Height="75"/>
-                <RowDefinition Height="225"/>
+                <RowDefinition Height="150"/>
+                <RowDefinition Height="75"/>
             </Grid.RowDefinitions>
             <Grid Grid.Row="0">
-                <TextBlock Style="{DynamicResource ForRange}" FontSize="15"
-                           Effect="{DynamicResource ShadowForRange}"
+                <TextBlock FontSize="15" 
                            HorizontalAlignment="Center" VerticalAlignment="Center"
-                           Text="System management"/>
+                           Text="System management" Foreground="#FFF8F890"/>
             </Grid>
             <Grid Grid.Row="1">
                 <Button Height="50" Width="200" Margin="0,15,0,0" 
-                        Template="{DynamicResource RoundButtonForAdd}"
-                        Background="#FFFEBC2A" Content="ДОБАВИТЬ КНИГУ" FontWeight="Bold" Foreground="Black" Cursor="Hand"/>
+                        Template="{DynamicResource RoundButtonForAdd}" Content="ДОБАВИТЬ КНИГУ" FontWeight="Bold" Foreground="Black"
+                        Background="#FFFEBC2A" BorderBrush="#FFFEBC2A" Click="Button_Click" />
             </Grid>
             <Grid Grid.Row="2">
                 <Button Height="50" Width="200" Margin="0,15,0,0" 
                         Template="{DynamicResource RoundButtonForAdd}"
-                        Background="#FFFEBC2A" Content="СГЕНЕРИРОВАТЬ" FontWeight="Bold" Foreground="Black" Cursor="Hand"/>
+                        Background="#FFFEBC2A" Content="СГЕНЕРИРОВАТЬ" FontWeight="Bold" 
+                        Foreground="Black" BorderBrush="#FFFEBC2A"/>
+            </Grid>
+            <Grid Grid.Row="4">
+                <Button Height="50" Width="200" Margin="0,0,0,15"
+                        Template="{DynamicResource RoundButtonForAdd}" 
+                        Background="#FFFEBC2A" BorderBrush="#FFFEBC2A"
+                        Content="ОЧИСТИТЬ" FontWeight="Bold" Foreground="Black"/>
             </Grid>
         </Grid>
     </Border>
