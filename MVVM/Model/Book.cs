@@ -18,6 +18,7 @@ namespace BookMarket.MVVM.Model.Books
         public int Price { get; }
         public int RetailMargin { get; }
         public int DemandRating { get; set; }
+        public User User { get; }
         public Book(string author, string title, string publisher, int year, int pagecount, string topic, string category, int price, int retailmargin, int rating)
         {
             Author = author;
@@ -30,6 +31,26 @@ namespace BookMarket.MVVM.Model.Books
             Price = price + retailmargin;
             RetailMargin = retailmargin;
             DemandRating = rating;
+        }
+        public override bool Equals(object obj)
+        {
+            return obj is Book book &&
+                Author == book.Author &&
+                Title == book.Title &&
+                Publisher == book.Publisher &&
+                YearOfPublication == book.YearOfPublication &&
+                PageCount == book.PageCount &&
+                Topic == book.Topic &&
+                Category == book.Category &&
+                Price == book.Price &&
+                RetailMargin == book.RetailMargin;
+        }
+        public override int GetHashCode()
+        {
+            var hash = HashCode.Combine(Author, Title,
+            Publisher, YearOfPublication,
+            PageCount, Topic, Category);
+            return HashCode.Combine(hash, Price, RetailMargin);
         }
 
     }
