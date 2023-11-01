@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BookMarket.MVVM.Model.Books
 {
-    public class Book
+    public class Book : IElements
     {
         public string Author { get;}
         public string Title { get;}

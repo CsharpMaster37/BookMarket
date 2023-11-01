@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BookMarket.MVVM.Model
 {
-    public class AssortmentBooks
+    public class AssortmentBooks : IAssortment
     {
         private readonly Dictionary<Book,int> _assortmentBooks;
         public AssortmentBooks()
@@ -20,21 +20,21 @@ namespace BookMarket.MVVM.Model
             return _assortmentBooks.Keys.Where(x => x.User == user);
         }
 
-        public void AddBook(Book book)
+        public void Add(IElements book)
         {
             try
             {
-                _assortmentBooks.Add(book, 1);
+                _assortmentBooks.Add((Book)book, 1);
             }
             catch
             {
-                _assortmentBooks[book]++;
+                _assortmentBooks[(Book)book]++;
             }
         }
 
-        public void BuyBook(Book book)
+        public void Buy(IElements book)
         {
-            _assortmentBooks[book]--;
+            _assortmentBooks[(Book)book]--;
         }
     }
 }

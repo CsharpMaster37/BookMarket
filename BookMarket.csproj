@@ -109,6 +109,8 @@
     <Compile Include="MVVM\Model\AssortmentBooks.cs" />
     <Compile Include="MVVM\Model\Book.cs" />
     <Compile Include="MVVM\Model\BookMarket.cs" />
+    <Compile Include="MVVM\Model\IAssortment.cs" />
+    <Compile Include="MVVM\Model\IElements.cs" />
     <Compile Include="MVVM\Model\User.cs" />
     <Compile Include="MVVM\ViewModels\Helpers.cs" />
     <Compile Include="MVVM\ViewModels\MainViewModel.cs" />
@@ -130,6 +132,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MVVM\View\UserControls\ListBooksControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\UserControls\ModelingManagementControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -167,6 +173,9 @@
     </Compile>
     <Compile Include="MVVM\View\UserControls\ListBooksControl.xaml.cs">
       <DependentUpon>ListBooksControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\UserControls\ModelingManagementControl.xaml.cs">
+      <DependentUpon>ModelingManagementControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="MVVM\View\UserControls\SystemManagementControl.xaml.cs">
       <DependentUpon>SystemManagementControl.xaml</DependentUpon>

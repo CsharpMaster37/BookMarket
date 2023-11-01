@@ -22,12 +22,12 @@ namespace BookMarket.MVVM.Model
 
         public void AddBook(Book book)
         {
-            _assortmentBooks.AddBook(book);
+            _assortmentBooks.Add(book);
         }
 
         public void BuyBook(Book book)
         {
-            _assortmentBooks.BuyBook(book);
+            _assortmentBooks.Buy(book);
         }
     }
 }
