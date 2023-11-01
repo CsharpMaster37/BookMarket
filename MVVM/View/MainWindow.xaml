@@ -112,7 +112,8 @@
                         <usercontrols:ChoosePageControl/>
                     </Grid>
                     <Grid Grid.Row="2" Margin="0,15,0,10">
-                        <usercontrols:ListBooksControl/>
+                        <usercontrols:ListBooksControl Visibility="Hidden"/>
+                        <usercontrols:ModelingSettingsControl/>
                     </Grid>
                 </Grid>
                 <Grid Grid.Column="2">

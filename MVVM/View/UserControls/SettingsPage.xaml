@@ -14,14 +14,14 @@
          TextOptions.TextFormattingMode="Ideal"
          TextOptions.TextRenderingMode="Auto"
          Background="{x:Null}"
-         FontFamily="{DynamicResource MaterialDesignFont}"  Height="600" Width="700">
+         FontFamily="{DynamicResource MaterialDesignFont}"  Height="825" Width="1000">
 
     <UserControl.DataContext>
         <viewmodels:SettingsViewModel/>
     </UserControl.DataContext>
 
     <Border Background="#FF1F1F1F" 
-            Height="600" Width="700"
+            Height="825" Width="1000"
             CornerRadius="0,0,0,30">
         <Grid>
             <Grid.RowDefinitions>
