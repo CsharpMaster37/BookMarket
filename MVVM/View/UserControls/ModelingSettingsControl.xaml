@@ -3,6 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
              xmlns:local="clr-namespace:BookMarket.MVVM.View.UserControls"
              mc:Ignorable="d" 
              Height="825" Width="1000">
@@ -28,22 +30,128 @@
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="40"/>
-                            <RowDefinition Height="115"/>
-                            <RowDefinition Height="115"/>
-                            <RowDefinition Height="115"/>
+                            <RowDefinition Height="173"/>
+                            <RowDefinition Height="173"/>
                         </Grid.RowDefinitions>
                         <Border Grid.Row="0">
                             <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"
                                FontSize="15" FontWeight="Bold" Foreground="#FFF8F890"
-                               Text="ЗАГЛУШКА"/>
+                               Text="ДИАПАЗОНЫ"/>
                         </Border>
+                        
                         <Border Grid.Row="1">
-                            
+                            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <TextBlock Text="Время доставки" 
+                                           FontSize="15" FontWeight="Bold" Foreground="#FF64676C"
+                                           HorizontalAlignment="Center"/>
+                                <mah:RangeSlider Width="325" Height="60" 
+                                             HorizontalAlignment="Center" VerticalAlignment="Center"
+                                             Style="{DynamicResource MahApps.Styles.RangeSlider.Win10}"
+                                            mah:SliderHelper.TrackValueFillBrush="#FFFEBC2A"
+                                             mah:SliderHelper.ThumbFillBrush="#FFFEBC2A"
+                                             mah:SliderHelper.ThumbFillHoverBrush="#FFFEBC2A"
+                                             mah:SliderHelper.TrackValueFillHoverBrush="#FFFEBC2A"
+                                             mah:SliderHelper.ThumbFillPressedBrush="#FFFEBC2A"
+                                             mah:SliderHelper.TrackValueFillPressedBrush="#FFFEBC2A"
+                                             MinRangeWidth ="0" TickFrequency="1"                                             
+                                             IsSnapToTickEnabled="True" 
+                                             ExtendedMode ="True"
+                                             Minimum="1" Maximum="5"
+                                             TickPlacement="BottomRight"
+                                             AutoToolTipPlacement="TopLeft"
+                                             LowerValue="1" UpperValue="5">
+                                </mah:RangeSlider>
+                            </StackPanel>
+
                         </Border>
+                        
+                        <Border Grid.Row="2">
+                            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <TextBlock Text="Порог для заявки *" 
+                                           FontSize="15" FontWeight="Bold" Foreground="#FF64676C"
+                                           HorizontalAlignment="Center" 
+                                           ToolTip="Порог кол-ва книг, при котором будет составляться заявка в издательство на заказ новой партии данных книг" 
+                                           ToolTipService.Placement="Top">
+                                </TextBlock>
+                                <mah:RangeSlider Width="325" Height="60" 
+                                             HorizontalAlignment="Center" VerticalAlignment="Center"
+                                             Style="{DynamicResource MahApps.Styles.RangeSlider.Win10}"
+                                            mah:SliderHelper.TrackValueFillBrush="#FFFEBC2A"
+                                             mah:SliderHelper.ThumbFillBrush="#FFFEBC2A"
+                                             mah:SliderHelper.ThumbFillHoverBrush="#FFFEBC2A"
+                                             mah:SliderHelper.TrackValueFillHoverBrush="#FFFEBC2A"
+                                             mah:SliderHelper.ThumbFillPressedBrush="#FFFEBC2A"
+                                             mah:SliderHelper.TrackValueFillPressedBrush="#FFFEBC2A"
+                                             MinRangeWidth ="0" TickFrequency="1"                                             
+                                             IsSnapToTickEnabled="True" 
+                                             ExtendedMode ="True"
+                                             Minimum="3" Maximum="5"
+                                             TickPlacement="BottomRight"
+                                             AutoToolTipPlacement="TopLeft"
+                                             LowerValue="3" UpperValue="5">
+                                </mah:RangeSlider>
+                            </StackPanel>
+                        </Border>
+                        
                     </Grid>
                 </Border>
                 <Border Grid.Column="1" BorderBrush="#FFFEBC2A" BorderThickness="2,0,0,0" CornerRadius="0,0,0,15">
-                    
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="40"/>
+                            <RowDefinition Height="173"/>
+                            <RowDefinition Height="173"/>
+                        </Grid.RowDefinitions>
+                        <Border Grid.Row="0">
+                            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"
+                               FontSize="15" FontWeight="Bold" Foreground="#FFF8F890"
+                               Text="НАЦЕНКИ"/>
+                        </Border>
+                        <Border Grid.Row="1">
+                            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <TextBlock Text="Розничная наценка" 
+                                           FontSize="15" FontWeight="Bold" Foreground="#FF64676C"
+                                           HorizontalAlignment="Center"/>
+                                <Slider Width="325" Height="60" 
+                                             HorizontalAlignment="Center" VerticalAlignment="Center"
+                                             Style="{DynamicResource MahApps.Styles.Slider.Win10}"
+                                            mah:SliderHelper.TrackValueFillBrush="#FFFEBC2A"
+                                             mah:SliderHelper.ThumbFillBrush="#FFFEBC2A"
+                                             mah:SliderHelper.ThumbFillHoverBrush="#FFFEBC2A"
+                                             mah:SliderHelper.TrackValueFillHoverBrush="#FFFEBC2A"
+                                             mah:SliderHelper.ThumbFillPressedBrush="#FFFEBC2A"
+                                             mah:SliderHelper.TrackValueFillPressedBrush="#FFFEBC2A" TickFrequency="3"                                             
+                                             IsSnapToTickEnabled="True" 
+                                             Minimum="0" Maximum="30"
+                                             Value="15"
+                                             TickPlacement="BottomRight"
+                                             AutoToolTipPlacement="TopLeft">
+                                </Slider>
+                            </StackPanel>
+                        </Border>
+                        <Border Grid.Row="2">
+                            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <TextBlock Text="Наценка на новые книги" 
+                                           FontSize="15" FontWeight="Bold" Foreground="#FF64676C"
+                                           HorizontalAlignment="Center"/>
+                                <Slider Width="325" Height="60" 
+                                             HorizontalAlignment="Center" VerticalAlignment="Center"
+                                             Style="{DynamicResource MahApps.Styles.Slider.Win10}"
+                                            mah:SliderHelper.TrackValueFillBrush="#FFFEBC2A"
+                                             mah:SliderHelper.ThumbFillBrush="#FFFEBC2A"
+                                             mah:SliderHelper.ThumbFillHoverBrush="#FFFEBC2A"
+                                             mah:SliderHelper.TrackValueFillHoverBrush="#FFFEBC2A"
+                                             mah:SliderHelper.ThumbFillPressedBrush="#FFFEBC2A"
+                                             mah:SliderHelper.TrackValueFillPressedBrush="#FFFEBC2A" TickFrequency="2"                                             
+                                             IsSnapToTickEnabled="True" 
+                                             Minimum="0" Maximum="20"
+                                             Value="10"
+                                             TickPlacement="BottomRight"
+                                             AutoToolTipPlacement="TopLeft">
+                                </Slider>
+                            </StackPanel>
+                        </Border>
+                    </Grid>
                 </Border>
             </Grid>
             <Grid Grid.Row="2">
@@ -52,7 +160,63 @@
                     <ColumnDefinition Width="500"/>
                 </Grid.ColumnDefinitions>
                 <Border Grid.Column="0" BorderBrush="#FFFEBC2A" BorderThickness="0,0,2,0" CornerRadius="0,15,0,0">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="40"/>
+                            <RowDefinition Height="173"/>
+                            <RowDefinition Height="173"/>
+                        </Grid.RowDefinitions>
+                        <Border Grid.Row="0">
+                            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"
+                               FontSize="15" FontWeight="Bold" Foreground="#FFF8F890"
+                               Text="МОДЕЛИРОВАНИЕ"/>
+                        </Border>
+                        <Border Grid.Row="1">
+                            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <TextBlock Text="Период моделирования" 
+                                           FontSize="15" FontWeight="Bold" Foreground="#FF64676C"
+                                           HorizontalAlignment="Center"/>
+                                <Slider Width="325" Height="60" 
+                                             HorizontalAlignment="Center" VerticalAlignment="Center"
+                                             Style="{DynamicResource MahApps.Styles.Slider.Win10}"
+                                            mah:SliderHelper.TrackValueFillBrush="#FFFEBC2A"
+                                             mah:SliderHelper.ThumbFillBrush="#FFFEBC2A"
+                                             mah:SliderHelper.ThumbFillHoverBrush="#FFFEBC2A"
+                                             mah:SliderHelper.TrackValueFillHoverBrush="#FFFEBC2A"
+                                             mah:SliderHelper.ThumbFillPressedBrush="#FFFEBC2A"
+                                             mah:SliderHelper.TrackValueFillPressedBrush="#FFFEBC2A" TickFrequency="2"                                             
+                                             IsSnapToTickEnabled="True" 
+                                             Minimum="10" Maximum="30"
+                                             Value="20"
+                                             TickPlacement="BottomRight"
+                                             AutoToolTipPlacement="TopLeft">
+                                </Slider>
+                            </StackPanel>
+                        </Border>
+                        <Border Grid.Row="2">
+                            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <TextBlock Text="Шаг моделирования" 
+                                           FontSize="15" FontWeight="Bold" Foreground="#FF64676C"
+                                           HorizontalAlignment="Center"/>
+                                <Slider Width="325" Height="60" 
+                                             HorizontalAlignment="Center" VerticalAlignment="Center"
+                                             Style="{DynamicResource MahApps.Styles.Slider.Win10}"
+                                            mah:SliderHelper.TrackValueFillBrush="#FFFEBC2A"
+                                             mah:SliderHelper.ThumbFillBrush="#FFFEBC2A"
+                                             mah:SliderHelper.ThumbFillHoverBrush="#FFFEBC2A"
+                                             mah:SliderHelper.TrackValueFillHoverBrush="#FFFEBC2A"
+                                             mah:SliderHelper.ThumbFillPressedBrush="#FFFEBC2A"
+                                             mah:SliderHelper.TrackValueFillPressedBrush="#FFFEBC2A" TickFrequency="1"                                             
+                                             IsSnapToTickEnabled="True" 
+                                             Minimum="1" Maximum="3"
+                                             Value="2"
+                                             TickPlacement="BottomRight"
+                                             AutoToolTipPlacement="TopLeft">
+                                </Slider>
+                            </StackPanel>
+                        </Border>
 
+                    </Grid>
                 </Border>
                 <Border Grid.Column="1" BorderBrush="#FFFEBC2A" BorderThickness="0,2,0,0" CornerRadius="15,0,0,0">
                     <Grid>

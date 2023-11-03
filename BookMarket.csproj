@@ -109,13 +109,12 @@
     <Compile Include="MVVM\Model\AssortmentBooks.cs" />
     <Compile Include="MVVM\Model\Book.cs" />
     <Compile Include="MVVM\Model\BookMarket.cs" />
-    <Compile Include="MVVM\Model\IAssortment.cs" />
-    <Compile Include="MVVM\Model\IElements.cs" />
+    <Compile Include="MVVM\Model\Interfaces\IAssortment.cs" />
+    <Compile Include="MVVM\Model\Interfaces\IElements.cs" />
     <Compile Include="MVVM\Model\User.cs" />
     <Compile Include="MVVM\ViewModels\Helpers.cs" />
     <Compile Include="MVVM\ViewModels\MainViewModel.cs" />
     <Compile Include="MVVM\ViewModels\RelayCommand.cs" />
-    <Compile Include="MVVM\ViewModels\SettingsViewModel.cs" />
     <Compile Include="MVVM\View\CreateBookWindow.xaml.cs">
       <DependentUpon>CreateBookWindow.xaml</DependentUpon>
     </Compile>
@@ -124,10 +123,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="MVVM\View\UserControls\ModelingSettingsControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="MVVM\View\UserControls\SettingsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -171,9 +166,6 @@
   <ItemGroup>
     <Compile Include="MVVM\View\UserControls\ModelingSettingsControl.xaml.cs">
       <DependentUpon>ModelingSettingsControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="MVVM\View\UserControls\SettingsPage.xaml.cs">
-      <DependentUpon>SettingsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="MVVM\View\UserControls\ChoosePageControl.xaml.cs">
       <DependentUpon>ChoosePageControl.xaml</DependentUpon>

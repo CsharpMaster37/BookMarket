@@ -113,7 +113,7 @@
                     </Grid>
                     <Grid Grid.Row="2" Margin="0,15,0,10">
                         <usercontrols:ListBooksControl Visibility="Hidden"/>
-                        <usercontrols:ModelingSettingsControl/>
+                        <usercontrols:ModelingSettingsControl Visibility="Visible"/>
                     </Grid>
                 </Grid>
                 <Grid Grid.Column="2">
