@@ -32,7 +32,7 @@
             </Grid.RowDefinitions>
             <Grid Name ="ToolBar" Background="Transparent" Grid.Row="0" MouseLeftButtonDown="Drag">
                 <Polygon
-                        Margin="225,0,0,0"
+                        Margin="285,0,0,0"
                         HorizontalAlignment="Center" VerticalAlignment="Top"
                         Points="-300,0 -250,10 250,10 300,0 "
                         Fill="#FF64676C"
@@ -41,7 +41,7 @@
                       X1="-225" X2="225" Y1 ="5" Y2="5" 
                       StrokeThickness="1" 
                       Stroke="#FF212429"
-                      Margin="150,0,0,0"/>
+                      Margin="210,0,0,0"/>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Width="150">
                     <Image Name="MinButton" Height="35" Width="35" Margin="50,0,10,0" MouseDown="MinButton_MouseDown">
                         <Image.Style>
@@ -67,13 +67,6 @@
                             </Style>
                         </Image.Style>
                     </Image>
-                </StackPanel>
-                <StackPanel Margin="10,0,0,0" Orientation="Horizontal" HorizontalAlignment="Left">
-                    <Button HorizontalAlignment="Left"                        
-                        Height="50" Width="50"
-                        Command="{Binding SettingsButton}"
-                        Template="{DynamicResource SettingsButton}"
-                        Background="#FF212429"/>
                 </StackPanel>
             </Grid>
             <Grid Grid.Row="1">

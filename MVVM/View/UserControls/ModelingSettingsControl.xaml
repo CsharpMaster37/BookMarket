@@ -228,15 +228,15 @@
                             <Button VerticalAlignment="Center" HorizontalAlignment="Center"
                                     Height="60" Width="300" Cursor="Hand" Background="#FFFEBC2A"
                                     BorderBrush="#FFFEBC2A" Content="ПО УМОЛЧАНИЮ"
-                                    Template="{DynamicResource RoundButtonForAdd}"
+                                    Template="{DynamicResource RoundButtonForSettingsDefault}"
                                     FontWeight="Bold" Foreground="Black"
-                                    Margin="0,80,0,0"/>
+                                    Margin="0,75,0,0"/>
                         </Border>
                         <Border Grid.Row="1">
                             <Button VerticalAlignment="Center" HorizontalAlignment="Center"
                                     Height="60" Width="300" Cursor="Hand" Background="#FFFEBC2A"
                                     BorderBrush="#FFFEBC2A" Content="ПРИМЕНИТЬ"
-                                    Template="{DynamicResource RoundButtonForAdd}"
+                                    Template="{DynamicResource RoundButtonForSettingsApply}"
                                     FontWeight="Bold" Foreground="Black"
                                     Margin="0,0,0,75"/>
                         </Border>

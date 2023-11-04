@@ -20,7 +20,7 @@ namespace BookMarket.MVVM.Model
             return _assortmentBooks.Keys.Where(x => x.User == user);
         }
 
-        public void Add(IElements book)
+        public void Add(AbstractItem book)
         {
             try
             {
@@ -32,7 +32,7 @@ namespace BookMarket.MVVM.Model
             }
         }
 
-        public void Buy(IElements book)
+        public void Buy(AbstractItem book)
         {
             _assortmentBooks[(Book)book]--;
         }

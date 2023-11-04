@@ -8,7 +8,7 @@ namespace BookMarket.MVVM.Model
 {
     public interface IAssortment
     {
-        void Add(IElements e);
-        void Buy(IElements e);
+        void Add(AbstractItem item);
+        void Buy(AbstractItem item);
     }
 }

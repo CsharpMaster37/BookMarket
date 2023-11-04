@@ -106,11 +106,11 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="MVVM\Model\AbstractItem.cs" />
     <Compile Include="MVVM\Model\AssortmentBooks.cs" />
     <Compile Include="MVVM\Model\Book.cs" />
     <Compile Include="MVVM\Model\BookMarket.cs" />
     <Compile Include="MVVM\Model\Interfaces\IAssortment.cs" />
-    <Compile Include="MVVM\Model\Interfaces\IElements.cs" />
     <Compile Include="MVVM\Model\User.cs" />
     <Compile Include="MVVM\ViewModels\Helpers.cs" />
     <Compile Include="MVVM\ViewModels\MainViewModel.cs" />
