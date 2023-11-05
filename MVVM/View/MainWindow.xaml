@@ -105,8 +105,19 @@
                         <usercontrols:ChoosePageControl/>
                     </Grid>
                     <Grid Grid.Row="2" Margin="0,15,0,10">
-                        <usercontrols:ListBooksControl Visibility="Hidden"/>
-                        <usercontrols:ModelingSettingsControl Visibility="Visible"/>
+                        <usercontrols:ListBooksControl Visibility="Visible"/>
+                        <usercontrols:ModelingSettingsControl/>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="412"/>
+                            </Grid.RowDefinitions>
+                            <Grid Grid.Row="0" Margin="0,0,0,10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="750"/>
+                                </Grid.ColumnDefinitions>
+                                <usercontrols:CreateBookControl/>
+                            </Grid>
+                        </Grid>
                     </Grid>
                 </Grid>
                 <Grid Grid.Column="2">

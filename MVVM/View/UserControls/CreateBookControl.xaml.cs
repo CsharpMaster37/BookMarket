@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace BookMarket.MVVM.View.UserControls
 {
     /// <summary>
-    /// Логика взаимодействия для SystemManagementControl.xaml
+    /// Логика взаимодействия для CreateBookControl.xaml
     /// </summary>
-    public partial class SystemManagementControl : UserControl
+    public partial class CreateBookControl : UserControl
     {
-        public SystemManagementControl()
+        public CreateBookControl()
         {
             InitializeComponent();
         }

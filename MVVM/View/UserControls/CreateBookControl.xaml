@@ -1,0 +1,133 @@
+﻿<UserControl x:Class="BookMarket.MVVM.View.UserControls.CreateBookControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:BookMarket.MVVM.View.UserControls"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:app="clr-namespace:BookMarket"
+             mc:Ignorable="d" 
+             d:DesignHeight="402" d:DesignWidth="750"
+             DataContext="{x:Static app:App._createBook}"
+             Visibility="{Binding _visibility}">
+
+    <Border CornerRadius="20" Background="#FF272A2F" BorderBrush="#FFFEBC2A" BorderThickness="2">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="360"/>
+                <RowDefinition Height="42"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="375"/>
+                    <ColumnDefinition Width="375"/>
+                </Grid.ColumnDefinitions>
+                
+            </Grid>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="375"/>
+                    <ColumnDefinition Width="375"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="68"/>
+                        <RowDefinition Height="68"/>
+                        <RowDefinition Height="68"/>
+                        <RowDefinition Height="68"/>
+                        <RowDefinition Height="68"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0" 
+                               Text="ОБЯЗАТЕЛЬНЫЕ ДАННЫЕ" 
+                               VerticalAlignment="Center" HorizontalAlignment="Center"
+                               FontSize="12" FontWeight="Bold" Foreground="#FFFEBC2A"/>
+                    <TextBox Grid.Row="1" 
+                             Background="#FFEFEDA4" Height="50" Width="250"
+                             VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                             HorizontalAlignment="Center" VerticalAlignment="Center"
+                             materialDesign:HintAssist.Hint="Название книги" materialDesign:HintAssist.IsFloating="True"
+                             materialDesign:HintAssist.Foreground="Black"
+                             FontSize="17" CaretBrush="Black" SelectionBrush="#FFFEBC2A"/>
+                    <TextBox Grid.Row="2" 
+                             Background="#FFEFEDA4" Height="50" Width="250"
+                             VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                             HorizontalAlignment="Center" VerticalAlignment="Center"
+                             materialDesign:HintAssist.Hint="Автор" materialDesign:HintAssist.IsFloating="True"
+                             materialDesign:HintAssist.Foreground="Black"
+                             FontSize="17" CaretBrush="Black" SelectionBrush="#FFFEBC2A"/>
+                    <TextBox Grid.Row="3" 
+                             Background="#FFEFEDA4" Height="50" Width="250"
+                             VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                             HorizontalAlignment="Center" VerticalAlignment="Center"
+                             materialDesign:HintAssist.Hint="Год издания" materialDesign:HintAssist.IsFloating="True"
+                             materialDesign:HintAssist.Foreground="Black"
+                             FontSize="17" CaretBrush="Black" SelectionBrush="#FFFEBC2A"/>
+                    <TextBox Grid.Row="4" 
+                             Background="#FFEFEDA4" Height="50" Width="250"
+                             VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                             HorizontalAlignment="Center" VerticalAlignment="Center"
+                             materialDesign:HintAssist.Hint="Издательство" materialDesign:HintAssist.IsFloating="True"
+                             materialDesign:HintAssist.Foreground="Black"
+                             FontSize="17" CaretBrush="Black" SelectionBrush="#FFFEBC2A"/>
+                    <TextBox Grid.Row="5" 
+                             Background="#FFEFEDA4" Height="50" Width="250"
+                             VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                             HorizontalAlignment="Center" VerticalAlignment="Center"
+                             materialDesign:HintAssist.Hint="Цена" materialDesign:HintAssist.IsFloating="True"
+                             materialDesign:HintAssist.Foreground="Black"
+                             FontSize="17" CaretBrush="Black" SelectionBrush="#FFFEBC2A"/>
+                </Grid>
+
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="68"/>
+                        <RowDefinition Height="68"/>
+                        <RowDefinition Height="68"/>
+                        <RowDefinition Height="68"/>
+                        <RowDefinition Height="68"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0" 
+                               Text="НЕОБЯЗАТЕЛЬНЫЕ ДАННЫЕ" 
+                               VerticalAlignment="Center" HorizontalAlignment="Center"
+                               FontSize="12" FontWeight="Bold" Foreground="#FFFEBC2A"/>
+                    <TextBox Grid.Row="1" 
+                             Background="#FFEFEDA4" Height="50" Width="250"
+                             VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                             HorizontalAlignment="Center" VerticalAlignment="Center"
+                             materialDesign:HintAssist.Hint="Кол-во страниц" materialDesign:HintAssist.IsFloating="True"
+                             materialDesign:HintAssist.Foreground="Black"
+                             FontSize="17" CaretBrush="Black" SelectionBrush="#FFFEBC2A"/>
+                    <TextBox Grid.Row="2" 
+                             Background="#FFEFEDA4" Height="50" Width="250"
+                             VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                             HorizontalAlignment="Center" VerticalAlignment="Center"
+                             materialDesign:HintAssist.Hint="Категория" materialDesign:HintAssist.IsFloating="True"
+                             materialDesign:HintAssist.Foreground="Black"
+                             FontSize="17" CaretBrush="Black" SelectionBrush="#FFFEBC2A"/>
+                    <TextBox Grid.Row="3" 
+                             Background="#FFEFEDA4" Height="50" Width="250"
+                             VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                             HorizontalAlignment="Center" VerticalAlignment="Center"
+                             materialDesign:HintAssist.Hint="Тема" materialDesign:HintAssist.IsFloating="True"
+                             materialDesign:HintAssist.Foreground="Black"
+                             FontSize="17" CaretBrush="Black" SelectionBrush="#FFFEBC2A"/>
+                    <Button Grid.Row="4"
+                        Width="250" Height="50"
+                        Content="ДОБАВИТЬ" FontWeight="Bold" Foreground="Black"
+                        Background="#FFFEBC2A" BorderBrush="#FFFEBC2A"
+                        Template="{DynamicResource RoundButtonForAddBook}"/>
+                    <Button Grid.Row="5"
+                        Width="250" Height="50"
+                        Content="ОТМЕНА" FontWeight="Bold" Foreground="Black"
+                        Background="#FFFEBC2A" BorderBrush="#FFFEBC2A"
+                        Template="{DynamicResource RoundButtonForAddBook}"
+                        Command="{Binding CancelButton}"/>
+                </Grid>
+                
+            </Grid>
+            
+        </Grid>
+    </Border>
+</UserControl>

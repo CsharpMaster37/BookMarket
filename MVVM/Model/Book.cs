@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
 
 namespace BookMarket.MVVM.Model.Books
 {
@@ -16,7 +17,7 @@ namespace BookMarket.MVVM.Model.Books
         public string Topic { get; }
         public string Category { get; }
         public User User { get; }
-        public Book(string author, string title, string publisher, int year, int pagecount, string topic, string category, int price, int retailmargin, int rating)
+        public Book(string author, string title, string publisher, int year, int pagecount, string topic, string category, int price)
         {
             Author = author;
             Title = title;
@@ -25,9 +26,7 @@ namespace BookMarket.MVVM.Model.Books
             PageCount = pagecount;
             Topic = topic;
             Category = category;
-            Price = price + retailmargin;
-            RetailMargin = retailmargin;
-            DemandRating = rating;
+            Price = price + RetailMargin;
         }
         public override bool Equals(object obj)
         {
@@ -35,19 +34,11 @@ namespace BookMarket.MVVM.Model.Books
                 Author == book.Author &&
                 Title == book.Title &&
                 Publisher == book.Publisher &&
-                YearOfPublication == book.YearOfPublication &&
-                PageCount == book.PageCount &&
-                Topic == book.Topic &&
-                Category == book.Category &&
-                Price == book.Price &&
-                RetailMargin == book.RetailMargin;
+                YearOfPublication == book.YearOfPublication;
         }
         public override int GetHashCode()
         {
-            var hash = HashCode.Combine(Author, Title,
-            Publisher, YearOfPublication,
-            PageCount, Topic, Category);
-            return HashCode.Combine(hash, Price, RetailMargin);
+            return HashCode.Combine(Author, Title, Publisher, YearOfPublication);
         }
 
     }

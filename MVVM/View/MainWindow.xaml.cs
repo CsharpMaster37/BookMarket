@@ -33,7 +33,7 @@ namespace BookMarket
             }
         }
 
-        private void CloseButton_MouseDown(object sender, MouseButtonEventArgs e) => this.Close();
+        private void CloseButton_MouseDown(object sender, MouseButtonEventArgs e) => Environment.Exit(0);
 
         private void MinButton_MouseDown(object sender, MouseButtonEventArgs e) => this.WindowState = WindowState.Minimized;
     }

@@ -4,8 +4,10 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:BookMarket.MVVM.View.UserControls"
+             xmlns:app="clr-namespace:BookMarket"
              mc:Ignorable="d" 
-             d:DesignHeight="400" d:DesignWidth="280">
+             d:DesignHeight="400" d:DesignWidth="280"
+             DataContext="{x:Static app:App._modelingManagement}">
     
     <Border Background="#FF272A2F" CornerRadius="20">
         <Grid>
@@ -25,7 +27,7 @@
             <Grid Grid.Row="1">
                 <Button Height="50" Width="200" Margin="0,15,0,0" 
                     Template="{DynamicResource RoundButtonForAdd}" Content="НАЧАТЬ" FontWeight="Bold" Foreground="Black"
-                    Background="#FFFEBC2A" BorderBrush="#FFFEBC2A" Cursor="Hand" />
+                    Background="#FFFEBC2A" BorderBrush="#FFFEBC2A" />
             </Grid>
             <Grid Grid.Row="2">
                 <Button Height="50" Width="200" Margin="0,15,0,0" 
@@ -37,13 +39,14 @@
                 <Button Height="50" Width="200" Margin="0,15,0,0" 
                     Template="{DynamicResource RoundButtonForAdd}"
                     Background="#FFFEBC2A" Content="НАСТРОЙКИ" FontWeight="Bold" 
-                    Foreground="Black" BorderBrush="#FFFEBC2A"/>    
+                    Foreground="Black" BorderBrush="#FFFEBC2A"
+                    Command="{Binding SettingsButton}"/>    
             </Grid>
             <Grid Grid.Row="4">
                 <Button Height="50" Width="200" Margin="0,15,0,0" 
                     Template="{DynamicResource RoundButtonForAdd}"
                     Background="#FFFEBC2A" Content="СБРОС" FontWeight="Bold" 
-                    Foreground="Black" BorderBrush="#FFFEBC2A"/>    
+                    Foreground="Black" BorderBrush="#FFFEBC2A"/>
             </Grid>
         </Grid>
     </Border>
