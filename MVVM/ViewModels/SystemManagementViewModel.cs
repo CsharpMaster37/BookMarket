@@ -15,7 +15,20 @@ namespace BookMarket.MVVM.ViewModels
             {
                 return new RelayCommand((obj) =>
                 {
+                    Helpers.CloseSettings();
                     App._createBook.View();
+                });
+            }
+        }
+        public RelayCommand ClearButton
+        {
+            get
+            {
+                return new RelayCommand((obj) =>
+                {
+                    Helpers.CloseCreate();
+                    Helpers.CloseSettings();
+                    App._market._assortmentBooks._assortment.Clear();
                 });
             }
         }

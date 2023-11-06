@@ -18,5 +18,6 @@ namespace BookMarket.MVVM.ViewModels
             if(_visibility == Visibility.Visible) { _visibility = Visibility.Hidden; }
             else { _visibility = Visibility.Visible; }
         }
+
     }
 }

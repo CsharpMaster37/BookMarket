@@ -38,7 +38,8 @@
                 <Button Height="50" Width="200" Margin="0,15,0,0"
                         Template="{DynamicResource RoundButtonForAdd}" 
                         Background="#FFFEBC2A" BorderBrush="#FFFEBC2A"
-                        Content="ОЧИСТИТЬ" FontWeight="Bold" Foreground="Black"/>
+                        Content="ОЧИСТИТЬ" FontWeight="Bold" Foreground="Black" Cursor="Hand"
+                        Command="{Binding ClearButton}"/>
             </Grid>
         </Grid>
     </Border>

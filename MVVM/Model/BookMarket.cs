@@ -9,7 +9,7 @@ namespace BookMarket.MVVM.Model
 {
     public class Market
     {
-        private readonly AssortmentBooks _assortmentBooks;
+        public readonly AssortmentBooks _assortmentBooks;
         public Market()
         {
             _assortmentBooks = new AssortmentBooks();

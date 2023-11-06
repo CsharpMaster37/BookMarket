@@ -48,35 +48,40 @@
                              HorizontalAlignment="Center" VerticalAlignment="Center"
                              materialDesign:HintAssist.Hint="Название книги" materialDesign:HintAssist.IsFloating="True"
                              materialDesign:HintAssist.Foreground="Black"
-                             FontSize="17" CaretBrush="Black" SelectionBrush="#FFFEBC2A"/>
+                             FontSize="17" CaretBrush="Black" SelectionBrush="#FFFEBC2A"
+                             Text="{Binding _title}"/>
                     <TextBox Grid.Row="2" 
                              Background="#FFEFEDA4" Height="50" Width="250"
                              VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
                              HorizontalAlignment="Center" VerticalAlignment="Center"
                              materialDesign:HintAssist.Hint="Автор" materialDesign:HintAssist.IsFloating="True"
                              materialDesign:HintAssist.Foreground="Black"
-                             FontSize="17" CaretBrush="Black" SelectionBrush="#FFFEBC2A"/>
+                             FontSize="17" CaretBrush="Black" SelectionBrush="#FFFEBC2A"
+                             Text="{Binding _author}"/>
                     <TextBox Grid.Row="3" 
                              Background="#FFEFEDA4" Height="50" Width="250"
                              VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
                              HorizontalAlignment="Center" VerticalAlignment="Center"
                              materialDesign:HintAssist.Hint="Год издания" materialDesign:HintAssist.IsFloating="True"
                              materialDesign:HintAssist.Foreground="Black"
-                             FontSize="17" CaretBrush="Black" SelectionBrush="#FFFEBC2A"/>
+                             FontSize="17" CaretBrush="Black" SelectionBrush="#FFFEBC2A"
+                             Text="{Binding _year}"/>
                     <TextBox Grid.Row="4" 
                              Background="#FFEFEDA4" Height="50" Width="250"
                              VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
                              HorizontalAlignment="Center" VerticalAlignment="Center"
                              materialDesign:HintAssist.Hint="Издательство" materialDesign:HintAssist.IsFloating="True"
                              materialDesign:HintAssist.Foreground="Black"
-                             FontSize="17" CaretBrush="Black" SelectionBrush="#FFFEBC2A"/>
+                             FontSize="17" CaretBrush="Black" SelectionBrush="#FFFEBC2A"
+                             Text="{Binding _publisher}"/>
                     <TextBox Grid.Row="5" 
                              Background="#FFEFEDA4" Height="50" Width="250"
                              VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
                              HorizontalAlignment="Center" VerticalAlignment="Center"
                              materialDesign:HintAssist.Hint="Цена" materialDesign:HintAssist.IsFloating="True"
                              materialDesign:HintAssist.Foreground="Black"
-                             FontSize="17" CaretBrush="Black" SelectionBrush="#FFFEBC2A"/>
+                             FontSize="17" CaretBrush="Black" SelectionBrush="#FFFEBC2A"
+                             Text="{Binding _price}"/>
                 </Grid>
 
                 <Grid Grid.Column="1">
@@ -98,26 +103,30 @@
                              HorizontalAlignment="Center" VerticalAlignment="Center"
                              materialDesign:HintAssist.Hint="Кол-во страниц" materialDesign:HintAssist.IsFloating="True"
                              materialDesign:HintAssist.Foreground="Black"
-                             FontSize="17" CaretBrush="Black" SelectionBrush="#FFFEBC2A"/>
+                             FontSize="17" CaretBrush="Black" SelectionBrush="#FFFEBC2A"
+                             Text="{Binding _countpages}"/>
                     <TextBox Grid.Row="2" 
                              Background="#FFEFEDA4" Height="50" Width="250"
                              VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
                              HorizontalAlignment="Center" VerticalAlignment="Center"
                              materialDesign:HintAssist.Hint="Категория" materialDesign:HintAssist.IsFloating="True"
                              materialDesign:HintAssist.Foreground="Black"
-                             FontSize="17" CaretBrush="Black" SelectionBrush="#FFFEBC2A"/>
+                             FontSize="17" CaretBrush="Black" SelectionBrush="#FFFEBC2A"
+                             Text="{Binding _category}"/>
                     <TextBox Grid.Row="3" 
                              Background="#FFEFEDA4" Height="50" Width="250"
                              VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
                              HorizontalAlignment="Center" VerticalAlignment="Center"
                              materialDesign:HintAssist.Hint="Тема" materialDesign:HintAssist.IsFloating="True"
                              materialDesign:HintAssist.Foreground="Black"
-                             FontSize="17" CaretBrush="Black" SelectionBrush="#FFFEBC2A"/>
+                             FontSize="17" CaretBrush="Black" SelectionBrush="#FFFEBC2A"
+                             Text="{Binding _topic}"/>
                     <Button Grid.Row="4"
                         Width="250" Height="50"
                         Content="ДОБАВИТЬ" FontWeight="Bold" Foreground="Black"
                         Background="#FFFEBC2A" BorderBrush="#FFFEBC2A"
-                        Template="{DynamicResource RoundButtonForAddBook}"/>
+                        Template="{DynamicResource RoundButtonForAddBook}"
+                        Command="{Binding Add}"/>
                     <Button Grid.Row="5"
                         Width="250" Height="50"
                         Content="ОТМЕНА" FontWeight="Bold" Foreground="Black"

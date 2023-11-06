@@ -15,9 +15,11 @@ namespace BookMarket.MVVM.ViewModels
             {
                 return new RelayCommand((obj) =>
                 {
-                    App._modelingSettings.View();
+                    Helpers.CloseCreate();
+                    App._modelingSettings.View();                  
                 });
             }
         }
+
     }
 }

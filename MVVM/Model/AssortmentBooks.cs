@@ -9,32 +9,32 @@ namespace BookMarket.MVVM.Model
 {
     public class AssortmentBooks : IAssortment
     {
-        private readonly Dictionary<Book,int> _assortmentBooks;
+        public readonly Dictionary<Book,int> _assortment;
         public AssortmentBooks()
         {
-            _assortmentBooks = new Dictionary<Book,int>();
+            _assortment = new Dictionary<Book,int>();
         }
         
         public IEnumerable<Book> GetBooksForUser(User user)
         {
-            return _assortmentBooks.Keys.Where(x => x.User == user);
+            return _assortment.Keys.Where(x => x.User == user);
         }
 
         public void Add(AbstractItem book)
         {
             try
             {
-                _assortmentBooks.Add((Book)book, 1);
+                _assortment.Add((Book)book, 1);
             }
             catch
             {
-                _assortmentBooks[(Book)book]++;
+                _assortment[(Book)book]++;
             }
         }
 
         public void Buy(AbstractItem book)
         {
-            _assortmentBooks[(Book)book]--;
+            _assortment[(Book)book]--;
         }
     }
 }

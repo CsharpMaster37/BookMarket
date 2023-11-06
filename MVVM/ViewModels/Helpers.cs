@@ -3,16 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows;
 
 namespace BookMarket.MVVM.ViewModels
 {
-    public static class Helpers
+    public class Helpers
     {
-        public static Visibility ToggleVisibility(Visibility element)
+        public static void CloseSettings()
         {
-            if (element == Visibility.Visible) { return Visibility.Hidden; }
-            else return Visibility.Visible;
+            if(App._modelingSettings._visibility == System.Windows.Visibility.Visible)
+                        App._modelingSettings._visibility = System.Windows.Visibility.Hidden;
+        }
+        public static void CloseCreate()
+        {
+            if (App._createBook._visibility == System.Windows.Visibility.Visible)
+                App._createBook._visibility = System.Windows.Visibility.Hidden;
         }
     }
 }
