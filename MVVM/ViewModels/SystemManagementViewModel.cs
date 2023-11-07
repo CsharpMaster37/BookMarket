@@ -4,11 +4,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace BookMarket.MVVM.ViewModels
 {
     public class SystemManagementViewModel : ViewModelBase
     {
+        public int CountType { get; set; }
+        public Visibility _visibility_count { get; set; } = Visibility.Hidden;
+        public Visibility _visibility_count_button { get; set; } = Visibility.Hidden;
+
         public RelayCommand AddBookButton
         {
             get
@@ -26,9 +31,34 @@ namespace BookMarket.MVVM.ViewModels
             {
                 return new RelayCommand((obj) =>
                 {
-                    Helpers.CloseCreate();
-                    Helpers.CloseSettings();
+                    Helpers.Synchronization_Button();
                     App._market._assortmentBooks._assortment.Clear();
+                });
+            }
+        }
+        public RelayCommand OK_GenateButton
+        {
+            get
+            {
+                return new RelayCommand((obj) =>
+                {
+                    if(CountType > 0) 
+                    {
+                        Helpers.Synchronization_Button();
+                        App._market.Generation(CountType);
+                        Helpers.GenerateButton();
+                    }
+                });
+            }
+        }
+        public RelayCommand GenerateButton
+        {
+            get
+            {
+                return new RelayCommand((obj) =>
+                {
+                    Helpers.Synchronization_Button();
+                    Helpers.GenerateButton();
                 });
             }
         }

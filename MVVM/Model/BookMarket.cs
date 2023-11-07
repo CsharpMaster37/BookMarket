@@ -20,14 +20,18 @@ namespace BookMarket.MVVM.Model
             return _assortmentBooks.GetBooksForUser(user);
         }
 
-        public void AddBook(Book book)
+        public void AddBook(Book book, int count)
         {
-            _assortmentBooks.Add(book);
+            _assortmentBooks.Add(book, count);
         }
 
         public void BuyBook(Book book)
         {
             _assortmentBooks.Buy(book);
+        }
+        public void Generation(int countType)
+        {
+            _assortmentBooks.Generation(countType);
         }
     }
 }

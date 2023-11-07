@@ -112,7 +112,7 @@
                         </Border>
                         <Border Grid.Row="1">
                             <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                <TextBlock Text="Розничная наценка" 
+                                <TextBlock Text="Розничная наценка (%)" 
                                            FontSize="15" FontWeight="Bold" Foreground="#FF64676C"
                                            HorizontalAlignment="Center"/>
                                 <Slider Width="325" Height="60" 
@@ -134,7 +134,7 @@
                         </Border>
                         <Border Grid.Row="2">
                             <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                <TextBlock Text="Наценка на новые книги" 
+                                <TextBlock Text="Наценка на новые книги (%)" 
                                            FontSize="15" FontWeight="Bold" Foreground="#FF64676C"
                                            HorizontalAlignment="Center"/>
                                 <Slider Width="325" Height="60" 

@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:BookMarket.MVVM.View.UserControls"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:app="clr-namespace:BookMarket"
              mc:Ignorable="d" 
              d:DesignHeight="400" d:DesignWidth="280"
@@ -29,18 +30,38 @@
                         Background="#FFFEBC2A" BorderBrush="#FFFEBC2A" Command="{Binding AddBookButton}"/>
             </Grid>
             <Grid Grid.Row="2">
-                <Button Height="50" Width="200" Margin="0,15,0,0" 
-                        Template="{DynamicResource RoundButtonForAdd}"
-                        Background="#FFFEBC2A" Content="СГЕНЕРИРОВАТЬ" FontWeight="Bold" 
-                        Foreground="Black" BorderBrush="#FFFEBC2A"/>
-            </Grid>
-            <Grid Grid.Row="3">
                 <Button Height="50" Width="200" Margin="0,15,0,0"
                         Template="{DynamicResource RoundButtonForAdd}" 
                         Background="#FFFEBC2A" BorderBrush="#FFFEBC2A"
                         Content="ОЧИСТИТЬ" FontWeight="Bold" Foreground="Black" Cursor="Hand"
                         Command="{Binding ClearButton}"/>
             </Grid>
+            <Grid Grid.Row="3">
+                <Button Height="50" Width="200" Margin="0,15,0,0" 
+                        Template="{DynamicResource RoundButtonForAdd}"
+                        Background="#FFFEBC2A" Content="СГЕНЕРИРОВАТЬ" FontWeight="Bold" 
+                        Foreground="Black" BorderBrush="#FFFEBC2A"
+                        Command="{Binding GenerateButton}"/>
+            </Grid>
+            <StackPanel Grid.Row="4" Orientation="Horizontal">
+                <TextBox 
+                     Background="#FFEFEDA4" 
+                        Height="40" Width="60" 
+                        VerticalAlignment="Top" HorizontalAlignment="Left" Margin="45,0,0,0"
+                        VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                        materialDesign:HintAssist.Hint="Кол-во" materialDesign:HintAssist.IsFloating="True"
+                        CaretBrush="Black" SelectionBrush="#FFFEBC2A"
+                        Visibility="{Binding _visibility_count}"
+                        Text="{Binding CountType}"/>
+                <Button VerticalAlignment="Top" HorizontalAlignment="Left"
+                        Margin="10,0,0,0"
+                        Height="39" Width="120"
+                        Background="#FFFEBC2A" Content="ОК" FontWeight="Bold" 
+                        Foreground="Black" BorderBrush="#FFFEBC2A" FontSize="10"
+                        Template="{DynamicResource RoundButtonForApplyGeneration}"
+                        Command="{Binding OK_GenateButton}"
+                        Visibility="{Binding _visibility_count_button}"/>
+            </StackPanel>
         </Grid>
     </Border>
 </UserControl>

@@ -34,13 +34,15 @@ namespace BookMarket.MVVM.ViewModels
             }
         }
 
+
+
         public RelayCommand Add
         {
             get
             {
                 return new RelayCommand((obj) =>
                 {
-                    App._market.AddBook(new Book(_author, _title, _publisher, int.Parse(_year), int.Parse(_countpages), _topic, _category, int.Parse(_price) ));
+                    App._market.AddBook(new Book(_author, _title, _publisher, int.Parse(_year), int.Parse(_countpages), _topic, _category, int.Parse(_price)),1);
                     DataClear();
                 });
             }

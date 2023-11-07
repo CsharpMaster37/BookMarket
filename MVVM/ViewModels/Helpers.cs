@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace BookMarket.MVVM.ViewModels
 {
@@ -10,13 +11,30 @@ namespace BookMarket.MVVM.ViewModels
     {
         public static void CloseSettings()
         {
-            if(App._modelingSettings._visibility == System.Windows.Visibility.Visible)
-                        App._modelingSettings._visibility = System.Windows.Visibility.Hidden;
+            if(App._modelingSettings._visibility == Visibility.Visible)
+                        App._modelingSettings._visibility = Visibility.Hidden;
         }
         public static void CloseCreate()
         {
-            if (App._createBook._visibility == System.Windows.Visibility.Visible)
-                App._createBook._visibility = System.Windows.Visibility.Hidden;
+            if (App._createBook._visibility == Visibility.Visible)
+                App._createBook._visibility = Visibility.Hidden;
+        }
+        public static void Synchronization_Button()
+        {
+            CloseSettings();
+            CloseCreate();
+        }
+        public static void GenerateButton()
+        {
+            if (App._systemManagement._visibility_count == Visibility.Visible)
+                App._systemManagement._visibility_count = Visibility.Hidden;
+            else
+                App._systemManagement._visibility_count = Visibility.Visible;
+
+            if (App._systemManagement._visibility_count_button == Visibility.Visible)
+                App._systemManagement._visibility_count_button = Visibility.Hidden;
+            else
+                App._systemManagement._visibility_count_button = Visibility.Visible;
         }
     }
 }

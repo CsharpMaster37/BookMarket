@@ -95,6 +95,37 @@
         </ControlTemplate.Triggers>
     </ControlTemplate>
 
+    <ControlTemplate TargetType="{x:Type Button}" x:Key="RoundButtonForApplyGeneration">
+        <Border x:Name="Bord" CornerRadius="5" 
+                Background="{TemplateBinding Background}"
+                Opacity="{TemplateBinding Opacity}"
+                Width="{TemplateBinding Width}" Height="{TemplateBinding Height}"
+                BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+            <ContentPresenter   ContentSource="{TemplateBinding Content}"
+                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"/>
+        </Border>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="Bord" Property="Opacity" Value="0.8"/>
+            </Trigger>
+            <EventTrigger RoutedEvent="PreviewMouseDown">
+                <BeginStoryboard>
+                    <Storyboard>
+                        <ThicknessAnimation Storyboard.TargetProperty="Margin" Duration="0:0:0.1" From="10,0,0,0" To="10,0,0,2"/>
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+            <EventTrigger RoutedEvent="PreviewMouseUp">
+                <BeginStoryboard>
+                    <Storyboard>
+                        <ThicknessAnimation Storyboard.TargetProperty="Margin" Duration="0:0:0.1" From="10,0,0,2" To="10,0,0,0"/>
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
 
     <ControlTemplate TargetType="{x:Type Button}" x:Key="RoundButtonForSettingsApply">
         <Border x:Name="Bord" CornerRadius="5" 

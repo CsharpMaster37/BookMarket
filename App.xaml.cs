@@ -4,6 +4,7 @@ using System.Configuration;
 using System.Data;
 using BookMarket.MVVM.Model;
 using System.Linq;
+using System.IO;
 using System.Threading.Tasks;
 using System.Windows;
 using BookMarket.MVVM.ViewModels;
@@ -20,7 +21,7 @@ namespace BookMarket
         public static SystemManagementViewModel _systemManagement { get; }
         public static ModelingSettingsViewModel _modelingSettings { get; }
         public static CreateBookViewModel _createBook { get; }
-
+        public static List<string[]> ArrayGenerate { get; set; } = new List<string[]>();
         static App()
         {
             _market = new Market();
@@ -28,6 +29,14 @@ namespace BookMarket
             _createBook = new CreateBookViewModel();
             _modelingManagement = new ModelingManagementViewModel();
             _modelingSettings = new ModelingSettingsViewModel();
+            CreateArrayForGenerate();
+
         }        
+        private static void CreateArrayForGenerate()
+        {
+            StreamReader sr = new StreamReader("FileGenerate.txt");
+            while(!sr.EndOfStream)
+                ArrayGenerate.Add(sr.ReadLine().Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries));
+        }
     }
 }
