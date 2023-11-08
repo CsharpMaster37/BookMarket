@@ -3,7 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace BookMarket.MVVM.Model
 {
@@ -36,15 +38,18 @@ namespace BookMarket.MVVM.Model
         {
             _assortment[(Book)book]--;
         }
-
         public void Generation(int countType)
         {
             Random rd = new Random();
-            for (int i = 0; i < countType; i++)
+            Thread thread = new Thread(() =>
             {
-                string[] element = App.ArrayGenerate[rd.Next(0,App.ArrayGenerate.Count)];
-                Add(new Book(element[0], element[1], element[2], int.Parse(element[3]), int.Parse(element[4]), element[5], element[6],int.Parse(element[7])), rd.Next(1,15));
-            }
+                for (int i = 0; i < countType; i++)
+                {
+                    string[] element = App.ArrayGenerate[rd.Next(0, App.ArrayGenerate.Count)];
+                    Add(new Book(element[0], element[1], element[2], int.Parse(element[3]), int.Parse(element[4]), element[5], element[6], int.Parse(element[7])), rd.Next(1, 15));
+                }
+            });
+            thread.Start();
         }
     }
 }

@@ -11,8 +11,13 @@ namespace BookMarket.MVVM.ViewModels
     public class SystemManagementViewModel : ViewModelBase
     {
         public int CountType { get; set; }
-        public Visibility _visibility_count { get; set; } = Visibility.Hidden;
-        public Visibility _visibility_count_button { get; set; } = Visibility.Hidden;
+        public Visibility _visibility_count { get; set; }
+        public Visibility _visibility_count_button { get; set; }
+        public SystemManagementViewModel()
+        {
+            _visibility_count = Visibility.Hidden;
+            _visibility_count_button = Visibility.Hidden;
+        }
 
         public RelayCommand AddBookButton
         {

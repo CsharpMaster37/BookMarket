@@ -44,9 +44,11 @@
                         
                         <Border Grid.Row="1">
                             <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                <TextBlock Text="Время доставки" 
+                                <TextBlock Text="Время доставки *" 
                                            FontSize="15" FontWeight="Bold" Foreground="#FF64676C"
-                                           HorizontalAlignment="Center"/>
+                                           HorizontalAlignment="Center"
+                                           ToolTip="Время, за которое издательство доставляет книги в магазин" 
+                                            ToolTipService.Placement="Top"/>
                                 <mah:RangeSlider Width="325" Height="60" 
                                              HorizontalAlignment="Center" VerticalAlignment="Center"
                                              Style="{DynamicResource MahApps.Styles.RangeSlider.Win10}"
@@ -62,7 +64,7 @@
                                              Minimum="1" Maximum="5"
                                              TickPlacement="BottomRight"
                                              AutoToolTipPlacement="TopLeft"
-                                             LowerValue="1" UpperValue="5">
+                                             LowerValue="{Binding LowerValue_TimeDelivery}" UpperValue="{Binding UpperValue_TimeDelivery}">
                                 </mah:RangeSlider>
                             </StackPanel>
 
@@ -91,7 +93,7 @@
                                              Minimum="3" Maximum="5"
                                              TickPlacement="BottomRight"
                                              AutoToolTipPlacement="TopLeft"
-                                             LowerValue="3" UpperValue="5">
+                                             LowerValue="{Binding LowerValue_Threshold}" UpperValue="{Binding UpperValue_Threshold}">
                                 </mah:RangeSlider>
                             </StackPanel>
                         </Border>
@@ -126,7 +128,7 @@
                                              mah:SliderHelper.TrackValueFillPressedBrush="#FFFEBC2A" TickFrequency="3"                                             
                                              IsSnapToTickEnabled="True" 
                                              Minimum="0" Maximum="30"
-                                             Value="15"
+                                             Value="{Binding Value_Retail}"
                                              TickPlacement="BottomRight"
                                              AutoToolTipPlacement="TopLeft">
                                 </Slider>
@@ -148,7 +150,7 @@
                                              mah:SliderHelper.TrackValueFillPressedBrush="#FFFEBC2A" TickFrequency="2"                                             
                                              IsSnapToTickEnabled="True" 
                                              Minimum="0" Maximum="20"
-                                             Value="10"
+                                             Value="{Binding Value_RetailNew}"
                                              TickPlacement="BottomRight"
                                              AutoToolTipPlacement="TopLeft">
                                 </Slider>
@@ -190,7 +192,7 @@
                                              mah:SliderHelper.TrackValueFillPressedBrush="#FFFEBC2A" TickFrequency="2"                                             
                                              IsSnapToTickEnabled="True" 
                                              Minimum="10" Maximum="30"
-                                             Value="20"
+                                             Value="{Binding Value_ModelingPeriod}"
                                              TickPlacement="BottomRight"
                                              AutoToolTipPlacement="TopLeft">
                                 </Slider>
@@ -212,7 +214,7 @@
                                              mah:SliderHelper.TrackValueFillPressedBrush="#FFFEBC2A" TickFrequency="1"                                             
                                              IsSnapToTickEnabled="True" 
                                              Minimum="1" Maximum="3"
-                                             Value="2"
+                                             Value="{Binding Value_ModelingStep}"
                                              TickPlacement="BottomRight"
                                              AutoToolTipPlacement="TopLeft">
                                 </Slider>
@@ -233,7 +235,7 @@
                                     BorderBrush="#FFFEBC2A" Content="ПО УМОЛЧАНИЮ"
                                     Template="{DynamicResource RoundButtonForSettingsDefault}"
                                     FontWeight="Bold" Foreground="Black"
-                                    Margin="0,75,0,0"/>
+                                    Margin="0,75,0,0" Command="{Binding DefaultButton}"/>
                         </Border>
                         <Border Grid.Row="1">
                             <Button VerticalAlignment="Center" HorizontalAlignment="Center"
