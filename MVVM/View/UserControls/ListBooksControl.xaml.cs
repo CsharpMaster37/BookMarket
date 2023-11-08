@@ -18,6 +18,7 @@ namespace BookMarket.MVVM.View.UserControls
     /// <summary>
     /// Логика взаимодействия для ListBooksControl.xaml
     /// </summary>
+    /// 
     public partial class ListBooksControl : UserControl
     {
         public ListBooksControl()

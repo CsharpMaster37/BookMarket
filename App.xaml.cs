@@ -21,7 +21,8 @@ namespace BookMarket
         public static SystemManagementViewModel _systemManagement { get; }
         public static ModelingSettingsViewModel _modelingSettings { get; }
         public static CreateBookViewModel _createBook { get; }
-        public static List<string[]> ArrayGenerate { get; set; } = new List<string[]>();
+        public static List<string[]> ArrayGenerate { get; set; }
+        public static ListBooksViewModel _listBooks { get; set; }
         static App()
         {
             _market = new Market();
@@ -29,13 +30,15 @@ namespace BookMarket
             _createBook = new CreateBookViewModel();
             _modelingManagement = new ModelingManagementViewModel();
             _modelingSettings = new ModelingSettingsViewModel();
+            _listBooks = new ListBooksViewModel();
+            ArrayGenerate = new List<string[]>();
             CreateArrayForGenerate();
 
         }        
         private static void CreateArrayForGenerate()
         {
             StreamReader sr = new StreamReader("FileGenerate.txt");
-            while(!sr.EndOfStream)
+            while (!sr.EndOfStream)
                 ArrayGenerate.Add(sr.ReadLine().Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries));
         }
     }
