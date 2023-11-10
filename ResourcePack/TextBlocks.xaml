@@ -25,6 +25,12 @@
         </Style.Resources>
     </Style>
 
+    <Style TargetType="TextBlock" x:Key="ForDataGrid">
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="Foreground" Value="#FFEFEDA4"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
 
     <Style TargetType="TextBlock" x:Key="ForRange">
         <Setter Property="VerticalAlignment" Value="Center"/>

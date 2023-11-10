@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:local="clr-namespace:BookMarket.MVVM.View.UserControls"
              xmlns:app="clr-namespace:BookMarket" xmlns:viewmodels="clr-namespace:BookMarket.MVVM.ViewModels"
              mc:Ignorable="d" 
@@ -10,29 +11,68 @@
              DataContext="{x:Static app:App._listBooks}">
 
     <Border Background="#FF272A2F" CornerRadius="20">
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="50"/>
-                <RowDefinition Height="775"/>
-            </Grid.RowDefinitions>
-            <Border CornerRadius="20,20,0,0" Background="#FF2B3035">
-
-            </Border>
-            <DataGrid Grid.Row="1" Background="#FF272A2F" ColumnWidth="200" ItemsSource="{Binding ListBooks}"
+        <DataGrid Grid.Row="1" Background="#FF272A2F" ColumnWidth="200" ItemsSource="{Binding ListBooks}"
                       HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
-                      AutoGenerateColumns = "False">
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="Название" Binding="{Binding Path=Title}"
-                                        FontSize="20"/>
-                    <DataGridTextColumn Header="Автор" Binding="{Binding Path=Author}"
-                                        FontSize="20"/>
-                    <DataGridTextColumn Header="Год издания" Binding="{Binding Path=YearOfPublication}"
-                                        FontSize="20"/>
-                    <DataGridTextColumn Header="Цена" Binding="{Binding Path=Price}"
-                                        FontSize="20"/>
-                    <DataGridTextColumn Header="Информация" Binding="{Binding Path=Price}" FontSize="20"/>
-                </DataGrid.Columns>
-            </DataGrid>
-        </Grid>
+                      AutoGenerateColumns = "False"
+                      CanUserAddRows="False"
+                      materialDesign:DataGridAssist.SelectedCellBorderBrush="Transparent"
+                      RowHeight="80" >
+
+            <DataGrid.Resources>
+                <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}" >
+                    <Setter Property="Foreground" Value="#FFF8F890"/>
+                    <Setter Property="BorderBrush" Value="#FF64676C"/>
+                    <Setter Property="BorderThickness" Value="1"/>
+                    <Setter Property="Margin" Value="-1,-1,0,0" />
+                    <Setter Property="Width" Value="auto"/>
+                    <Setter Property="FontSize" Value="15"/>
+                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Opacity" Value="0.6"/>
+                            <Setter Property="Foreground" Value="#FFF8F890"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+                <Style x:Key="{x:Type DataGridCell}" TargetType="{x:Type DataGridCell}">
+                    <Setter Property="Background" Value="{x:Null}" />
+                    <Setter Property="BorderBrush" Value="{x:Null}" />
+                    <Style.Triggers>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter Property="Background" Value="{x:Null}" />
+                            <Setter Property="BorderBrush" Value="{x:Null}" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+                <Style TargetType="{x:Type DataGridRow}">
+                    <Setter Property="Background" Value="{x:Null}" />
+                    <Setter Property="BorderBrush" Value="{x:Null}" />
+                    <Style.Triggers>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter Property="Background" Value="{x:Null}" />
+                            <Setter Property="BorderBrush" Value="{x:Null}" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </DataGrid.Resources>
+            <DataGrid.Columns>
+                <materialDesign:DataGridTextColumn Header="Название" Binding="{Binding Path=Title}" 
+                                                   ElementStyle="{DynamicResource ForDataGrid}" IsReadOnly="True"/>
+                <materialDesign:DataGridTextColumn Header="Автор" Binding="{Binding Path=Author}"
+                                                   ElementStyle="{DynamicResource ForDataGrid}" IsReadOnly="True"/>
+                <materialDesign:DataGridTextColumn Header="Год издания" Binding="{Binding Path=YearOfPublication}"
+                                                   ElementStyle="{DynamicResource ForDataGrid}" IsReadOnly="True"/>
+                <materialDesign:DataGridTextColumn Header="Цена" Binding="{Binding Path=Price}"
+                                                   ElementStyle="{DynamicResource ForDataGrid}" IsReadOnly="True"/>
+                <DataGridTemplateColumn Header="Информация" IsReadOnly="True">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Template="{DynamicResource InfoButton}"
+                                    Background="Transparent" Height="40" Width="40"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
     </Border>
 </UserControl>

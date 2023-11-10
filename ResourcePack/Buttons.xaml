@@ -324,5 +324,28 @@
         </ControlTemplate.Triggers>
     </ControlTemplate>
 
+    <ControlTemplate TargetType="{x:Type Button}" x:Key="InfoButton">
+        <Border x:Name="Bord" CornerRadius="20" 
+             Background="{TemplateBinding Background}"
+             Opacity="{TemplateBinding Opacity}"
+             Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
+            <ContentPresenter       ContentSource="{TemplateBinding Content}"                             
+                                 VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                 HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}">
+                <ContentPresenter.Content>
+                    <materialDesign:PackIcon  Kind="BookOpen" x:Name="Icon"
+                                          Width="{TemplateBinding Width}" Height="{TemplateBinding Height}"
+                                          Foreground="#FFFEBC2A"/>
+
+                </ContentPresenter.Content>
+            </ContentPresenter>
+        </Border>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="Bord" Property="Opacity" Value="0.6"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
 
 </ResourceDictionary>
