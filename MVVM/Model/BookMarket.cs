@@ -33,6 +33,7 @@ namespace BookMarket.MVVM.Model
         {
             _assortmentBooks.Generation(countType);
             App._listBooks.Update(_assortmentBooks._assortment.Keys.ToList());
+            
         }
     }
 }

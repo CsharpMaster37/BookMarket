@@ -38,6 +38,7 @@ namespace BookMarket.MVVM.ViewModels
                 {
                     Helpers.Synchronization_Button();
                     App._market._assortmentBooks._assortment.Clear();
+                    App._listBooks.ListBooks.Clear();
                 });
             }
         }
@@ -52,6 +53,7 @@ namespace BookMarket.MVVM.ViewModels
                         Helpers.Synchronization_Button();
                         App._market.Generation(CountType);
                         Helpers.GenerateButton();
+                        CountType = 0;
                     }
                 });
             }

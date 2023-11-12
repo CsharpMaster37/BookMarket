@@ -106,6 +106,9 @@
                     </Grid>
                     <Grid Grid.Row="2" Margin="0,15,0,10">
                         <usercontrols:ListBooksControl Visibility="Visible"/>
+                        <usercontrols:StatementControl Visibility="Hidden"/>
+                        <usercontrols:HistoryControl Visibility="Hidden"/>
+                        <usercontrols:RequestsControl Visibility="Hidden"/>
                         <usercontrols:ModelingSettingsControl/>
                         <Grid>
                             <Grid.RowDefinitions>

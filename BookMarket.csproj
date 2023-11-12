@@ -128,6 +128,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="MVVM\View\UserControls\HistoryControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MVVM\View\UserControls\ModelingSettingsControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -141,6 +145,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MVVM\View\UserControls\ModelingManagementControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\UserControls\RequestsControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\UserControls\StatementControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -173,6 +185,9 @@
     <Compile Include="MVVM\View\UserControls\CreateBookControl.xaml.cs">
       <DependentUpon>CreateBookControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MVVM\View\UserControls\HistoryControl.xaml.cs">
+      <DependentUpon>HistoryControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MVVM\View\UserControls\ModelingSettingsControl.xaml.cs">
       <DependentUpon>ModelingSettingsControl.xaml</DependentUpon>
     </Compile>
@@ -184,6 +199,12 @@
     </Compile>
     <Compile Include="MVVM\View\UserControls\ModelingManagementControl.xaml.cs">
       <DependentUpon>ModelingManagementControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\UserControls\RequestsControl.xaml.cs">
+      <DependentUpon>RequestsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\UserControls\StatementControl.xaml.cs">
+      <DependentUpon>StatementControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="MVVM\View\UserControls\SystemManagementControl.xaml.cs">
       <DependentUpon>SystemManagementControl.xaml</DependentUpon>

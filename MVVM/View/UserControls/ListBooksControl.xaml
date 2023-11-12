@@ -16,7 +16,7 @@
                       AutoGenerateColumns = "False"
                       CanUserAddRows="False"
                       materialDesign:DataGridAssist.SelectedCellBorderBrush="Transparent"
-                      RowHeight="80" >
+                      RowHeight="80">
 
             <DataGrid.Resources>
                 <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}" >
@@ -57,14 +57,14 @@
             </DataGrid.Resources>
             <DataGrid.Columns>
                 <materialDesign:DataGridTextColumn Header="Название" Binding="{Binding Path=Title}" 
-                                                   ElementStyle="{DynamicResource ForDataGrid}" IsReadOnly="True"/>
+                                                   ElementStyle="{DynamicResource ForDataGrid}" IsReadOnly="True" CanUserResize="False"                                                  />
                 <materialDesign:DataGridTextColumn Header="Автор" Binding="{Binding Path=Author}"
-                                                   ElementStyle="{DynamicResource ForDataGrid}" IsReadOnly="True"/>
+                                                   ElementStyle="{DynamicResource ForDataGrid}" IsReadOnly="True" CanUserResize="False" />
                 <materialDesign:DataGridTextColumn Header="Год издания" Binding="{Binding Path=YearOfPublication}"
-                                                   ElementStyle="{DynamicResource ForDataGrid}" IsReadOnly="True"/>
+                                                   ElementStyle="{DynamicResource ForDataGrid}" IsReadOnly="True" CanUserResize="False" />
                 <materialDesign:DataGridTextColumn Header="Цена" Binding="{Binding Path=Price}"
-                                                   ElementStyle="{DynamicResource ForDataGrid}" IsReadOnly="True"/>
-                <DataGridTemplateColumn Header="Информация" IsReadOnly="True">
+                                                   ElementStyle="{DynamicResource ForDataGrid}" IsReadOnly="True" CanUserResize="False" />
+                <DataGridTemplateColumn Header="Информация" IsReadOnly="True" CanUserResize="False" >
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <Button Template="{DynamicResource InfoButton}"

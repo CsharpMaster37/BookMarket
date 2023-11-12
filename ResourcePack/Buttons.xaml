@@ -333,7 +333,7 @@
                                  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                                  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}">
                 <ContentPresenter.Content>
-                    <materialDesign:PackIcon  Kind="BookOpen" x:Name="Icon"
+                    <materialDesign:PackIcon  Kind="BookOpenPageVariantOutline" x:Name="Icon"
                                           Width="{TemplateBinding Width}" Height="{TemplateBinding Height}"
                                           Foreground="#FFFEBC2A"/>
 
