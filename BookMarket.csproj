@@ -112,12 +112,14 @@
     <Compile Include="MVVM\Model\BookMarket.cs" />
     <Compile Include="MVVM\Model\Interfaces\IAssortment.cs" />
     <Compile Include="MVVM\Model\User.cs" />
+    <Compile Include="MVVM\ViewModels\ChoosePageViewModel.cs" />
     <Compile Include="MVVM\ViewModels\CreateBookViewModel.cs" />
     <Compile Include="MVVM\ViewModels\Helpers.cs" />
     <Compile Include="MVVM\ViewModels\ListBooksViewModel.cs" />
     <Compile Include="MVVM\ViewModels\MainViewModel.cs" />
     <Compile Include="MVVM\ViewModels\ModelingManagementViewModel.cs" />
     <Compile Include="MVVM\ViewModels\ModelingSettingsViewModel.cs" />
+    <Compile Include="MVVM\ViewModels\NavigationRadio.cs" />
     <Compile Include="MVVM\ViewModels\RelayCommand.cs" />
     <Compile Include="MVVM\ViewModels\SystemManagementViewModel.cs" />
     <Compile Include="MVVM\View\MainWindow.xaml.cs">

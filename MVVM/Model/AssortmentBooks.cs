@@ -12,7 +12,7 @@ namespace BookMarket.MVVM.Model
     public class AssortmentBooks : IAssortment
     {
         public readonly Dictionary<Book,int> _assortment;
-        private HashSet<int> unique;
+        private readonly HashSet<int> unique;
         public AssortmentBooks()
         {
             _assortment = new Dictionary<Book,int>();

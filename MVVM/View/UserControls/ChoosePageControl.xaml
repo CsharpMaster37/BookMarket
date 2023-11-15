@@ -5,36 +5,43 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
             xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
-             xmlns:local="clr-namespace:BookMarket.MVVM.View.UserControls"
+             xmlns:local="clr-namespace:BookMarket.MVVM.View.UserControls" xmlns:viewmodels="clr-namespace:BookMarket.MVVM.ViewModels"
              mc:Ignorable="d" 
              d:DesignHeight="50" d:DesignWidth="1000">
+    <UserControl.DataContext>
+        <viewmodels:ChoosePageViewModel/>
+    </UserControl.DataContext>
     <Grid>
         <StackPanel Grid.Row="0" Orientation="Horizontal" >
             <RadioButton Width="250" Style="{DynamicResource MahApps.Styles.Button}" 
+                                    IsChecked="{Binding btn1}"
                                      Background="#FF64676C"
                                      Content="Список книг"
-                                     Command="{Binding RadioButton_Category1}"
+                                     Command="{Binding RadioButton_Category}"
                                      HorizontalContentAlignment="Center"
                                      VerticalContentAlignment="Center"
                                      FontSize="13"/>
-            <RadioButton Width="250" Style="{DynamicResource MahApps.Styles.Button}" 
+            <RadioButton Width="250" Style="{DynamicResource MahApps.Styles.Button}"
+                                    IsChecked="{Binding btn2}"
                                      Background="#FF64676C"
                                      Content="Заявки"
-                                     Command="{Binding RadioButton_Category2}"
+                                     Command="{Binding RadioButton_Category}"
                                      HorizontalContentAlignment="Center"
                                      VerticalContentAlignment="Center"
                                      FontSize="13"/>
             <RadioButton Width="250" Style="{DynamicResource MahApps.Styles.Button}" 
+                                    IsChecked="{Binding btn3}"
                                      Background="#FF64676C"
                                      Content="История продаж"
-                                     Command="{Binding RadioButton_Category3}"
+                                     Command="{Binding RadioButton_Category}"
                                      HorizontalContentAlignment="Center"
                                      VerticalContentAlignment="Center"
                                      FontSize="13"/>
             <RadioButton Width="250" Style="{DynamicResource MahApps.Styles.Button}" 
+                                    IsChecked="{Binding btn4}"
                                      Background="#FF64676C"
                                      Content="Запросы"
-                                     Command="{Binding RadioButton_Category4}"
+                                     Command="{Binding RadioButton_Category}"
                                      HorizontalContentAlignment="Center"
                                      VerticalContentAlignment="Center"
                                      FontSize="13"/>

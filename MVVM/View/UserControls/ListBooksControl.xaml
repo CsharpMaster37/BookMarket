@@ -16,6 +16,7 @@
                       AutoGenerateColumns = "False"
                       CanUserAddRows="False"
                       materialDesign:DataGridAssist.SelectedCellBorderBrush="Transparent"
+                      HorizontalScrollBarVisibility="Disabled"
                       RowHeight="80">
 
             <DataGrid.Resources>

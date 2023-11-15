@@ -8,6 +8,8 @@ using System.IO;
 using System.Threading.Tasks;
 using System.Windows;
 using BookMarket.MVVM.ViewModels;
+using BookMarket.MVVM.View.UserControls;
+using System.Web.UI;
 
 namespace BookMarket
 {
@@ -23,6 +25,7 @@ namespace BookMarket
         public static CreateBookViewModel _createBook { get; }
         public static List<string[]> ArrayGenerate { get; set; }
         public static ListBooksViewModel _listBooks { get; set; }
+        public static UserControl CurrentPage { get; set; }
         static App()
         {
             _market = new Market();
@@ -34,7 +37,7 @@ namespace BookMarket
             ArrayGenerate = new List<string[]>();
             CreateArrayForGenerate();
 
-        }        
+        }
         private static void CreateArrayForGenerate()
         {
             StreamReader sr = new StreamReader("FileGenerate.txt");
