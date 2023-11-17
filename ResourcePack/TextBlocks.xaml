@@ -39,5 +39,5 @@
         <Setter Property="FontFamily" Value="Cascadia Mono ExtraLight"/>
         <Setter Property="Foreground" Value="Gray"/>
     </Style>
-    
+
 </ResourceDictionary>
