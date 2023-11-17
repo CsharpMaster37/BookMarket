@@ -8,6 +8,7 @@
              xmlns:app="clr-namespace:BookMarket" xmlns:viewmodels="clr-namespace:BookMarket.MVVM.ViewModels"
              mc:Ignorable="d" 
              Height="825" Width="1000"
+             Visibility="{Binding _listVisibility}"
              DataContext="{x:Static app:App._listBooks}">
 
     <Border Background="#FF272A2F" CornerRadius="20">
@@ -65,7 +66,7 @@
                                                    ElementStyle="{DynamicResource ForDataGrid}" IsReadOnly="True" CanUserResize="False" />
                 <materialDesign:DataGridTextColumn Header="Цена" Binding="{Binding Path=Price}"
                                                    ElementStyle="{DynamicResource ForDataGrid}" IsReadOnly="True" CanUserResize="False" />
-                <DataGridTemplateColumn Header="Информация" IsReadOnly="True" CanUserResize="False" >
+                <DataGridTemplateColumn Header="Покупка" IsReadOnly="True" CanUserResize="False" >
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <Button Template="{DynamicResource InfoButton}"

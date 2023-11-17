@@ -25,7 +25,9 @@ namespace BookMarket
         public static CreateBookViewModel _createBook { get; }
         public static List<string[]> ArrayGenerate { get; set; }
         public static ListBooksViewModel _listBooks { get; set; }
-        public static UserControl CurrentPage { get; set; }
+        public static StatementViewModel _statement { get; set; }
+        public static HistoryViewModel _history { get; set; }
+        public static RequestsViewModel _requests { get; set; }
         static App()
         {
             _market = new Market();
@@ -35,6 +37,9 @@ namespace BookMarket
             _modelingSettings = new ModelingSettingsViewModel();
             _listBooks = new ListBooksViewModel();
             ArrayGenerate = new List<string[]>();
+            _statement = new StatementViewModel();
+            _history = new HistoryViewModel();
+            _requests = new RequestsViewModel();
             CreateArrayForGenerate();
 
         }

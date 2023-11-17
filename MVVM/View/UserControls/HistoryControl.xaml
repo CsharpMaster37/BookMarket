@@ -7,9 +7,68 @@
              xmlns:local="clr-namespace:BookMarket.MVVM.View.UserControls"
              xmlns:app="clr-namespace:BookMarket" xmlns:viewmodels="clr-namespace:BookMarket.MVVM.ViewModels"
              mc:Ignorable="d" 
-             Height="825" Width="1000">
+             Height="825" Width="1000"
+             Visibility="{Binding _historyVisibility}"
+             DataContext="{x:Static app:App._history}">
 
     <Border Background="#FF272A2F" CornerRadius="20">
+        <DataGrid Grid.Row="1" Background="#FF272A2F" ColumnWidth="200"
+                      HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+                      AutoGenerateColumns = "False"
+                      CanUserAddRows="False"
+                      materialDesign:DataGridAssist.SelectedCellBorderBrush="Transparent"
+                      HorizontalScrollBarVisibility="Disabled"
+                      RowHeight="80">
 
+            <DataGrid.Resources>
+                <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}" >
+                    <Setter Property="Foreground" Value="#FFF8F890"/>
+                    <Setter Property="BorderBrush" Value="#FF64676C"/>
+                    <Setter Property="BorderThickness" Value="1"/>
+                    <Setter Property="Margin" Value="-1,-1,0,0" />
+                    <Setter Property="Width" Value="auto"/>
+                    <Setter Property="FontSize" Value="15"/>
+                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Opacity" Value="0.6"/>
+                            <Setter Property="Foreground" Value="#FFF8F890"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+                <Style x:Key="{x:Type DataGridCell}" TargetType="{x:Type DataGridCell}">
+                    <Setter Property="Background" Value="{x:Null}" />
+                    <Setter Property="BorderBrush" Value="{x:Null}" />
+                    <Style.Triggers>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter Property="Background" Value="{x:Null}" />
+                            <Setter Property="BorderBrush" Value="{x:Null}" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+                <Style TargetType="{x:Type DataGridRow}">
+                    <Setter Property="Background" Value="{x:Null}" />
+                    <Setter Property="BorderBrush" Value="{x:Null}" />
+                    <Style.Triggers>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter Property="Background" Value="{x:Null}" />
+                            <Setter Property="BorderBrush" Value="{x:Null}" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </DataGrid.Resources>
+            <DataGrid.Columns>
+                <materialDesign:DataGridTextColumn Header="Название" Binding="{Binding Path=Title}" 
+                                                   ElementStyle="{DynamicResource ForDataGrid}" IsReadOnly="True" CanUserResize="False"/>
+                <materialDesign:DataGridTextColumn Header="Автор" Binding="{Binding Path=Author}"
+                                                   ElementStyle="{DynamicResource ForDataGrid}" IsReadOnly="True" CanUserResize="False" />
+                <materialDesign:DataGridTextColumn Header="Год издания" Binding="{Binding Path=YearOfPublication}"
+                                                   ElementStyle="{DynamicResource ForDataGrid}" IsReadOnly="True" CanUserResize="False" />
+                <materialDesign:DataGridTextColumn Header="Цена" Binding="{Binding Path=Price}"
+                                                   ElementStyle="{DynamicResource ForDataGrid}" IsReadOnly="True" CanUserResize="False" />
+                <materialDesign:DataGridTextColumn Header="Покупатель" Binding="{Binding Path=Price}"
+                                                   ElementStyle="{DynamicResource ForDataGrid}" IsReadOnly="True" CanUserResize="False" />
+            </DataGrid.Columns>
+        </DataGrid>
     </Border>
 </UserControl>

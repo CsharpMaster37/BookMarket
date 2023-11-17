@@ -115,12 +115,14 @@
     <Compile Include="MVVM\ViewModels\ChoosePageViewModel.cs" />
     <Compile Include="MVVM\ViewModels\CreateBookViewModel.cs" />
     <Compile Include="MVVM\ViewModels\Helpers.cs" />
+    <Compile Include="MVVM\ViewModels\HistoryViewModel.cs" />
     <Compile Include="MVVM\ViewModels\ListBooksViewModel.cs" />
     <Compile Include="MVVM\ViewModels\MainViewModel.cs" />
     <Compile Include="MVVM\ViewModels\ModelingManagementViewModel.cs" />
     <Compile Include="MVVM\ViewModels\ModelingSettingsViewModel.cs" />
-    <Compile Include="MVVM\ViewModels\NavigationRadio.cs" />
     <Compile Include="MVVM\ViewModels\RelayCommand.cs" />
+    <Compile Include="MVVM\ViewModels\RequestsViewModel.cs" />
+    <Compile Include="MVVM\ViewModels\StatementViewModel.cs" />
     <Compile Include="MVVM\ViewModels\SystemManagementViewModel.cs" />
     <Compile Include="MVVM\View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -155,6 +157,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MVVM\View\UserControls\StatementControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\UserControls\StatisticControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -207,6 +213,9 @@
     </Compile>
     <Compile Include="MVVM\View\UserControls\StatementControl.xaml.cs">
       <DependentUpon>StatementControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\UserControls\StatisticControl.xaml.cs">
+      <DependentUpon>StatisticControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="MVVM\View\UserControls\SystemManagementControl.xaml.cs">
       <DependentUpon>SystemManagementControl.xaml</DependentUpon>

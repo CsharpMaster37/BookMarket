@@ -1,0 +1,41 @@
+﻿<UserControl x:Class="BookMarket.MVVM.View.UserControls.StatisticControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:BookMarket.MVVM.View.UserControls"
+             mc:Ignorable="d" 
+             Height="395" Width="280">
+
+    <Border Background="#FF272A2F" CornerRadius="20">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="79"/>
+                <RowDefinition Height="79"/>
+                <RowDefinition Height="79"/>
+                <RowDefinition Height="79"/>
+                <RowDefinition Height="79"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <TextBlock FontSize="15" Margin="10,0,0,0"
+                                    HorizontalAlignment="Left" VerticalAlignment="Center"
+                                    Text="АССОРТИМЕНТ КНИГ" Foreground="#FFF8F890"/>
+            </Grid>
+            <Grid Grid.Row="1">
+                <TextBlock FontSize="15" Margin="10,0,0,0"
+                                    HorizontalAlignment="Left" VerticalAlignment="Center"
+                                    Text="ПОСТУПИВШИЕ ЗАКАЗЫ" Foreground="#FFF8F890"/>
+            </Grid>
+            <Grid Grid.Row="2">
+                <TextBlock FontSize="15" Margin="10,0,0,0"
+                                    HorizontalAlignment="Left" VerticalAlignment="Center"
+                                    Text="ОБРАБОТАННЫЕ ЗАКАЗЫ" Foreground="#FFF8F890"/>
+            </Grid>
+            <Grid Grid.Row="3">
+                <TextBlock FontSize="15" Margin="10,0,0,0"
+                                    HorizontalAlignment="Left" VerticalAlignment="Center"
+                                    Text="ВЫП. ЗАЯВКИ В ИЗДАТ." Foreground="#FFF8F890"/>
+            </Grid>
+        </Grid>
+    </Border>
+</UserControl>

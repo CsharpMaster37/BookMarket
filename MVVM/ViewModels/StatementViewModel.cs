@@ -1,19 +1,15 @@
 ﻿using DevExpress.Mvvm;
-using BookMarket.MVVM.View.UserControls;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Web.UI;
+using System.Windows;
 
 namespace BookMarket.MVVM.ViewModels
 {
-    internal class NavigationRadio
+    public class StatementViewModel : ViewModelBase
     {
-        public NavigationRadio()
-        {
-            
-        }
+        public Visibility _statementVisibility { get; set; } = Visibility.Hidden;
     }
 }

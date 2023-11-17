@@ -105,11 +105,10 @@
                         <usercontrols:ChoosePageControl/>
                     </Grid>
                     <Grid Grid.Row="2" Margin="0,15,0,10">
-                        <ContentPresenter Content="{Binding CurrentPage}">
-                            <ContentPresenter.DataContext>
-                                <viewmodels:NavigationRadio/>
-                            </ContentPresenter.DataContext>
-                        </ContentPresenter>
+                        <usercontrols:ListBooksControl/>
+                        <usercontrols:StatementControl/>
+                        <usercontrols:HistoryControl/>
+                        <usercontrols:RequestsControl/>
                         <usercontrols:ModelingSettingsControl/>
                         <Grid>
                             <Grid.RowDefinitions>
@@ -137,36 +136,8 @@
                             FontSize="13" Text="СТАТИСТИКА" FontWeight="Bold"
                             Foreground="Black"/>
                     </Border>
-                    <Border Grid.Row="1" Background="#FF272A2F" CornerRadius="2,2,10,10" Margin="10,15,10,10">
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="81"/>
-                                <RowDefinition Height="81"/>
-                                <RowDefinition Height="81"/>
-                                <RowDefinition Height="81"/>
-                                <RowDefinition Height="81"/>
-                            </Grid.RowDefinitions>
-                            <Grid Grid.Row="0">
-                                <TextBlock FontSize="15" Margin="10,0,0,0"
-                                    HorizontalAlignment="Left" VerticalAlignment="Center"
-                                    Text="АССОРТИМЕНТ КНИГ" Foreground="#FFF8F890"/>
-                            </Grid>
-                            <Grid Grid.Row="1">
-                                <TextBlock FontSize="15" Margin="10,0,0,0"
-                                    HorizontalAlignment="Left" VerticalAlignment="Center"
-                                    Text="ПОСТУПИВШИЕ ЗАКАЗЫ" Foreground="#FFF8F890"/>
-                            </Grid>
-                            <Grid Grid.Row="2">
-                                <TextBlock FontSize="15" Margin="10,0,0,0"
-                                    HorizontalAlignment="Left" VerticalAlignment="Center"
-                                    Text="ОБРАБОТАННЫЕ ЗАКАЗЫ" Foreground="#FFF8F890"/>
-                            </Grid>
-                            <Grid Grid.Row="3">
-                                <TextBlock FontSize="15" Margin="10,0,0,0"
-                                    HorizontalAlignment="Left" VerticalAlignment="Center"
-                                    Text="ВЫП. ЗАЯВКИ В ИЗДАТ." Foreground="#FFF8F890"/>
-                            </Grid>
-                        </Grid>
+                    <Border Grid.Row="1" Margin="10,15,10,10">
+                        <usercontrols:StatisticControl/>
                     </Border>
                 </Grid>
             </Grid>
