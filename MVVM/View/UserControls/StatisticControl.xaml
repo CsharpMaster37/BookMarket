@@ -16,25 +16,66 @@
                 <RowDefinition Height="79"/>
                 <RowDefinition Height="79"/>
             </Grid.RowDefinitions>
-            <Grid Grid.Row="0">
-                <TextBlock FontSize="15" Margin="10,0,0,0"
-                                    HorizontalAlignment="Left" VerticalAlignment="Center"
-                                    Text="АССОРТИМЕНТ КНИГ" Foreground="#FFF8F890"/>
-            </Grid>
-            <Grid Grid.Row="1">
-                <TextBlock FontSize="15" Margin="10,0,0,0"
-                                    HorizontalAlignment="Left" VerticalAlignment="Center"
-                                    Text="ПОСТУПИВШИЕ ЗАКАЗЫ" Foreground="#FFF8F890"/>
-            </Grid>
-            <Grid Grid.Row="2">
-                <TextBlock FontSize="15" Margin="10,0,0,0"
-                                    HorizontalAlignment="Left" VerticalAlignment="Center"
-                                    Text="ОБРАБОТАННЫЕ ЗАКАЗЫ" Foreground="#FFF8F890"/>
-            </Grid>
-            <Grid Grid.Row="3">
-                <TextBlock FontSize="15" Margin="10,0,0,0"
-                                    HorizontalAlignment="Left" VerticalAlignment="Center"
-                                    Text="ВЫП. ЗАЯВКИ В ИЗДАТ." Foreground="#FFF8F890"/>
+            <StackPanel Grid.Row="0" Orientation="Horizontal">
+                <Grid>
+                    <TextBlock FontSize="15" Margin="10,0,0,0"
+                        HorizontalAlignment="Left" VerticalAlignment="Center"
+                        Text="АССОРТИМЕНТ КНИГ:" Foreground="#FFF8F890"/>
+                </Grid>
+                <Grid Grid.Row="0">
+                    <TextBlock FontSize="15" Margin="10,0,0,0"
+                        HorizontalAlignment="Left" VerticalAlignment="Center"
+                        Text="0" Foreground="#FFF8F890"/>
+                </Grid>
+            </StackPanel>
+            <StackPanel Grid.Row="1" Orientation="Horizontal">
+                <Grid>
+                    <TextBlock FontSize="15" Margin="10,0,0,0"
+                         HorizontalAlignment="Left" VerticalAlignment="Center"
+                         Text="ПОСТУПИВШИЕ ЗАКАЗЫ:" Foreground="#FFF8F890"/>
+                </Grid>
+                <Grid>
+                    <TextBlock FontSize="15" Margin="10,0,0,0"
+                         HorizontalAlignment="Left" VerticalAlignment="Center"
+                         Text="0" Foreground="#FFF8F890"/>
+                </Grid>
+            </StackPanel>
+            <StackPanel Grid.Row="2" Orientation="Horizontal">
+                <Grid>
+                    <TextBlock FontSize="15" Margin="10,0,0,0"
+                          HorizontalAlignment="Left" VerticalAlignment="Center"
+                          Text="ОБРАБОТАННЫЕ ЗАКАЗЫ:" Foreground="#FFF8F890"/>
+                </Grid>
+                <Grid>
+                    <TextBlock FontSize="15" Margin="10,0,0,0"
+                          HorizontalAlignment="Left" VerticalAlignment="Center"
+                          Text="0" Foreground="#FFF8F890"/>
+                </Grid>
+            </StackPanel>
+            <StackPanel Grid.Row="3" Orientation="Horizontal">
+                <Grid Grid.Row="3">
+                    <TextBlock FontSize="15" Margin="10,0,0,0"
+                        HorizontalAlignment="Left" VerticalAlignment="Center"
+                        Text="ВЫП. ЗАЯВКИ В ИЗДАТ.:" Foreground="#FFF8F890"/>
+                </Grid>
+                <Grid Grid.Row="3">
+                    <TextBlock FontSize="15" Margin="10,0,0,0"
+                        HorizontalAlignment="Left" VerticalAlignment="Center"
+                        Text="0" Foreground="#FFF8F890"/>
+                </Grid>
+            </StackPanel>
+            <Grid Grid.Row="4">
+                <Button Height="50"
+                        Width="200"
+                        Margin="0,0,0,25"
+                        Template="{DynamicResource RoundButtonForAdd}"
+                        Background="#FFFEBC2A"
+                        BorderBrush="#FFFEBC2A"
+                        Content="Статистика работы"
+                        FontWeight="Bold"
+                        Foreground="Black"
+                        Cursor="Hand"
+                        />
             </Grid>
         </Grid>
     </Border>
