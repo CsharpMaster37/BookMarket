@@ -39,6 +39,9 @@ namespace BookMarket.MVVM.ViewModels
                     Helpers.Synchronization_Button();
                     App._market._assortmentBooks._assortment.Clear();
                     App._listBooks.ListBooks.Clear();
+                    App._history.History.Clear();
+                    App._requests.Requests.Clear();
+                    App._statement.Statement.Clear();
                 });
             }
         }

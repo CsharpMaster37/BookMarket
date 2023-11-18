@@ -12,7 +12,7 @@
              DataContext="{x:Static app:App._requests}">
 
     <Border Background="#FF272A2F" CornerRadius="20">
-        <DataGrid Grid.Row="1" Background="#FF272A2F" ColumnWidth="200"
+        <DataGrid Grid.Row="1" Background="#FF272A2F" ColumnWidth="200" ItemsSource="{Binding Requests}"
                       HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
                       AutoGenerateColumns = "False"
                       CanUserAddRows="False"
@@ -64,9 +64,9 @@
                                                    ElementStyle="{DynamicResource ForDataGrid}" IsReadOnly="True" CanUserResize="False" />
                 <materialDesign:DataGridTextColumn Header="Год издания" Binding="{Binding Path=YearOfPublication}"
                                                    ElementStyle="{DynamicResource ForDataGrid}" IsReadOnly="True" CanUserResize="False" />
-                <materialDesign:DataGridTextColumn Header="Заказчик" Binding="{Binding Path=Price}"
+                <materialDesign:DataGridTextColumn Header="Заказчик" Binding="{Binding Path=Username}"
                                                    ElementStyle="{DynamicResource ForDataGrid}" IsReadOnly="True" CanUserResize="False" />
-                <materialDesign:DataGridTextColumn Header="Контакты" Binding="{Binding Path=Price}"
+                <materialDesign:DataGridTextColumn Header="Контакты" Binding="{Binding Path=Communication}"
                                                    ElementStyle="{DynamicResource ForDataGrid}" IsReadOnly="True" CanUserResize="False" />
             </DataGrid.Columns>
         </DataGrid>

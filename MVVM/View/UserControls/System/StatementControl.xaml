@@ -12,7 +12,7 @@
              DataContext="{x:Static app:App._statement}">
 
     <Border Background="#FF272A2F" CornerRadius="20">
-        <DataGrid Grid.Row="1" Background="#FF272A2F" ColumnWidth="200"
+        <DataGrid Grid.Row="1" Background="#FF272A2F" ColumnWidth="200" ItemsSource="{Binding Statement}"
                       HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
                       AutoGenerateColumns = "False"
                       CanUserAddRows="False"
@@ -66,7 +66,7 @@
                                                    ElementStyle="{DynamicResource ForDataGrid}" IsReadOnly="True" CanUserResize="False" />
                 <materialDesign:DataGridTextColumn Header="Количество" Binding="{Binding Path=Price}"
                                                    ElementStyle="{DynamicResource ForDataGrid}" IsReadOnly="True" CanUserResize="False" />
-                <materialDesign:DataGridTextColumn Header="Срок" Binding="{Binding Path=Price}"
+                <materialDesign:DataGridTextColumn Header="Срок" Binding="{Binding Path=DeliveryTime}"
                                                    ElementStyle="{DynamicResource ForDataGrid}" IsReadOnly="True" CanUserResize="False" />
             </DataGrid.Columns>
         </DataGrid>

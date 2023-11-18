@@ -68,7 +68,7 @@
                 <Button Height="50"
                         Width="200"
                         Margin="0,0,0,25"
-                        Template="{DynamicResource RoundButtonForAdd}"
+                        Template="{DynamicResource RadioButtonStatistics}"
                         Background="#FFFEBC2A"
                         BorderBrush="#FFFEBC2A"
                         Content="Статистика работы"

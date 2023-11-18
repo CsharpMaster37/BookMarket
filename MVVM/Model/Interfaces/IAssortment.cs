@@ -10,6 +10,5 @@ namespace BookMarket.MVVM.Model
     {
         void Add(AbstractItem item,int count);
         void Buy(AbstractItem item);
-        void Generation(int countType);
     }
 }

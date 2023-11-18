@@ -19,9 +19,6 @@
        Title="MainWindow" Height="960" Width="1600" AllowsTransparency="True" WindowStyle="None" ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen">
 
-    <Window.DataContext>
-        <viewmodels:MainViewModel/>
-    </Window.DataContext>
 
     <Border CornerRadius="20" Background="#FF212429"
             BorderBrush="Black" BorderThickness="0.4">

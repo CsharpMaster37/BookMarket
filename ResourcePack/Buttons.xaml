@@ -81,14 +81,14 @@
             <EventTrigger RoutedEvent="PreviewMouseDown">
                 <BeginStoryboard>
                     <Storyboard>
-                        <ThicknessAnimation Storyboard.TargetProperty="Margin"  Duration="0:0:0.1" From="0,0,0,25" To="0,0,0,20"/>
+                        <ThicknessAnimation Storyboard.TargetProperty="Margin"  Duration="0:0:0.1" From="0,0,0,25" To="0,0,0,28"/>
                     </Storyboard>
                 </BeginStoryboard>
             </EventTrigger>
             <EventTrigger RoutedEvent="PreviewMouseUp">
                 <BeginStoryboard>
                     <Storyboard>
-                        <ThicknessAnimation Storyboard.TargetProperty="Margin" Duration="0:0:0.1" From="0,0,0,20" To="0,0,0,25"/>
+                        <ThicknessAnimation Storyboard.TargetProperty="Margin" Duration="0:0:0.1" From="0,0,0,28" To="0,0,0,25"/>
                     </Storyboard>
                 </BeginStoryboard>
             </EventTrigger>
