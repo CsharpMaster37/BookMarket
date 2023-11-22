@@ -106,6 +106,7 @@
                         <usercontrols:StatementControl/>
                         <usercontrols:HistoryControl/>
                         <usercontrols:RequestsControl/>
+                        <usercontrols:BookInformation/>
                         <usercontrols:ModelingSettingsControl/>
                         <Grid>
                             <Grid.RowDefinitions>
