@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="BookMarket.MVVM.View.UserControls.CustomMessageBox"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:BookMarket.MVVM.View.UserControls"
+             mc:Ignorable="d" 
+             Height="200" Width="350">
+    <Border Background="#FF212429" CornerRadius="20" BorderBrush="#FFF8F890" BorderThickness="1">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="125"/>
+                <RowDefinition Height="75"/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" FontSize="15" Margin="10,0,0,0"
+                HorizontalAlignment="Center" VerticalAlignment="Center"
+                Text="ТЕКСТ ТЕКСТ ТЕКСТ ТЕКСТ ТЕКСТ" Foreground="#FFF8F890"/>
+            <Grid Grid.Row="1">
+                <Button Height="35"
+                        Width="100"
+                        Margin="0,0,0,10"
+                        Template="{DynamicResource RoundButtonForInformationBuy}"
+                        Background="#FFFEBC2A"
+                        BorderBrush="#FFFEBC2A"
+                        Content="ОК"
+                        FontWeight="Bold"
+                        Foreground="Black"
+                        Cursor="Hand"/>
+            </Grid>
+        </Grid>
+    </Border>
+</UserControl>

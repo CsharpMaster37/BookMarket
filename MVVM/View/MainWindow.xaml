@@ -106,8 +106,7 @@
                         <usercontrols:StatementControl/>
                         <usercontrols:HistoryControl/>
                         <usercontrols:RequestsControl/>
-                        <usercontrols:BookInformation/>
-                        <usercontrols:ModelingSettingsControl/>
+                        <usercontrols:BuyBookPagexaml/>
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="412"/>

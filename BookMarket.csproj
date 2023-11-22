@@ -135,7 +135,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="MVVM\View\UserControls\BuyBookPagexaml.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MVVM\View\UserControls\CreateBookControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\UserControls\CustomMessageBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -200,8 +208,14 @@
     <Compile Include="MVVM\View\UserControls\BookInformation.xaml.cs">
       <DependentUpon>BookInformation.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MVVM\View\UserControls\BuyBookPagexaml.xaml.cs">
+      <DependentUpon>BuyBookPagexaml.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MVVM\View\UserControls\CreateBookControl.xaml.cs">
       <DependentUpon>CreateBookControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\UserControls\CustomMessageBox.xaml.cs">
+      <DependentUpon>CustomMessageBox.xaml</DependentUpon>
     </Compile>
     <Compile Include="MVVM\View\UserControls\HistoryControl.xaml.cs">
       <DependentUpon>HistoryControl.xaml</DependentUpon>
