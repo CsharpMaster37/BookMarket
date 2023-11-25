@@ -17,10 +17,6 @@ namespace BookMarket.MVVM.Model
             unique = new HashSet<int>();
         }
 
-        public IEnumerable<Book> GetBooksForUser(User user)
-        {
-            return _assortmentBooks.GetBooksForUser(user);
-        }
 
         public void AddBook(Book book, int count)
         {
@@ -28,19 +24,18 @@ namespace BookMarket.MVVM.Model
             App._listBooks.ListBooks.Add(book);
             if (count < 10)
                 App._statement.Add(book, 5, 10); //ToDo: Заглушка
-            //BuyBook(book, null);
         }
 
-        public void BuyBook(Book book, User user)
+        public void BuyBook(int idxbook, User user)
         {
-            if (_assortmentBooks._assortment[book] > 0) //ToDo: Сделать метод
+            if (_assortmentBooks._assortment[idxbook].Count > 0) //ToDo: Сделать метод
             {
-                _assortmentBooks.Buy(book);
-                App._history.Add(book, user);
+                _assortmentBooks.Buy(idxbook);
+                App._history.Add(_assortmentBooks._assortment[idxbook], user);
             }
             else
             {
-                App._requests.Add(book, user);
+                App._requests.Add(_assortmentBooks._assortment[idxbook], user);
             }
         }
         public void Generation(int countType)
@@ -57,7 +52,6 @@ namespace BookMarket.MVVM.Model
                 string[] element = App.ArrayGenerate[index];
                 AddBook(new Book(element[0], element[1], element[2], int.Parse(element[3]), int.Parse(element[4]), element[5], element[6], int.Parse(element[7])), rd.Next(1, 15));
             }
-            App._listBooks.Update(_assortmentBooks._assortment.Keys.ToList());
         }
     }
 }

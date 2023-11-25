@@ -1,6 +1,8 @@
 ﻿using BookMarket.MVVM.Model;
 using BookMarket.MVVM.Model.Books;
+using BookMarket.MVVM.View.UserControls;
 using DevExpress.Mvvm;
+using MaterialDesignThemes.Wpf;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -15,12 +17,19 @@ namespace BookMarket.MVVM.ViewModels
     {
         public Visibility _listVisibility { get; set; } = Visibility.Visible;
         public ObservableCollection<Book> ListBooks { get; set; }
+        public int selectedBook { get; set; }
         public ListBooksViewModel() {
-            ListBooks = new ObservableCollection<Book>();        
+            ListBooks = new ObservableCollection<Book>(App._market._assortmentBooks._assortment);        
         }
-        public void Update(List<Book> books)
+        public RelayCommand BookInformationButton
         {
-            ListBooks = new ObservableCollection<Book>(books);
+            get
+            {
+                return new RelayCommand((obj) =>
+                {
+                    App._bookInformation.InformationAboutBook(ListBooks[selectedBook]);
+                });
+            }
         }
     }
 }

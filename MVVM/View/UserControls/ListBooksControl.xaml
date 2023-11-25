@@ -18,7 +18,7 @@
                       CanUserAddRows="False"
                       materialDesign:DataGridAssist.SelectedCellBorderBrush="Transparent"
                       HorizontalScrollBarVisibility="Disabled"
-                      RowHeight="80">
+                      RowHeight="80" SelectedIndex="{Binding selectedBook, Mode=TwoWay}">
 
             <DataGrid.Resources>
                 <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}" >
@@ -70,7 +70,8 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <Button Template="{DynamicResource InfoButton}"
-                                    Background="Transparent" Height="40" Width="40"/>
+                                    Background="Transparent" Height="40" Width="40"
+                                    Command="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UserControl}, Path=DataContext.BookInformationButton}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>

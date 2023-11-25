@@ -106,7 +106,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MVVM\Model\AbstractItem.cs" />
     <Compile Include="MVVM\Model\AssortmentBooks.cs" />
     <Compile Include="MVVM\Model\Book.cs" />
     <Compile Include="MVVM\Model\BookMarket.cs" />
@@ -116,6 +115,7 @@
     <Compile Include="MVVM\Model\Request.cs" />
     <Compile Include="MVVM\Model\Statement.cs" />
     <Compile Include="MVVM\Model\User.cs" />
+    <Compile Include="MVVM\ViewModels\BookInformationViewModel.cs" />
     <Compile Include="MVVM\ViewModels\ChoosePageViewModel.cs" />
     <Compile Include="MVVM\ViewModels\CreateBookViewModel.cs" />
     <Compile Include="MVVM\ViewModels\Helpers.cs" />

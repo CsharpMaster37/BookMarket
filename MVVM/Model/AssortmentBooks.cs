@@ -1,4 +1,5 @@
 ﻿using BookMarket.MVVM.Model.Books;
+using DevExpress.Mvvm.Native;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,32 +12,28 @@ namespace BookMarket.MVVM.Model
 {
     public class AssortmentBooks : IAssortment
     {
-        public readonly Dictionary<Book,int> _assortment;
+        public List<Book> _assortment;
         public AssortmentBooks()
         {
-            _assortment = new Dictionary<Book,int>();
+            _assortment = new List<Book>();
         }
         
-        public IEnumerable<Book> GetBooksForUser(User user)
+
+        public void Add(Book book,int count)
         {
-            return _assortment.Keys.Where(x => x.User == user);
+            int idx = _assortment.IndexOf(book);
+            if(idx == -1)
+            {
+                _assortment.Add(book);
+                _assortment[_assortment.Count - 1].Count += count;
+            }
+            else
+                _assortment[idx].Count += count;
         }
 
-        public void Add(AbstractItem book,int count)
+        public void Buy(int idxbook)
         {
-            try
-            {
-                _assortment.Add((Book)book, count);
-            }
-            catch
-            {
-                _assortment[(Book)book] += count;
-            }
-        }
-
-        public void Buy(AbstractItem book)
-        {
-            _assortment[(Book)book]--;
+            _assortment[idxbook].Count--;
         }
     }
 }

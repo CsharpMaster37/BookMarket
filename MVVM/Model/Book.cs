@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace BookMarket.MVVM.Model.Books
 {
-    public class Book : AbstractItem
+    public class Book
     {
         public string Author { get;}
         public string Title { get;}
@@ -16,6 +16,10 @@ namespace BookMarket.MVVM.Model.Books
         public int PageCount { get;}
         public string Topic { get; }
         public string Category { get; }
+        public int Count { get; set; }
+        public int Price { get; set; }
+        public int RetailMargin { get; set; }
+        public int DemandRating { get; set; }
         public User User { get; }
         public Book(string author, string title, string publisher, int year, int pagecount, string topic, string category, int price)
         {

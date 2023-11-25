@@ -4,8 +4,11 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:BookMarket.MVVM.View.UserControls"
+             xmlns:app="clr-namespace:BookMarket" xmlns:viewmodels="clr-namespace:BookMarket.MVVM.ViewModels"
              mc:Ignorable="d" 
-             Height="600" Width="500">
+             Height="600" Width="500"
+             Visibility="{Binding InfoVisibility}"
+             DataContext="{x:Static app:App._bookInformation}">
     <Border Background="#FF212429" CornerRadius="20" BorderBrush="#FFF8F890" BorderThickness="1">
         <Grid>
             <Grid.RowDefinitions>
@@ -28,7 +31,7 @@
                     <TextBlock Text="НАЗВАНИЕ:" FontSize="20" FontWeight="Bold"
                         HorizontalAlignment="Center" VerticalAlignment="Center" 
                            Foreground="#FFFEBC2A"/>
-                    <TextBlock Text="Летящие мгновения" FontSize="20" Margin="15,0,0,0"
+                    <TextBlock Text="{Binding Title}" FontSize="20" Margin="15,0,0,0"
                         HorizontalAlignment="Center" VerticalAlignment="Center" 
                            Foreground="#FFF8F890"/>
                 </StackPanel>
@@ -38,7 +41,7 @@
                     <TextBlock Text="АВТОР:" FontSize="20" FontWeight="Bold"
                         HorizontalAlignment="Center" VerticalAlignment="Center" 
                            Foreground="#FFFEBC2A"/>
-                    <TextBlock Text="Елена Иванова" FontSize="20" Margin="15,0,0,0"
+                    <TextBlock Text="{Binding Author}" FontSize="20" Margin="15,0,0,0"
                         HorizontalAlignment="Center" VerticalAlignment="Center" 
                            Foreground="#FFF8F890"/>
                 </StackPanel>
@@ -48,7 +51,7 @@
                     <TextBlock Text="ИЗДАТЕЛЬСТВО:" FontSize="20" FontWeight="Bold"
                         HorizontalAlignment="Center" VerticalAlignment="Center" 
                            Foreground="#FFFEBC2A"/>
-                    <TextBlock Text="АртПресс" FontSize="20" Margin="15,0,0,0"
+                    <TextBlock Text="{Binding Publisher}" FontSize="20" Margin="15,0,0,0"
                         HorizontalAlignment="Center" VerticalAlignment="Center" 
                            Foreground="#FFF8F890"/>
                 </StackPanel>
@@ -58,7 +61,7 @@
                     <TextBlock Text="КАТЕГОРИЯ:" FontSize="20" FontWeight="Bold"
                         HorizontalAlignment="Center" VerticalAlignment="Center" 
                            Foreground="#FFFEBC2A"/>
-                    <TextBlock Text="Художественная литература" FontSize="20" Margin="15,0,0,0"
+                    <TextBlock Text="{Binding Category}" FontSize="20" Margin="15,0,0,0"
                         HorizontalAlignment="Center" VerticalAlignment="Center" 
                            Foreground="#FFF8F890"/>
                 </StackPanel>
@@ -68,7 +71,7 @@
                     <TextBlock Text="ТЕМАТИКА:" FontSize="20" FontWeight="Bold"
                         HorizontalAlignment="Center" VerticalAlignment="Center" 
                            Foreground="#FFFEBC2A"/>
-                    <TextBlock Text="Романтика и приключения" FontSize="20" Margin="15,0,0,0"
+                    <TextBlock Text="{Binding Topic}" FontSize="20" Margin="15,0,0,0"
                         HorizontalAlignment="Center" VerticalAlignment="Center" 
                            Foreground="#FFF8F890"/>
                 </StackPanel>
@@ -88,7 +91,7 @@
                             <TextBlock Text="ГОД:" FontSize="20" FontWeight="Bold"
                                 HorizontalAlignment="Center" VerticalAlignment="Center" 
                                 Foreground="#FFFEBC2A"/>
-                            <TextBlock Text="2015" FontSize="20" Margin="15,0,0,0"
+                            <TextBlock Text="{Binding YearOfPublication}" FontSize="20" Margin="15,0,0,0"
                                 HorizontalAlignment="Center" VerticalAlignment="Center" 
                                 Foreground="#FFF8F890"/>
                         </StackPanel>
@@ -98,7 +101,7 @@
                             <TextBlock Text="КОЛ-ВО(СКЛАД):" FontSize="20" FontWeight="Bold"
                                 HorizontalAlignment="Center" VerticalAlignment="Center" 
                                 Foreground="#FFFEBC2A"/>
-                            <TextBlock Text="15" FontSize="20" Margin="10,0,0,0"
+                            <TextBlock Text="{Binding Count}" FontSize="20" Margin="10,0,0,0"
                                 HorizontalAlignment="Center" VerticalAlignment="Center" 
                                 Foreground="#FFF8F890"/>
                         </StackPanel>
@@ -114,7 +117,7 @@
                             <TextBlock Text="СТРАНИЦЫ:" FontSize="20" FontWeight="Bold"
                                 HorizontalAlignment="Center" VerticalAlignment="Center" 
                                 Foreground="#FFFEBC2A"/>
-                            <TextBlock Text="898" FontSize="20" Margin="15,0,0,0"
+                            <TextBlock Text="{Binding PageCount}" FontSize="20" Margin="15,0,0,0"
                                 HorizontalAlignment="Center" VerticalAlignment="Center" 
                                 Foreground="#FFF8F890"/>
                         </StackPanel>
@@ -124,7 +127,7 @@
                             <TextBlock Text="ЦЕНА:" FontSize="20" FontWeight="Bold"
                                 HorizontalAlignment="Center" VerticalAlignment="Center" 
                                 Foreground="#FFFEBC2A"/>
-                            <TextBlock Text="420" FontSize="20" Margin="15,0,0,0"
+                            <TextBlock Text="{Binding Price}" FontSize="20" Margin="15,0,0,0"
                                 HorizontalAlignment="Center" VerticalAlignment="Center" 
                                 Foreground="#FFF8F890"/>
                             <TextBlock Text="руб." FontSize="20" Margin="5,0,0,0"
@@ -149,7 +152,7 @@
                     <Button HorizontalAlignment="Center" VerticalAlignment="Center"
                             Template="{DynamicResource RoundButtonForBuy}" Width="200" Height="60"
                             Background="#FFFEBC2A" Content="ОТМЕНА" FontWeight="Bold"
-                            Foreground="Black" BorderBrush="#FFFEBC2A"/>
+                            Foreground="Black" BorderBrush="#FFFEBC2A" Command="{Binding CancelButton}"/>
                 </Grid>
             </Grid>
         </Grid>

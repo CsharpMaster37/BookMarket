@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BookMarket.MVVM.Model.Books;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,7 @@ namespace BookMarket.MVVM.Model
 {
     public interface IAssortment
     {
-        void Add(AbstractItem item,int count);
-        void Buy(AbstractItem item);
+        void Add(Book item,int count);
+        void Buy(int item);
     }
 }
