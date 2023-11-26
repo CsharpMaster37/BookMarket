@@ -45,5 +45,16 @@ namespace BookMarket.MVVM.ViewModels
                 });
             }
         }
+
+        public RelayCommand BuyButton
+        {
+            get
+            {
+                return new RelayCommand((obj) =>
+                {
+                    App._buyBook.BuyVisibility = Visibility.Visible;
+                });
+            }
+        }
     }
 }

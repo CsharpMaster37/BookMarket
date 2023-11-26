@@ -146,7 +146,7 @@
                     <Button HorizontalAlignment="Center" VerticalAlignment="Center"
                             Template="{DynamicResource RoundButtonForBuy}" Width="200" Height="60"
                             Background="#FFFEBC2A" Content="КУПИТЬ" FontWeight="Bold"
-                            Foreground="Black" BorderBrush="#FFFEBC2A"/>
+                            Foreground="Black" BorderBrush="#FFFEBC2A" Command="{Binding BuyButton}"/>
                 </Grid>
                 <Grid Grid.Column="1">
                     <Button HorizontalAlignment="Center" VerticalAlignment="Center"

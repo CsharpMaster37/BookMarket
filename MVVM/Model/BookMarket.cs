@@ -28,7 +28,7 @@ namespace BookMarket.MVVM.Model
 
         public void BuyBook(int idxbook, User user)
         {
-            if (_assortmentBooks._assortment[idxbook].Count > 0) //ToDo: Сделать метод
+            if (_assortmentBooks._assortment[idxbook].Count > 0)
             {
                 _assortmentBooks.Buy(idxbook);
                 App._history.Add(_assortmentBooks._assortment[idxbook], user);
