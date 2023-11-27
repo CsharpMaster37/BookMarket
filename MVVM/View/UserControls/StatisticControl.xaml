@@ -5,7 +5,9 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:BookMarket.MVVM.View.UserControls"
              mc:Ignorable="d" 
-             Height="395" Width="280">
+             xmlns:app="clr-namespace:BookMarket" xmlns:viewmodels="clr-namespace:BookMarket.MVVM.ViewModels"
+             Height="395" Width="280"
+             DataContext="{x:Static app:App._statistic}">
 
     <Border Background="#FF272A2F" CornerRadius="20">
         <Grid>
@@ -23,9 +25,11 @@
                         Text="АССОРТИМЕНТ КНИГ:" Foreground="#FFF8F890"/>
                 </Grid>
                 <Grid Grid.Row="0">
-                    <TextBlock FontSize="15" Margin="10,0,0,0"
+                    <TextBlock
+                        Text="{Binding AssortmentBookStatisticCount}"
+                        FontSize="15" Margin="10,0,0,0"
                         HorizontalAlignment="Left" VerticalAlignment="Center"
-                        Text="0" Foreground="#FFF8F890"/>
+                        Foreground="#FFF8F890"/>
                 </Grid>
             </StackPanel>
             <StackPanel Grid.Row="1" Orientation="Horizontal">
@@ -35,9 +39,11 @@
                          Text="ПОСТУПИВШИЕ ЗАКАЗЫ:" Foreground="#FFF8F890"/>
                 </Grid>
                 <Grid>
-                    <TextBlock FontSize="15" Margin="10,0,0,0"
+                    <TextBlock 
+                         Text="{Binding ReceivedOrdersStatisticCount}"
+                         FontSize="15" Margin="10,0,0,0"
                          HorizontalAlignment="Left" VerticalAlignment="Center"
-                         Text="0" Foreground="#FFF8F890"/>
+                         Foreground="#FFF8F890"/>
                 </Grid>
             </StackPanel>
             <StackPanel Grid.Row="2" Orientation="Horizontal">
@@ -47,9 +53,11 @@
                           Text="ОБРАБОТАННЫЕ ЗАКАЗЫ:" Foreground="#FFF8F890"/>
                 </Grid>
                 <Grid>
-                    <TextBlock FontSize="15" Margin="10,0,0,0"
+                    <TextBlock
+                          Text="{Binding ProcessedOrdersStatisticCount}"
+                          FontSize="15" Margin="10,0,0,0"
                           HorizontalAlignment="Left" VerticalAlignment="Center"
-                          Text="0" Foreground="#FFF8F890"/>
+                          Foreground="#FFF8F890"/>
                 </Grid>
             </StackPanel>
             <StackPanel Grid.Row="3" Orientation="Horizontal">
@@ -59,16 +67,19 @@
                         Text="ВЫП. ЗАЯВКИ В ИЗДАТ.:" Foreground="#FFF8F890"/>
                 </Grid>
                 <Grid Grid.Row="3">
-                    <TextBlock FontSize="15" Margin="10,0,0,0"
+                    <TextBlock 
+                        Text="{Binding CompletedApplicationsPublisherStatisticCount}"
+                        FontSize="15" Margin="10,0,0,0"
                         HorizontalAlignment="Left" VerticalAlignment="Center"
-                        Text="0" Foreground="#FFF8F890"/>
+                        Foreground="#FFF8F890"/>
                 </Grid>
             </StackPanel>
             <Grid Grid.Row="4">
                 <Button Height="50"
-                        Width="200"
+                        Width="250"
                         Margin="0,0,0,25"
                         Template="{DynamicResource RadioButtonStatistics}"
+                        Command="{Binding WorkStatisticButton}"
                         Background="#FFFEBC2A"
                         BorderBrush="#FFFEBC2A"
                         Content="Статистика работы"

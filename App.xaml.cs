@@ -30,6 +30,7 @@ namespace BookMarket
         public static RequestsViewModel _requests { get; set; }
         public static BookInformationViewModel _bookInformation { get; set; }
         public static BuyBookViewModel _buyBook { get; set; }
+        public static StatisticControlViewModel _statistic { get; set; }
         static App()
         {
             _market = new Market();
@@ -44,6 +45,7 @@ namespace BookMarket
             _requests = new RequestsViewModel();
             _bookInformation = new BookInformationViewModel();
             _buyBook = new BuyBookViewModel();
+            _statistic = new StatisticControlViewModel();
             CreateArrayForGenerate();
 
         }
