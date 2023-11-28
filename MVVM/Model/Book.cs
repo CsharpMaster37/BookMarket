@@ -13,7 +13,7 @@ namespace BookMarket.MVVM.Model.Books
         public string Title { get;}
         public string Publisher { get;}
         public int YearOfPublication { get;}
-        public int PageCount { get;}
+        public int? PageCount { get;}
         public string Topic { get; }
         public string Category { get; }
         public int Count { get; set; }
@@ -21,7 +21,7 @@ namespace BookMarket.MVVM.Model.Books
         public int RetailMargin { get; set; }
         public int DemandRating { get; set; }
         public User User { get; }
-        public Book(string author, string title, string publisher, int year, int pagecount, string topic, string category, int price)
+        public Book(string author, string title, string publisher, int year, int? pagecount, string topic, string category, int price)
         {
             Author = author;
             Title = title;

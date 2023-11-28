@@ -3,9 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:BookMarket.MVVM.View.UserControls"
-             mc:Ignorable="d" 
-             Height="200" Width="350">
+             xmlns:local="clr-namespace:BookMarket.MVVM.View.UserControls" xmlns:viewmodels="clr-namespace:BookMarket.MVVM.ViewModels"
+                xmlns:app="clr-namespace:BookMarket"
+                mc:Ignorable="d"
+             Height="200" Width="350"   
+             Visibility="{Binding MsgBoxVisibility}"
+             DataContext="{x:Static app:App._messageBox}">
     <Border Background="#FF212429" CornerRadius="20" BorderBrush="#FFF8F890" BorderThickness="1">
         <Grid>
             <Grid.RowDefinitions>
@@ -14,7 +17,7 @@
             </Grid.RowDefinitions>
             <TextBlock Grid.Row="0" FontSize="15" Margin="10,0,0,0"
                 HorizontalAlignment="Center" VerticalAlignment="Center"
-                Text="ТЕКСТ ТЕКСТ ТЕКСТ ТЕКСТ ТЕКСТ" Foreground="#FFF8F890"/>
+                Text="{Binding Message}" Foreground="#FFF8F890"/>
             <Grid Grid.Row="1">
                 <Button Height="35"
                         Width="100"
@@ -25,7 +28,7 @@
                         Content="ОК"
                         FontWeight="Bold"
                         Foreground="Black"
-                        Cursor="Hand"/>
+                        Command="{Binding OK_Button}"/>
             </Grid>
         </Grid>
     </Border>

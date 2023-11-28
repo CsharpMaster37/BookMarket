@@ -1,4 +1,5 @@
-﻿using BookMarket.MVVM.Model.Books;
+﻿using BookMarket.MVVM.Model;
+using BookMarket.MVVM.Model.Books;
 using DevExpress.Mvvm;
 using System;
 using System.Collections.Generic;
@@ -20,7 +21,10 @@ namespace BookMarket.MVVM.ViewModels
             {
                 return new RelayCommand((obj) =>
                 {
-                    App._market.BuyBook(App._listBooks.selectedBook, null);
+                    if (Username != null && Communication != null)
+                        App._market.BuyBook(App._listBooks.selectedBook, new User(Username, Communication));
+                    else
+                        App._market.BuyBook(App._listBooks.selectedBook, null);
                     BuyVisibility = Visibility.Hidden;
                     Username = "";
                     Communication = "";
@@ -37,6 +41,10 @@ namespace BookMarket.MVVM.ViewModels
                     BuyVisibility = Visibility.Hidden;   
                 });
             }
+        }
+        public void CloseBuy()
+        {
+            BuyVisibility = Visibility.Hidden;
         }
     }
 }

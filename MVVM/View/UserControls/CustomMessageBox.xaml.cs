@@ -24,5 +24,6 @@ namespace BookMarket.MVVM.View.UserControls
         {
             InitializeComponent();
         }
+
     }
 }

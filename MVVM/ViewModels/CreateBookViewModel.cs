@@ -20,7 +20,7 @@ namespace BookMarket.MVVM.ViewModels
         public string _countpages { get; set; } = "";
         public string _category { get; set; } = "";
         public string _topic { get; set; } = "";
-
+        private int? pages;
 
         public RelayCommand CancelButton
         {
@@ -42,9 +42,18 @@ namespace BookMarket.MVVM.ViewModels
             {
                 return new RelayCommand((obj) =>
                 {
-                    Book newbook = new Book(_author, _title, _publisher, int.Parse(_year), int.Parse(_countpages), _topic, _category, int.Parse(_price));
-                    App._market.AddBook(newbook,1);
-                    Helpers.CloseCreate();
+                    if (_countpages != "")
+                        pages = int.Parse(_countpages);
+                    try
+                    {
+                        Book newbook = new Book(_author, _title, _publisher, int.Parse(_year), pages, _topic, _category, int.Parse(_price));
+                        App._market.AddBook(newbook, 1);
+                        Helpers.CloseCreate();
+                    }
+                    catch
+                    {
+                        App.Error_MessageBox("Неправильно введены данные!");
+                    }
                     DataClear();
                 });
             }

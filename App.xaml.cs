@@ -31,6 +31,7 @@ namespace BookMarket
         public static BookInformationViewModel _bookInformation { get; set; }
         public static BuyBookViewModel _buyBook { get; set; }
         public static StatisticControlViewModel _statistic { get; set; }
+        public static ShowMessageBox _messageBox { get; set; }
         static App()
         {
             _market = new Market();
@@ -46,8 +47,14 @@ namespace BookMarket
             _bookInformation = new BookInformationViewModel();
             _buyBook = new BuyBookViewModel();
             _statistic = new StatisticControlViewModel();
+            _messageBox = new ShowMessageBox();
             CreateArrayForGenerate();
 
+        }
+        public static void Error_MessageBox(string message)
+        {
+            _messageBox.Message = message;
+            _messageBox.MsgBoxVisibility = Visibility.Visible;
         }
         private static void CreateArrayForGenerate()
         {

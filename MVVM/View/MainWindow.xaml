@@ -117,6 +117,7 @@
                                     <ColumnDefinition Width="750"/>
                                 </Grid.ColumnDefinitions>
                                 <usercontrols:CreateBookControl/>
+                                <usercontrols:CustomMessageBox/>
                             </Grid>
                         </Grid>
                     </Grid>

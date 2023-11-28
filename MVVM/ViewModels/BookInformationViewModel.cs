@@ -16,7 +16,7 @@ namespace BookMarket.MVVM.ViewModels
         public string Title { get; set; }
         public string Publisher { get; set; }
         public int YearOfPublication { get; set; }
-        public int PageCount { get; set; }
+        public int? PageCount { get; set; }
         public string Topic { get; set; }
         public string Category { get; set; }
         public int Count { get; set; }
@@ -55,6 +55,10 @@ namespace BookMarket.MVVM.ViewModels
                     App._buyBook.BuyVisibility = Visibility.Visible;
                 });
             }
+        }
+        public void CloseInfo()
+        {
+            InfoVisibility = Visibility.Hidden;
         }
     }
 }

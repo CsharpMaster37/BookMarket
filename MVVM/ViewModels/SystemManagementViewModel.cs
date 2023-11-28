@@ -26,6 +26,7 @@ namespace BookMarket.MVVM.ViewModels
                 return new RelayCommand((obj) =>
                 {
                     Helpers.CloseSettings();
+                    Helpers.Synchronization_Info();
                     App._createBook.View();
                 });
             }
@@ -37,6 +38,7 @@ namespace BookMarket.MVVM.ViewModels
                 return new RelayCommand((obj) =>
                 {
                     Helpers.Synchronization_Button();
+                    Helpers.Synchronization_Info();
                     App._market._assortmentBooks._assortment.Clear();
                     App._listBooks.ListBooks.Clear();
                     App._history.History.Clear();
@@ -54,6 +56,7 @@ namespace BookMarket.MVVM.ViewModels
                     if(CountType > 0) 
                     {
                         Helpers.Synchronization_Button();
+                        Helpers.Synchronization_Info();
                         App._market.Generation(CountType);
                         Helpers.GenerateButton();
                         CountType = 0;

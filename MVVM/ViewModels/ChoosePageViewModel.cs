@@ -29,6 +29,7 @@ namespace BookMarket.MVVM.ViewModels
                         Choose(Visibility.Hidden, Visibility.Hidden, Visibility.Visible, Visibility.Hidden);
                     else if (btn4)
                         Choose(Visibility.Hidden, Visibility.Hidden, Visibility.Hidden, Visibility.Visible);
+                    Helpers.Synchronization_Info();
                 });
             }
         }

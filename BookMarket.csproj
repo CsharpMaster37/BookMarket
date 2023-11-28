@@ -122,6 +122,7 @@
     <Compile Include="MVVM\ViewModels\Helpers.cs" />
     <Compile Include="MVVM\ViewModels\HistoryViewModel.cs" />
     <Compile Include="MVVM\ViewModels\ListBooksViewModel.cs" />
+    <Compile Include="MVVM\ViewModels\ShowMessageBox.cs" />
     <Compile Include="MVVM\ViewModels\ModelingManagementViewModel.cs" />
     <Compile Include="MVVM\ViewModels\ModelingSettingsViewModel.cs" />
     <Compile Include="MVVM\ViewModels\RelayCommand.cs" />

@@ -27,7 +27,7 @@ namespace BookMarket.MVVM.Model
             if (user is null)
             {
                 Username = "Вы";
-                Communication = "misha310303@gmail.com";
+                Communication = "abc123@mail.ru";
             }
             else
             {

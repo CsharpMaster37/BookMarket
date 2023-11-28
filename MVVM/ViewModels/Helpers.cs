@@ -18,6 +18,8 @@ namespace BookMarket.MVVM.ViewModels
         {
             if (App._createBook._visibility == Visibility.Visible)
                 App._createBook._visibility = Visibility.Hidden;
+            if(App._messageBox.MsgBoxVisibility == Visibility.Visible)
+                App._messageBox.MsgBoxVisibility = Visibility.Hidden;
         }
         public static void Synchronization_Button()
         {
@@ -36,5 +38,12 @@ namespace BookMarket.MVVM.ViewModels
             else
                 App._systemManagement._visibility_count_button = Visibility.Visible;
         }
+
+        public static void Synchronization_Info()
+        {
+            App._bookInformation.CloseInfo();
+            App._buyBook.CloseBuy();
+        }
+
     }
 }

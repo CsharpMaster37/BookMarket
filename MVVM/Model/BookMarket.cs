@@ -11,10 +11,12 @@ namespace BookMarket.MVVM.Model
     {
         public readonly AssortmentBooks _assortmentBooks;
         private readonly HashSet<int> unique;
+        private Random random;
         public Market()
         {
             _assortmentBooks = new AssortmentBooks();
             unique = new HashSet<int>();
+            random = new Random();
         }
 
 
@@ -22,8 +24,8 @@ namespace BookMarket.MVVM.Model
         {
             _assortmentBooks.Add(book, count);
             App._listBooks.ListBooks.Add(book);
-            if (count < 10)
-                App._statement.Add(book, 5, 10); //ToDo: Заглушка
+            if (count <= 3)
+                App._statement.Add(book, random.Next(1,5), random.Next(1,15));
         }
 
         public void BuyBook(int idxbook, User user)
@@ -35,7 +37,10 @@ namespace BookMarket.MVVM.Model
             }
             else
             {
-                App._requests.Add(_assortmentBooks._assortment[idxbook], user);
+                if(user.Communication != "" && user.Username != "")
+                    App._requests.Add(_assortmentBooks._assortment[idxbook], user);
+                else
+                    App._requests.Add(_assortmentBooks._assortment[idxbook], null);
             }
         }
         public void Generation(int countType)
