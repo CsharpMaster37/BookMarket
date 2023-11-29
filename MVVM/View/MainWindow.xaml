@@ -106,6 +106,7 @@
                         <usercontrols:StatementControl/>
                         <usercontrols:HistoryControl/>
                         <usercontrols:RequestsControl/>
+                        <usercontrols:ModelingSettingsControl/>
                         <usercontrols:BookInformation/>
                         <usercontrols:BuyBookPagexaml/>
                         <Grid>
