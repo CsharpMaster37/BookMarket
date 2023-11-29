@@ -11,7 +11,7 @@ namespace BookMarket.MVVM.Model.Interfaces
     {
         void Start_Modeling();
         void Check_Request();
-        void Day_Passed();
+        void Next_Day();
         void Step_Passed();
         void Buy_Book();
     }

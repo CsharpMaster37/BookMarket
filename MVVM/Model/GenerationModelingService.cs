@@ -19,7 +19,7 @@ namespace BookMarket.MVVM.Model
         public GenerationModelingService(ref List<User> list) 
         {
             Generation_DataForUsers();
-            list_users = list; //Не забыть проверить передачу списка по ссылке
+            list_users = list; //ToDo: Не забыть проверить передачу списка по ссылке
         }
         public User Generation_User()
         {

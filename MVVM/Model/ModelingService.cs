@@ -1,4 +1,5 @@
-﻿using BookMarket.MVVM.Model.Interfaces;
+﻿using BookMarket.MVVM.Model.Books;
+using BookMarket.MVVM.Model.Interfaces;
 using MahApps.Metro.Controls;
 using System;
 using System.Collections.Generic;
@@ -17,7 +18,10 @@ namespace BookMarket.MVVM.Model
         public int ModelingPeriod { get; set; }
         public int ModelingStep { get; set; }
         public bool IsStoped { get; set; }
-        public List<User> Users { get; set; }
+        public int Days_Passed { get; set; }
+        public List<User> Users;
+        public GenerationModelingService Generation_Serivce { get; set; }
+        private Random random = new Random();
         public ModelingService(int LV_timeDelivery, int UV_timeDelivery,int LV_threshold, int UV_threshold, int modelingPeriod, int modelingStep)
         {
             LowerValue_TimeDelivery = LV_timeDelivery;
@@ -26,13 +30,14 @@ namespace BookMarket.MVVM.Model
             UpperValue_Threshold = UV_threshold;
             ModelingPeriod = modelingPeriod;
             ModelingStep = modelingStep;
+            Generation_Serivce = new GenerationModelingService(ref Users);
         }
         public void Start_Modeling()
         {
             for(int i = 1; i<=ModelingPeriod; i++)
             {
 
-                Day_Passed();
+                Next_Day();
                 if (i % ModelingStep == 0 || i == ModelingPeriod)
                     Step_Passed();
                 if (IsStoped)
@@ -43,17 +48,25 @@ namespace BookMarket.MVVM.Model
         {
 
         }
+        public void Next_Day()
+        {
+            Days_Passed++;
+            foreach (Statement item in App._statement.Statement)
+            {
+                item.DeliveryTime--;
+                //ToDo: Сделать удаление из Statement при 0
+            }
+            Check_Request();
+        }
+
         public void Buy_Book()
         {
-
+            Generation_Serivce.Generation_Buy(Users[random.Next(0, Users.Count-1)]);
         }
 
         public void Check_Request()
         {
-        }
 
-        public void Day_Passed()
-        {
         }
 
     }
