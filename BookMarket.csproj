@@ -109,9 +109,13 @@
     <Compile Include="MVVM\Model\AssortmentBooks.cs" />
     <Compile Include="MVVM\Model\Book.cs" />
     <Compile Include="MVVM\Model\BookMarket.cs" />
+    <Compile Include="MVVM\Model\GenerationModelingService.cs" />
     <Compile Include="MVVM\Model\History.cs" />
     <Compile Include="MVVM\Model\Interfaces\IAssortment.cs" />
+    <Compile Include="MVVM\Model\Interfaces\IGeneration.cs" />
+    <Compile Include="MVVM\Model\Interfaces\IModeling.cs" />
     <Compile Include="MVVM\Model\Interfaces\IStatement.cs" />
+    <Compile Include="MVVM\Model\ModelingService.cs" />
     <Compile Include="MVVM\Model\Request.cs" />
     <Compile Include="MVVM\Model\Statement.cs" />
     <Compile Include="MVVM\Model\User.cs" />

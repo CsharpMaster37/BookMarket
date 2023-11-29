@@ -25,7 +25,7 @@ namespace BookMarket.MVVM.Model
             _assortmentBooks.Add(book, count);
             App._listBooks.ListBooks.Add(book);
             if (count <= 3)
-                App._statement.Add(book, random.Next(1,5), random.Next(1,15));
+                App._statement.Add(book, random.Next(1,5), random.Next(1,15)); //ToDo: Выправить метод под Modeling
         }
 
         public void BuyBook(int idxbook, User user)

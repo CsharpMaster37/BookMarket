@@ -44,8 +44,6 @@ namespace BookMarket.MVVM.ViewModels
             UpperValue_TimeDelivery = 4;
             LowerValue_Threshold = 3;
             UpperValue_Threshold = 4;
-            Value_Retail = 15;
-            Value_RetailNew = 10;
             Value_ModelingPeriod = 20;
             Value_ModelingStep = 2;
         }
@@ -56,8 +54,6 @@ namespace BookMarket.MVVM.ViewModels
         public int UpperValue_TimeDelivery { get; set; }
         public int LowerValue_Threshold { get; set; }
         public int UpperValue_Threshold { get; set; }
-        public int Value_Retail { get; set; }
-        public int Value_RetailNew { get; set; }
         public int Value_ModelingPeriod { get; set; }
         public int Value_ModelingStep { get; set; }
 
