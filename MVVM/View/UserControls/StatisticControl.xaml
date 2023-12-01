@@ -74,20 +74,20 @@
                         Foreground="#FFF8F890"/>
                 </Grid>
             </StackPanel>
-            <Grid Grid.Row="4">
-                <Button Height="50"
-                        Width="250"
-                        Margin="0,0,0,25"
-                        Template="{DynamicResource RadioButtonStatistics}"
-                        Command="{Binding WorkStatisticButton}"
-                        Background="#FFFEBC2A"
-                        BorderBrush="#FFFEBC2A"
-                        Content="Статистика работы"
-                        FontWeight="Bold"
-                        Foreground="Black"
-                        Cursor="Hand"
-                        />
-            </Grid>
+            <StackPanel Grid.Row="4" Orientation="Horizontal">
+                <Grid>
+                    <TextBlock FontSize="15" Margin="10,0,0,0"
+                          HorizontalAlignment="Left" VerticalAlignment="Center"
+                          Text="ПРОШЕДШИЕ ДНИ:" Foreground="#FFF8F890"/>
+                </Grid>
+                <Grid>
+                    <TextBlock 
+                          Text="{Binding DayPassedCount}"
+                          FontSize="15" Margin="10,0,0,0"
+                          HorizontalAlignment="Left" VerticalAlignment="Center"
+                          Foreground="#FFF8F890"/>
+                </Grid>
+            </StackPanel>
         </Grid>
     </Border>
 </UserControl>

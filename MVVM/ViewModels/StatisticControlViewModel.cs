@@ -13,6 +13,7 @@ namespace BookMarket.MVVM.ViewModels
         public int ReceivedOrdersStatisticCount { get; set; }
         public int ProcessedOrdersStatisticCount { get; set; }
         public int CompletedApplicationsPublisherStatisticCount { get; set; }
+        public int DayPassedCount { get; set; }
         public RelayCommand WorkStatisticButton
         {
             get
