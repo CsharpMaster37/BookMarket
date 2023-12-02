@@ -33,6 +33,17 @@ namespace BookMarket.MVVM.ViewModels
             }
         }
 
+        public RelayCommand ApplyButton
+        {
+            get
+            {
+                return new RelayCommand((obj) =>
+                {
+                    _visibility = Visibility.Hidden;
+                });
+            }
+        }
+
         public void View()
         {
             if(_visibility == Visibility.Visible) { _visibility = Visibility.Hidden; }

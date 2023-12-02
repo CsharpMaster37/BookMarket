@@ -27,13 +27,13 @@
             <Grid Grid.Row="1">
                 <Button Height="50" Width="200" Margin="0,15,0,0" 
                     Template="{DynamicResource RoundButtonForAdd}" Content="НАЧАТЬ" FontWeight="Bold" Foreground="Black"
-                    Background="#FFFEBC2A" BorderBrush="#FFFEBC2A" />
+                    Background="#FFFEBC2A" BorderBrush="#FFFEBC2A" Command="{Binding Start_Modeling}"/>
             </Grid>
             <Grid Grid.Row="2">
                 <Button Height="50" Width="200" Margin="0,15,0,0" 
                     Template="{DynamicResource RoundButtonForAdd}"
                     Background="#FFFEBC2A" Content="ПРЕРВАТЬ" FontWeight="Bold" 
-                    Foreground="Black" BorderBrush="#FFFEBC2A"/>
+                    Foreground="Black" BorderBrush="#FFFEBC2A" Command="{Binding Stop_Modeling}"/>
             </Grid>
             <Grid Grid.Row="3">
                 <Button Height="50" Width="200" Margin="0,15,0,0" 

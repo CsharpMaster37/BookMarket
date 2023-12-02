@@ -13,6 +13,6 @@ namespace BookMarket.MVVM.Model.Interfaces
         void Check_Request();
         void Next_Day();
         void Step_Passed();
-        void Buy_Book();
+        void Success_Buy();
     }
 }

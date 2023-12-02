@@ -17,8 +17,10 @@ namespace BookMarket.MVVM.Model
         public string Username {get;}
         public User Buyer { get; }
         public Book Book { get; }
-        public Request(Book book, User user)
+        public int index { get; }
+        public Request(Book book, User user, int idx)
         {
+            index = idx;
             Book = book;
             YearOfPublication = book.YearOfPublication;
             Title = book.Title;
@@ -35,6 +37,8 @@ namespace BookMarket.MVVM.Model
                 Communication = user.Communication;
                 Username = user.Username;
             }
+
+            this.index = index;
         }
     }
 }

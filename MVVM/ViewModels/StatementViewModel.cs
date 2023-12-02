@@ -23,5 +23,9 @@ namespace BookMarket.MVVM.ViewModels
         {
             Statement.Add(new Statement(book, deliverytime, count));
         }
+        public void Remove(Statement book)
+        {
+            Statement.Remove(book);
+        }
     }
 }

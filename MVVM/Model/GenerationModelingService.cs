@@ -8,6 +8,8 @@ using System.Linq;
 using System.Security.RightsManagement;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Threading;
 
 namespace BookMarket.MVVM.Model
 {
@@ -19,12 +21,12 @@ namespace BookMarket.MVVM.Model
         public GenerationModelingService(ref List<User> list) 
         {
             Generation_DataForUsers();
-            list_users = list; //ToDo: Не забыть проверить передачу списка по ссылке
+            list_users = list;
         }
         public User Generation_User()
         {
             int Choose = random.Next(1, 5);
-            if (Choose <= 3 && list_users.Count > 0)
+            if ((Choose <= 3 && list_users.Count > 0) || list_users.Count >= (App._modelingManagement.modelingService.CountBooks)/2)
             {
                 int Choose_User = random.Next(0, list_users.Count-1);
                 return list_users[Choose_User];
@@ -54,9 +56,14 @@ namespace BookMarket.MVVM.Model
                 qTry++;
             }
         }
-        public void Generation_Buy(User user)
+        public bool Generation_Buy(User user)
         {
-            App._market.BuyBook(random.Next(0, App._market._assortmentBooks._assortment.Count), user);
+            int randomBook = random.Next(0, App._market._assortmentBooks._assortment.Count);
+            App._modelingManagement.modelingService.Profit += App._market._assortmentBooks._assortment[randomBook].Price;
+            App._modelingManagement.modelingService.ReceivedOrders++;
+            bool flag = false;
+            Application.Current.Dispatcher.Invoke(() => { flag = App._market.BuyBook(randomBook, user); });
+            return flag;
         }
     }
 }

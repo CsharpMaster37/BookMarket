@@ -26,6 +26,7 @@ namespace BookMarket.MVVM.Model
             {
                 _assortment.Add(book);
                 _assortment[_assortment.Count - 1].Count += count;
+                App._listBooks.ListBooks.Add(book);
             }
             else
                 _assortment[idx].Count += count;

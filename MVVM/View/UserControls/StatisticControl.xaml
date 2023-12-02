@@ -21,32 +21,17 @@
             <StackPanel Grid.Row="0" Orientation="Horizontal">
                 <Grid>
                     <TextBlock FontSize="15" Margin="10,0,0,0"
-                        HorizontalAlignment="Left" VerticalAlignment="Center"
-                        Text="АССОРТИМЕНТ КНИГ:" Foreground="#FFF8F890"/>
-                </Grid>
-                <Grid Grid.Row="0">
-                    <TextBlock
-                        Text="{Binding AssortmentBookStatisticCount}"
-                        FontSize="15" Margin="10,0,0,0"
-                        HorizontalAlignment="Left" VerticalAlignment="Center"
-                        Foreground="#FFF8F890"/>
-                </Grid>
-            </StackPanel>
-            <StackPanel Grid.Row="1" Orientation="Horizontal">
-                <Grid>
-                    <TextBlock FontSize="15" Margin="10,0,0,0"
                          HorizontalAlignment="Left" VerticalAlignment="Center"
                          Text="ПОСТУПИВШИЕ ЗАКАЗЫ:" Foreground="#FFF8F890"/>
                 </Grid>
                 <Grid>
                     <TextBlock 
                          Text="{Binding ReceivedOrdersStatisticCount}"
-                         FontSize="15" Margin="10,0,0,0"
-                         HorizontalAlignment="Left" VerticalAlignment="Center"
+                         FontSize="15" Margin="10,0,0,0" VerticalAlignment="Center"
                          Foreground="#FFF8F890"/>
                 </Grid>
             </StackPanel>
-            <StackPanel Grid.Row="2" Orientation="Horizontal">
+            <StackPanel Grid.Row="1" Orientation="Horizontal">
                 <Grid>
                     <TextBlock FontSize="15" Margin="10,0,0,0"
                           HorizontalAlignment="Left" VerticalAlignment="Center"
@@ -60,21 +45,17 @@
                           Foreground="#FFF8F890"/>
                 </Grid>
             </StackPanel>
-            <StackPanel Grid.Row="3" Orientation="Horizontal">
-                <Grid Grid.Row="3">
-                    <TextBlock FontSize="15" Margin="10,0,0,0"
+            <StackPanel Grid.Row="2" Orientation="Horizontal">
+                <TextBlock FontSize="15" Margin="10,0,0,0"
                         HorizontalAlignment="Left" VerticalAlignment="Center"
                         Text="ВЫП. ЗАЯВКИ В ИЗДАТ.:" Foreground="#FFF8F890"/>
-                </Grid>
-                <Grid Grid.Row="3">
-                    <TextBlock 
+                <TextBlock 
                         Text="{Binding CompletedApplicationsPublisherStatisticCount}"
                         FontSize="15" Margin="10,0,0,0"
                         HorizontalAlignment="Left" VerticalAlignment="Center"
                         Foreground="#FFF8F890"/>
-                </Grid>
             </StackPanel>
-            <StackPanel Grid.Row="4" Orientation="Horizontal">
+            <StackPanel Grid.Row="3" Orientation="Horizontal">
                 <Grid>
                     <TextBlock FontSize="15" Margin="10,0,0,0"
                           HorizontalAlignment="Left" VerticalAlignment="Center"
@@ -83,6 +64,20 @@
                 <Grid>
                     <TextBlock 
                           Text="{Binding DayPassedCount}"
+                          FontSize="15" Margin="10,0,0,0"
+                          HorizontalAlignment="Left" VerticalAlignment="Center"
+                          Foreground="#FFF8F890"/>
+                </Grid>
+            </StackPanel>
+            <StackPanel Grid.Row="4" Orientation="Horizontal">
+                <Grid>
+                    <TextBlock FontSize="15" Margin="10,0,0,0"
+                          HorizontalAlignment="Left" VerticalAlignment="Center"
+                          Text="ПРИБЫЛЬ:" Foreground="#FFF8F890"/>
+                </Grid>
+                <Grid>
+                    <TextBlock 
+                          Text="{Binding Profit}"
                           FontSize="15" Margin="10,0,0,0"
                           HorizontalAlignment="Left" VerticalAlignment="Center"
                           Foreground="#FFF8F890"/>

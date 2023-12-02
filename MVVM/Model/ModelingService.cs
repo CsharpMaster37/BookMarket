@@ -6,6 +6,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
+using RangeSliderWpfApp;
+using DevExpress.Mvvm;
+using System.Windows;
 
 namespace BookMarket.MVVM.Model
 {
@@ -19,7 +23,12 @@ namespace BookMarket.MVVM.Model
         public int ModelingStep { get; set; }
         public bool IsStoped { get; set; }
         public int Days_Passed { get; set; }
-        public List<User> Users;
+        public int ReceivedOrders { get; set; }
+        public int ProcessedOrders { get; set; }
+        public int Profit { get; set; }
+        public int CountBooks { get; set; }
+        public int CompletedApplicationsPublisher { get; set; }
+        public List<User> Users = new List<User>();
         public GenerationModelingService Generation_Serivce { get; set; }
         private Random random = new Random();
         public ModelingService(int LV_timeDelivery, int UV_timeDelivery,int LV_threshold, int UV_threshold, int modelingPeriod, int modelingStep)
@@ -31,43 +40,87 @@ namespace BookMarket.MVVM.Model
             ModelingPeriod = modelingPeriod;
             ModelingStep = modelingStep;
             Generation_Serivce = new GenerationModelingService(ref Users);
+            Check_Assortment();
         }
         public void Start_Modeling()
         {
             for(int i = 1; i<=ModelingPeriod; i++)
             {
-
+                int Predel = random.Next(0, (int)Math.Round((decimal)(CountBooks / 2)));
+                for(int j = 0; j<Predel; j++)
+                {
+                    if(Generation_Serivce.Generation_Buy(Generation_Serivce.Generation_User()))
+                    {
+                        Success_Buy();
+                    }
+                }
                 Next_Day();
                 if (i % ModelingStep == 0 || i == ModelingPeriod)
                     Step_Passed();
                 if (IsStoped)
                     return;
+                Thread.Sleep(1000);
+            }
+        }
+        public void Check_Assortment()
+        {          
+            foreach (Book item in App._listBooks.ListBooks)
+            {
+                CountBooks += item.Count;
             }
         }
         public void Step_Passed()
         {
-
+            App._statistic.DayPassedCount = Days_Passed;
+            App._statistic.CompletedApplicationsPublisherStatisticCount = CompletedApplicationsPublisher;
+            App._statistic.ProcessedOrdersStatisticCount = ProcessedOrders;
+            App._statistic.Profit = Profit;
+            App._statistic.ReceivedOrdersStatisticCount = ReceivedOrders;
         }
         public void Next_Day()
         {
             Days_Passed++;
-            foreach (Statement item in App._statement.Statement)
+            bool flag = false;
+            for (int i = App._statement.Statement.Count - 1; i >= 0; i--)
             {
-                item.DeliveryTime--;
-                //ToDo: Сделать удаление из Statement при 0
+                Application.Current.Dispatcher.Invoke(() =>
+                {
+                    if (App._statement.Statement[i].DayPassed())
+                    {
+                        CountBooks += App._statement.Statement[i].Count;
+                        App._statement.Remove(App._statement.Statement[i]);
+                        CompletedApplicationsPublisher++;
+                        flag = true;
+                    }
+                });
             }
-            Check_Request();
+            if(flag)
+                Check_Request();
         }
 
-        public void Buy_Book()
+        public void Success_Buy()
         {
-            Generation_Serivce.Generation_Buy(Users[random.Next(0, Users.Count-1)]);
+            ProcessedOrders++;
+            CountBooks--;
         }
 
         public void Check_Request()
         {
-
+            for (int i = App._requests.Requests.Count - 1; i >= 0; i--)
+            {
+                bool flag = false;
+                Application.Current.Dispatcher.Invoke(() =>
+                {
+                    if (App._listBooks.ListBooks[App._requests.Requests[i].index].Count > 0)
+                    {
+                        App._market.BuyBook(App._requests.Requests[i].index, App._requests.Requests[i].Buyer);
+                        App._requests.Requests.RemoveAt(i);
+                        flag = true;
+                    }
+                });
+                if(flag)
+                    Success_Buy();
+            }
         }
-
     }
 }

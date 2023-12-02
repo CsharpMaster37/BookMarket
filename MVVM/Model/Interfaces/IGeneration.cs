@@ -12,6 +12,6 @@ namespace BookMarket.MVVM.Model.Interfaces
         User Generation_User();
         User Create_User();
         void Generation_DataForUsers();
-        void Generation_Buy(User user);
+        bool Generation_Buy(User user);
     }
 }

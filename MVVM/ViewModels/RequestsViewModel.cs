@@ -19,9 +19,9 @@ namespace BookMarket.MVVM.ViewModels
         {
             Requests = new ObservableCollection<Request>();
         }
-        public void Add(Book book, User user)
+        public void Add(Book book, User user, int idx)
         {
-            Requests.Add(new Request(book, user));
+            Requests.Add(new Request(book, user, idx));
         }
     }
 }

@@ -243,7 +243,7 @@
                                     BorderBrush="#FFFEBC2A" Content="ПРИМЕНИТЬ"
                                     Template="{DynamicResource RoundButtonForSettingsApply}"
                                     FontWeight="Bold" Foreground="Black"
-                                    Margin="0,0,0,75"/>
+                                    Margin="0,0,0,75" Command="{Binding ApplyButton}"/>
                         </Border>
                     </Grid>
 

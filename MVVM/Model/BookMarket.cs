@@ -9,7 +9,7 @@ namespace BookMarket.MVVM.Model
 {
     public class Market
     {
-        public readonly AssortmentBooks _assortmentBooks;
+        public AssortmentBooks _assortmentBooks;
         private readonly HashSet<int> unique;
         private Random random;
         public Market()
@@ -23,24 +23,27 @@ namespace BookMarket.MVVM.Model
         public void AddBook(Book book, int count)
         {
             _assortmentBooks.Add(book, count);
-            App._listBooks.ListBooks.Add(book);
             if (count <= 3)
-                App._statement.Add(book, random.Next(1,5), random.Next(1,15)); //ToDo: Выправить метод под Modeling
+                App._statement.Add(book, random.Next(1,5), random.Next(1,15));
         }
 
-        public void BuyBook(int idxbook, User user)
+        public bool BuyBook(int idxbook, User user)
         {
             if (_assortmentBooks._assortment[idxbook].Count > 0)
             {
                 _assortmentBooks.Buy(idxbook);
                 App._history.Add(_assortmentBooks._assortment[idxbook], user);
+                if(_assortmentBooks._assortment[idxbook].Count <=3)
+                    App._statement.Add(_assortmentBooks._assortment[idxbook], random.Next(1, 5), random.Next(1, 15));
+                return true;
             }
             else
             {
                 if(user.Communication != "" && user.Username != "")
-                    App._requests.Add(_assortmentBooks._assortment[idxbook], user);
+                    App._requests.Add(_assortmentBooks._assortment[idxbook], user,idxbook);
                 else
-                    App._requests.Add(_assortmentBooks._assortment[idxbook], null);
+                    App._requests.Add(_assortmentBooks._assortment[idxbook], null, idxbook);
+                return false;
             }
         }
         public void Generation(int countType)
