@@ -39,10 +39,10 @@ namespace BookMarket.MVVM.Model
             }
             else
             {
-                if(user.Communication != "" && user.Username != "")
-                    App._requests.Add(_assortmentBooks._assortment[idxbook], user,idxbook);
-                else
+                if(user is null || user.Communication == "" || user.Username == "")
                     App._requests.Add(_assortmentBooks._assortment[idxbook], null, idxbook);
+                else
+                    App._requests.Add(_assortmentBooks._assortment[idxbook], user, idxbook);
                 return false;
             }
         }

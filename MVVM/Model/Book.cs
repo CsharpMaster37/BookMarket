@@ -9,17 +9,45 @@ namespace BookMarket.MVVM.Model.Books
 {
     public class Book
     {
+        private int? pageCount;
+        private int pricee;
+        private int Pubyear;
         public string Author { get;}
         public string Title { get;}
         public string Publisher { get;}
-        public int YearOfPublication { get;}
-        public int? PageCount { get;}
+        public int YearOfPublication 
+        {
+            get { return Pubyear; }
+            set
+            {
+                if (value < 0 || value > 2023)
+                    throw new ArgumentException();
+                Pubyear = value;
+            }
+        }
+        public int? PageCount
+        {
+            get { return pageCount; }
+            set
+            {
+                if (value < 0)
+                    throw new ArgumentException();
+                pageCount = value;
+            }
+        }
         public string Topic { get; }
         public string Category { get; }
         public int Count { get; set; }
-        public int Price { get; set; }
-        public int RetailMargin { get; set; }
-        public int DemandRating { get; set; }
+        public int Price 
+        {
+            get { return pricee; }
+            set 
+            {
+                if (value < 0)
+                    throw new ArgumentException();
+                pricee = value; 
+            }
+        }
         public User User { get; }
         public Book(string author, string title, string publisher, int year, int? pagecount, string topic, string category, int price)
         {
@@ -30,7 +58,7 @@ namespace BookMarket.MVVM.Model.Books
             PageCount = pagecount;
             Topic = topic;
             Category = category;
-            Price = price + RetailMargin;
+            Price = price;
         }
         public override bool Equals(object obj)
         {

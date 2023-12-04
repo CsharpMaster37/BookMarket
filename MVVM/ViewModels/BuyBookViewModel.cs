@@ -13,15 +13,15 @@ namespace BookMarket.MVVM.ViewModels
     public class BuyBookViewModel : ViewModelBase
     {
         public Visibility BuyVisibility { get; set; } = Visibility.Hidden;
-        public string Username { get; set; }
-        public string Communication { get; set; }
+        public string Username { get; set; } = "";
+        public string Communication { get; set; } = "";
         public RelayCommand BuyBookButton
         {
             get
             {
                 return new RelayCommand((obj) =>
                 {
-                    if (Username != null && Communication != null)
+                    if (Username != "" || Communication != "")
                         App._market.BuyBook(App._listBooks.selectedBook, new User(Username, Communication));
                     else
                         App._market.BuyBook(App._listBooks.selectedBook, null);
