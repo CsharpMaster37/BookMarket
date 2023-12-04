@@ -58,7 +58,7 @@ namespace BookMarket
         }
         private static void CreateArrayForGenerate()
         {
-            StreamReader sr = new StreamReader("FileGenerate.txt");
+            StreamReader sr = new StreamReader("../../FileGenerate.txt");
             while (!sr.EndOfStream)
                 ArrayGenerate.Add(sr.ReadLine().Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries));
         }

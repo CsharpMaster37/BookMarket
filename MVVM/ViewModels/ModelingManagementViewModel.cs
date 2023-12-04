@@ -11,6 +11,9 @@ namespace BookMarket.MVVM.ViewModels
 {
     public class ModelingManagementViewModel : ViewModelBase
     {
+        public bool IsEnabled_Start { get; set; } = true;
+        public bool IsEnabled_Settings { get; set; } = true;
+        public bool IsEnabled_Reset { get; set; } = true;
         public ModelingService modelingService;
         public RelayCommand SettingsButton
         {
@@ -30,15 +33,37 @@ namespace BookMarket.MVVM.ViewModels
             {
                 return new RelayCommand((obj) =>
                 {
-                    modelingService = new ModelingService(App._modelingSettings.LowerValue_TimeDelivery, App._modelingSettings.UpperValue_TimeDelivery,
+                    App._statistic.Reset();
+                    if (App._listBooks.ListBooks.Count > 0)
+                    {
+                        //Helpers.Block_Button_for_Modeling(false);
+                        modelingService = new ModelingService(App._modelingSettings.LowerValue_TimeDelivery, App._modelingSettings.UpperValue_TimeDelivery,
                         App._modelingSettings.LowerValue_Threshold, App._modelingSettings.UpperValue_Threshold, App._modelingSettings.Value_ModelingPeriod,
                         App._modelingSettings.Value_ModelingStep);
-                    Thread thread = new Thread(() => { modelingService.Start_Modeling(); });
-                    thread.Start();
+                        Thread thread = new Thread(() => 
+                        {
+                            Helpers.Block_Button_for_Modeling(false);
+                            modelingService.Start_Modeling();
+                            Helpers.Block_Button_for_Modeling(true);
+                        });
+                        thread.Start();
+                    }
+                    
                 });
             }
         }
 
+        public RelayCommand Reset
+        {
+            get
+            {
+                return new RelayCommand((obj) =>
+                {
+                    App._modelingSettings.DefaultSettings();
+                    App._statistic.Reset();
+                });
+            }
+        }
         public RelayCommand Stop_Modeling
         {
             get

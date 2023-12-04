@@ -46,6 +46,24 @@ namespace BookMarket.MVVM.Model
                 return false;
             }
         }
+
+        public bool BuyBook_ForModeling(int idxbook, User user,int lower_threeshold, int upper_threeshold, int lower_TimeDelivery, int upper_TimeDelivery)
+        {
+            if (_assortmentBooks._assortment[idxbook].Count > 0)
+            {
+                _assortmentBooks.Buy(idxbook);
+                App._history.Add(_assortmentBooks._assortment[idxbook], user);
+                if (_assortmentBooks._assortment[idxbook].Count <= random.Next(lower_threeshold, upper_threeshold))
+                    App._statement.Add(_assortmentBooks._assortment[idxbook], random.Next(lower_TimeDelivery, upper_TimeDelivery), random.Next(5,10));
+                return true;
+            }
+            else
+            {
+                App._requests.Add(_assortmentBooks._assortment[idxbook], user, idxbook);
+                return false;
+            }
+        }
+
         public void Generation(int countType)
         {
             Random rd = new Random();

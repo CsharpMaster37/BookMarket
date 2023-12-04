@@ -9,6 +9,16 @@ namespace BookMarket.MVVM.ViewModels
 {
     public class Helpers
     {
+
+        public static void Block_Button_for_Modeling(bool key)
+        {
+            App._systemManagement.IsEnabled_Add = key;
+            App._systemManagement.IsEnabled_Clear = key;
+            App._systemManagement.IsEnabled_Generate = key;
+            App._modelingManagement.IsEnabled_Start = key;
+            App._modelingManagement.IsEnabled_Settings = key;
+            App._modelingManagement.IsEnabled_Reset = key;
+        }
         public static void CloseSettings()
         {
             if(App._modelingSettings._visibility == Visibility.Visible)

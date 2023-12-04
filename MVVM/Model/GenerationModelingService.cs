@@ -26,7 +26,7 @@ namespace BookMarket.MVVM.Model
         public User Generation_User()
         {
             int Choose = random.Next(1, 5);
-            if ((Choose <= 3 && list_users.Count > 0) || list_users.Count >= (App._modelingManagement.modelingService.CountBooks)/2)
+            if (list_users.Count > 0 && ((Choose <= 3) || list_users.Count >= (App._modelingManagement.modelingService.CountBooks)/2))
             {
                 int Choose_User = random.Next(0, list_users.Count-1);
                 return list_users[Choose_User];
@@ -38,7 +38,7 @@ namespace BookMarket.MVVM.Model
         }
         public void Generation_DataForUsers()
         {
-            StreamReader sr = new StreamReader("Users.txt");
+            StreamReader sr = new StreamReader("../../Users.txt");
             while (!sr.EndOfStream)
             {
                data.Add(sr.ReadLine().Split(new char[] {','}, StringSplitOptions.RemoveEmptyEntries));
@@ -56,13 +56,12 @@ namespace BookMarket.MVVM.Model
                 qTry++;
             }
         }
-        public bool Generation_Buy(User user)
+        public bool Generation_Buy(User user, int lower_threeshold, int upper_threeshold, int lower_TimeDelivery, int upper_TimeDelivery)
         {
             int randomBook = random.Next(0, App._market._assortmentBooks._assortment.Count);
-            App._modelingManagement.modelingService.Profit += App._market._assortmentBooks._assortment[randomBook].Price;
             App._modelingManagement.modelingService.ReceivedOrders++;
             bool flag = false;
-            Application.Current.Dispatcher.Invoke(() => { flag = App._market.BuyBook(randomBook, user); });
+            Application.Current.Dispatcher.Invoke(() => { flag = App._market.BuyBook_ForModeling(randomBook, user,lower_threeshold,upper_threeshold,lower_TimeDelivery,upper_TimeDelivery); });
             return flag;
         }
     }

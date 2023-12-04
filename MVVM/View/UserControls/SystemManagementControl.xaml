@@ -27,21 +27,22 @@
             <Grid Grid.Row="1">
                 <Button Height="50" Width="200" Margin="0,15,0,0" 
                         Template="{DynamicResource RoundButtonForAdd}" Content="ДОБАВИТЬ КНИГУ" FontWeight="Bold" Foreground="Black"
-                        Background="#FFFEBC2A" BorderBrush="#FFFEBC2A" Command="{Binding AddBookButton}"/>
+                        Background="#FFFEBC2A" BorderBrush="#FFFEBC2A" 
+                        Command="{Binding AddBookButton}" IsEnabled="{Binding IsEnabled_Add}"/>
             </Grid>
             <Grid Grid.Row="2">
                 <Button Height="50" Width="200" Margin="0,15,0,0"
                         Template="{DynamicResource RoundButtonForAdd}" 
                         Background="#FFFEBC2A" BorderBrush="#FFFEBC2A"
                         Content="ОЧИСТИТЬ" FontWeight="Bold" Foreground="Black" Cursor="Hand"
-                        Command="{Binding ClearButton}"/>
+                        Command="{Binding ClearButton}" IsEnabled="{Binding IsEnabled_Clear}"/>
             </Grid>
             <Grid Grid.Row="3">
                 <Button Height="50" Width="200" Margin="0,15,0,0" 
                         Template="{DynamicResource RoundButtonForAdd}"
                         Background="#FFFEBC2A" Content="СГЕНЕРИРОВАТЬ" FontWeight="Bold" 
                         Foreground="Black" BorderBrush="#FFFEBC2A"
-                        Command="{Binding GenerateButton}"/>
+                        Command="{Binding GenerateButton}" IsEnabled="{Binding IsEnabled_Generate}"/>
             </Grid>
             <StackPanel Grid.Row="4" Orientation="Horizontal">
                 <TextBox 

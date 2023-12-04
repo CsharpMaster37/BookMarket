@@ -49,7 +49,7 @@ namespace BookMarket.MVVM.Model
                 int Predel = random.Next(0, (int)Math.Round((decimal)(CountBooks / 2)));
                 for(int j = 0; j<Predel; j++)
                 {
-                    if(Generation_Serivce.Generation_Buy(Generation_Serivce.Generation_User()))
+                    if(Generation_Serivce.Generation_Buy(Generation_Serivce.Generation_User(), LowerValue_Threshold, UpperValue_Threshold, LowerValue_TimeDelivery, UpperValue_TimeDelivery))
                     {
                         Success_Buy();
                     }
@@ -108,18 +108,16 @@ namespace BookMarket.MVVM.Model
         {
             for (int i = App._requests.Requests.Count - 1; i >= 0; i--)
             {
-                bool flag = false;
                 Application.Current.Dispatcher.Invoke(() =>
                 {
                     if (App._listBooks.ListBooks[App._requests.Requests[i].index].Count > 0)
                     {
                         App._market.BuyBook(App._requests.Requests[i].index, App._requests.Requests[i].Buyer);
+                        Profit += App._market._assortmentBooks._assortment[App._requests.Requests[i].index].Price;
                         App._requests.Requests.RemoveAt(i);
-                        flag = true;
+                        Success_Buy();
                     }
-                });
-                if(flag)
-                    Success_Buy();
+                }); 
             }
         }
     }

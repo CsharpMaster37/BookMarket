@@ -10,6 +10,9 @@ namespace BookMarket.MVVM.ViewModels
 {
     public class SystemManagementViewModel : ViewModelBase
     {
+        public bool IsEnabled_Add { get; set; } = true;
+        public bool IsEnabled_Clear { get; set; } = true;
+        public bool IsEnabled_Generate { get; set; } = true;
         public int CountType { get; set; }
         public Visibility _visibility_count { get; set; }
         public Visibility _visibility_count_button { get; set; }

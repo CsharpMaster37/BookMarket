@@ -14,5 +14,14 @@ namespace BookMarket.MVVM.ViewModels
         public int ProcessedOrdersStatisticCount { get; set; }
         public int CompletedApplicationsPublisherStatisticCount { get; set; }
         public int DayPassedCount { get; set; }
+
+        public void Reset()
+        {
+            Profit = 0;
+            ReceivedOrdersStatisticCount = 0;
+            ProcessedOrdersStatisticCount = 0;
+            CompletedApplicationsPublisherStatisticCount = 0;
+            DayPassedCount = 0;
+        }
     }
 }

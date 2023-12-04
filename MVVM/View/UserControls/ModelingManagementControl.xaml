@@ -27,26 +27,32 @@
             <Grid Grid.Row="1">
                 <Button Height="50" Width="200" Margin="0,15,0,0" 
                     Template="{DynamicResource RoundButtonForAdd}" Content="НАЧАТЬ" FontWeight="Bold" Foreground="Black"
-                    Background="#FFFEBC2A" BorderBrush="#FFFEBC2A" Command="{Binding Start_Modeling}"/>
+                    Background="#FFFEBC2A" BorderBrush="#FFFEBC2A" 
+                    Command="{Binding Start_Modeling}" Cursor="Hand"
+                    IsEnabled="{Binding IsEnabled_Start}"/>
             </Grid>
             <Grid Grid.Row="2">
                 <Button Height="50" Width="200" Margin="0,15,0,0" 
                     Template="{DynamicResource RoundButtonForAdd}"
                     Background="#FFFEBC2A" Content="ПРЕРВАТЬ" FontWeight="Bold" 
-                    Foreground="Black" BorderBrush="#FFFEBC2A" Command="{Binding Stop_Modeling}"/>
+                    Foreground="Black" BorderBrush="#FFFEBC2A" 
+                    Command="{Binding Stop_Modeling}"/>
             </Grid>
             <Grid Grid.Row="3">
                 <Button Height="50" Width="200" Margin="0,15,0,0" 
                     Template="{DynamicResource RoundButtonForAdd}"
                     Background="#FFFEBC2A" Content="НАСТРОЙКИ" FontWeight="Bold" 
                     Foreground="Black" BorderBrush="#FFFEBC2A"
-                    Command="{Binding SettingsButton}"/>    
+                    Command="{Binding SettingsButton}"
+                    IsEnabled="{Binding IsEnabled_Settings}"/>    
             </Grid>
             <Grid Grid.Row="4">
                 <Button Height="50" Width="200" Margin="0,15,0,0" 
                     Template="{DynamicResource RoundButtonForAdd}"
                     Background="#FFFEBC2A" Content="СБРОС" FontWeight="Bold" 
-                    Foreground="Black" BorderBrush="#FFFEBC2A"/>
+                    Foreground="Black" BorderBrush="#FFFEBC2A"
+                    IsEnabled="{Binding IsEnabled_Reset}"
+                    Command="{Binding Reset}"/>
             </Grid>
         </Grid>
     </Border>

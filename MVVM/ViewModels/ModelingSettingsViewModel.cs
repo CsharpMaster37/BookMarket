@@ -49,7 +49,7 @@ namespace BookMarket.MVVM.ViewModels
             if(_visibility == Visibility.Visible) { _visibility = Visibility.Hidden; }
             else { _visibility = Visibility.Visible; }
         }
-        private void DefaultSettings()
+        public void DefaultSettings()
         {
             LowerValue_TimeDelivery = 2;
             UpperValue_TimeDelivery = 4;

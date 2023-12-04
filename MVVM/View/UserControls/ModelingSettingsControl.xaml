@@ -104,58 +104,59 @@
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="40"/>
-                            <RowDefinition Height="173"/>
-                            <RowDefinition Height="173"/>
+                            <RowDefinition Height="86.5"/>
+                            <RowDefinition Height="86.5"/>
+                            <RowDefinition Height="86.5"/>
+                            <RowDefinition Height="86.5"/>
                         </Grid.RowDefinitions>
-                        <Border Grid.Row="0">
+                        <Grid Grid.Row="0">
                             <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"
                                FontSize="15" FontWeight="Bold" Foreground="#FFF8F890"
-                               Text="НАЦЕНКИ"/>
-                        </Border>
-                        <Border Grid.Row="1">
-                            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                <TextBlock Text="Розничная наценка (%)" 
-                                           FontSize="15" FontWeight="Bold" Foreground="#FF64676C"
-                                           HorizontalAlignment="Center"/>
-                                <Slider Width="325" Height="60" 
-                                             HorizontalAlignment="Center" VerticalAlignment="Center"
-                                             Style="{DynamicResource MahApps.Styles.Slider.Win10}"
-                                            mah:SliderHelper.TrackValueFillBrush="#FFFEBC2A"
-                                             mah:SliderHelper.ThumbFillBrush="#FFFEBC2A"
-                                             mah:SliderHelper.ThumbFillHoverBrush="#FFFEBC2A"
-                                             mah:SliderHelper.TrackValueFillHoverBrush="#FFFEBC2A"
-                                             mah:SliderHelper.ThumbFillPressedBrush="#FFFEBC2A"
-                                             mah:SliderHelper.TrackValueFillPressedBrush="#FFFEBC2A" TickFrequency="3"                                             
-                                             IsSnapToTickEnabled="True" 
-                                             Minimum="0" Maximum="30"
-                                             Value="{Binding Value_Retail}"
-                                             TickPlacement="BottomRight"
-                                             AutoToolTipPlacement="TopLeft">
-                                </Slider>
+                               Text="FAQ"/>
+                        </Grid>
+                        <Grid Grid.Row="1">
+                            <StackPanel Orientation="Horizontal" Margin="10,0,0,0">
+                                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center"
+                               FontSize="15" FontWeight="Bold" Foreground="#FFFEBC2A"
+                               Text="ВРЕМЯ ДОСТАВКИ:"/>
+                                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center"
+                               FontSize="15" FontWeight="Bold" Foreground="#FFF8F890" Margin="10,0,0,0">
+                                    срок доставки книг от издательств <LineBreak/> в магазин
+                                </TextBlock>
                             </StackPanel>
-                        </Border>
-                        <Border Grid.Row="2">
-                            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                <TextBlock Text="Наценка на новые книги (%)" 
-                                           FontSize="15" FontWeight="Bold" Foreground="#FF64676C"
-                                           HorizontalAlignment="Center"/>
-                                <Slider Width="325" Height="60" 
-                                             HorizontalAlignment="Center" VerticalAlignment="Center"
-                                             Style="{DynamicResource MahApps.Styles.Slider.Win10}"
-                                            mah:SliderHelper.TrackValueFillBrush="#FFFEBC2A"
-                                             mah:SliderHelper.ThumbFillBrush="#FFFEBC2A"
-                                             mah:SliderHelper.ThumbFillHoverBrush="#FFFEBC2A"
-                                             mah:SliderHelper.TrackValueFillHoverBrush="#FFFEBC2A"
-                                             mah:SliderHelper.ThumbFillPressedBrush="#FFFEBC2A"
-                                             mah:SliderHelper.TrackValueFillPressedBrush="#FFFEBC2A" TickFrequency="2"                                             
-                                             IsSnapToTickEnabled="True" 
-                                             Minimum="0" Maximum="20"
-                                             Value="{Binding Value_RetailNew}"
-                                             TickPlacement="BottomRight"
-                                             AutoToolTipPlacement="TopLeft">
-                                </Slider>
+                        </Grid>
+                        <Grid Grid.Row="2">
+                            <StackPanel Orientation="Horizontal" Margin="10,0,0,0">
+                                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center"
+                               FontSize="15" FontWeight="Bold" Foreground="#FFFEBC2A"
+                               Text="ПОРОГ ДЛЯ ЗАЯВКИ:"/>
+                                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center"
+                               FontSize="15" FontWeight="Bold" Foreground="#FFF8F890" Margin="10,0,0,0">
+                                    минимальный остаток каждой книги <LineBreak/> для формирования заявки в издательство
+                                </TextBlock>
                             </StackPanel>
-                        </Border>
+                        </Grid>
+                        <Grid Grid.Row="3">
+                            <StackPanel Orientation="Horizontal" Margin="10,0,0,0">
+                                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center"
+                               FontSize="15" FontWeight="Bold" Foreground="#FFFEBC2A"
+                               Text="ПЕРИОД МОДЕЛИРОВАНИЯ:"/>
+                                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center"
+                               FontSize="15" FontWeight="Bold" Foreground="#FFF8F890"
+                               Text="кол-во дней моделирования" Margin="10,0,0,0"/>
+                            </StackPanel>
+                        </Grid>
+                        <Grid Grid.Row="4">
+                            <StackPanel Orientation="Horizontal" Margin="10,0,0,0">
+                                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center"
+                               FontSize="15" FontWeight="Bold" Foreground="#FFFEBC2A"
+                               Text="ШАГ МОДЕЛИРОВАНИЯ:"/>
+                                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center"
+                               FontSize="15" FontWeight="Bold" Foreground="#FFF8F890" Margin="10,0,0,0">
+                                    интервал модилирования
+                                </TextBlock>
+                            </StackPanel>
+                        </Grid>
                     </Grid>
                 </Border>
             </Grid>
