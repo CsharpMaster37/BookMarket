@@ -12,6 +12,8 @@ namespace BookMarket.MVVM.Model.Books
         private int? pageCount;
         private int pricee;
         private int Pubyear;
+        private string topic;
+        private string category;
         public string Author { get;}
         public string Title { get;}
         public string Publisher { get;}
@@ -35,8 +37,36 @@ namespace BookMarket.MVVM.Model.Books
                 pageCount = value;
             }
         }
-        public string Topic { get; }
-        public string Category { get; }
+        public string Topic 
+        {
+            get { return topic; }
+            set
+            {
+                for (int i = 0; i < value.Length; i++)
+                {
+                    if (char.IsDigit(value[i]))
+                    {
+                        throw new ArgumentException();
+                    }
+                }
+                topic = value;
+            }
+        }
+        public string Category 
+        {
+            get { return category;}
+            set
+            {
+                for (int i = 0; i < value.Length; i++)
+                {
+                    if (char.IsDigit(value[i]))
+                    {
+                        throw new ArgumentException();
+                    }
+                }
+                category = value;
+            }
+        }
         public int Count { get; set; }
         public int Price 
         {
