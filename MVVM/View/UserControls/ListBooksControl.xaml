@@ -59,7 +59,7 @@
             </DataGrid.Resources>
             <DataGrid.Columns>
                 <materialDesign:DataGridTextColumn Header="Название" Binding="{Binding Path=Title}" 
-                                                   ElementStyle="{DynamicResource ForDataGrid}" IsReadOnly="True" CanUserResize="False"                                                  />
+                                                   ElementStyle="{DynamicResource ForDataGrid}" IsReadOnly="True" CanUserResize="False"                                                />
                 <materialDesign:DataGridTextColumn Header="Автор" Binding="{Binding Path=Author}"
                                                    ElementStyle="{DynamicResource ForDataGrid}" IsReadOnly="True" CanUserResize="False" />
                 <materialDesign:DataGridTextColumn Header="Год издания" Binding="{Binding Path=YearOfPublication}"

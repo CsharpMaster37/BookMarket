@@ -57,11 +57,11 @@
                 <Button VerticalAlignment="Top" HorizontalAlignment="Left"
                         Margin="10,0,0,0"
                         Height="39" Width="120"
-                        Background="#FFFEBC2A" Content="ОК" FontWeight="Bold" 
+                        Background="#FFFEBC2A" Content="ОК (макс. 100)" FontWeight="Bold" 
                         Foreground="Black" BorderBrush="#FFFEBC2A" FontSize="10"
                         Template="{DynamicResource RoundButtonForApplyGeneration}"
                         Command="{Binding OK_GenateButton}"
-                        Visibility="{Binding _visibility_count_button}"/>
+                        Visibility="{Binding _visibility_count_button}" Cursor="Hand"/>
             </StackPanel>
         </Grid>
     </Border>

@@ -70,10 +70,19 @@ namespace BookMarket.MVVM.Model
             int index;
             for (int i = 0; i < countType; i++)
             {
-                while (true)
+                if (unique.Count == 100)
+                    return;
+                index = rd.Next(0, App.ArrayGenerate.Count - 1);
+                if (unique.Contains(index))
                 {
-                    index = rd.Next(0, App.ArrayGenerate.Count - 1);
-                    if (!unique.Contains(index)) { unique.Add(index); break; }
+                    for (int j = 0; j < 91; j++)
+                    {
+                        if (!unique.Contains(index)) { unique.Add(index); index = j; break; }
+                    }
+                }
+                else
+                {
+                    unique.Add(index);
                 }
                 string[] element = App.ArrayGenerate[index];
                 AddBook(new Book(element[0], element[1], element[2], int.Parse(element[3]), int.Parse(element[4]), element[5], element[6], int.Parse(element[7])), rd.Next(1, 15));
