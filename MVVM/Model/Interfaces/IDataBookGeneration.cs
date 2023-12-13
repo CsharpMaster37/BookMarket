@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace BookMarket.MVVM.Model.Interfaces
 {
-    public interface IStatement
+    public interface IDataBookGeneration
     {
-        bool DayPassed();
-        void Done();
+        void CreateArrayForGenerateBook(List<string[]> ArrayGenerate);
+        void Generation(int countType, HashSet<int> unique);
     }
 }

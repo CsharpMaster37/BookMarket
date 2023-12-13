@@ -7,11 +7,9 @@ using System.Threading.Tasks;
 
 namespace BookMarket.MVVM.Model.Interfaces
 {
-    public interface IGeneration
+    public interface IGenerationModeling
     {
         User Generation_User();
-        User Create_User();
-        void Generation_DataForUsers();
         bool Generation_Buy(User user, int lower_threeshold, int upper_threeshold, int lower_TimeDelivery, int upper_TimeDelivery);
     }
 }

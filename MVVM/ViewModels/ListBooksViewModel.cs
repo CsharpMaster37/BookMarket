@@ -19,7 +19,7 @@ namespace BookMarket.MVVM.ViewModels
         public ObservableCollection<Book> ListBooks { get; set; }
         public int selectedBook { get; set; }
         public ListBooksViewModel() {
-            ListBooks = new ObservableCollection<Book>(App._market._assortmentBooks._assortment);        
+            ListBooks = new ObservableCollection<Book>(App._market._assortmentBooks.GetAssortment());        
         }
         public RelayCommand BookInformationButton
         {

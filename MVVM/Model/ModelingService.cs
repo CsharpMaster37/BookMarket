@@ -29,7 +29,7 @@ namespace BookMarket.MVVM.Model
         public int CountBooks { get; set; }
         public int CompletedApplicationsPublisher { get; set; }
         public List<User> Users = new List<User>();
-        public GenerationModelingService Generation_Serivce { get; set; }
+        public IGenerationModeling Generation_Serivce;
         private Random random = new Random();
         public ModelingService(int LV_timeDelivery, int UV_timeDelivery,int LV_threshold, int UV_threshold, int modelingPeriod, int modelingStep)
         {
@@ -113,7 +113,7 @@ namespace BookMarket.MVVM.Model
                     if (App._listBooks.ListBooks[App._requests.Requests[i].index].Count > 0)
                     {
                         App._market.BuyBook(App._requests.Requests[i].index, App._requests.Requests[i].Buyer);
-                        Profit += App._market._assortmentBooks._assortment[App._requests.Requests[i].index].Price;
+                        Profit += App._market._assortmentBooks.GetAssortment()[App._requests.Requests[i].index].Price;
                         App._requests.Requests.RemoveAt(i);
                         Success_Buy();
                     }

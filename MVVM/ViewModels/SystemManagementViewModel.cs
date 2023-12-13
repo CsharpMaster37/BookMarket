@@ -54,7 +54,7 @@ namespace BookMarket.MVVM.ViewModels
                 {
                     Helpers.Synchronization_Button();
                     Helpers.Synchronization_Info();
-                    App._market._assortmentBooks._assortment.Clear();
+                    App._market._assortmentBooks.GetAssortment().Clear();
                     App._listBooks.ListBooks.Clear();
                     App._history.History.Clear();
                     App._requests.Requests.Clear();

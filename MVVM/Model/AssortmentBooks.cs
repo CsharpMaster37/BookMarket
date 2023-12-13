@@ -12,14 +12,17 @@ namespace BookMarket.MVVM.Model
 {
     public class AssortmentBooks : IAssortment
     {
-        public List<Book> _assortment;
+        private List<Book> _assortment;
         public AssortmentBooks()
         {
             _assortment = new List<Book>();
         }
         
-
-        public void Add(Book book,int count)
+        public List<Book> GetAssortment()
+        {
+            return _assortment;
+        }
+        public bool Add(Book book,int count)
         {
             int idx = _assortment.IndexOf(book);
             if(idx == -1)
@@ -27,9 +30,13 @@ namespace BookMarket.MVVM.Model
                 _assortment.Add(book);
                 _assortment[_assortment.Count - 1].Count += count;
                 App._listBooks.ListBooks.Add(book);
+                return true;
             }
             else
+            {
                 _assortment[idx].Count += count;
+                return false;
+            }
         }
 
         public void Buy(int idxbook)

@@ -9,7 +9,8 @@ namespace BookMarket.MVVM.Model
 {
     public interface IAssortment
     {
-        void Add(Book item,int count);
+        bool Add(Book item,int count);
         void Buy(int item);
+        List<Book> GetAssortment();
     }
 }

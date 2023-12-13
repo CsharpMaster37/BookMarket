@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BookMarket.MVVM.Model
 {
-    public class Statement : IStatement
+    public class Statement
     {
         public string Title { get;}
         public string Author { get;}

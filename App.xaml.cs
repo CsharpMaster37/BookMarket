@@ -10,6 +10,7 @@ using System.Windows;
 using BookMarket.MVVM.ViewModels;
 using BookMarket.MVVM.View.UserControls;
 using System.Web.UI;
+using BookMarket.MVVM.Model.Interfaces;
 
 namespace BookMarket
 {
@@ -32,6 +33,7 @@ namespace BookMarket
         public static BuyBookViewModel _buyBook { get; set; }
         public static StatisticControlViewModel _statistic { get; set; }
         public static ShowMessageBox _messageBox { get; set; }
+        public static IDataBookGeneration dataBookGeneration { get; set; }
         static App()
         {
             _market = new Market();
@@ -48,19 +50,14 @@ namespace BookMarket
             _buyBook = new BuyBookViewModel();
             _statistic = new StatisticControlViewModel();
             _messageBox = new ShowMessageBox();
-            CreateArrayForGenerate();
+            dataBookGeneration = new DataBookGeneration();
+            dataBookGeneration.CreateArrayForGenerateBook(ArrayGenerate);
 
         }
         public static void Error_MessageBox(string message)
         {
             _messageBox.Message = message;
             _messageBox.MsgBoxVisibility = Visibility.Visible;
-        }
-        private static void CreateArrayForGenerate()
-        {
-            StreamReader sr = new StreamReader("../../FileGenerate.txt");
-            while (!sr.EndOfStream)
-                ArrayGenerate.Add(sr.ReadLine().Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries));
         }
     }
 }
